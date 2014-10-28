@@ -1,32 +1,4 @@
-<!DOCTYPE html>
-<html lang="zh-cn" ng-app="myblog" ng-controller="indexCtrl">
-
-<head>
-  <meta charset="utf-8">
-  <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">  -->
-  <link rel="icon" href="images/logo.png" type="image/png" sizes="32x32" />
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/main.css">
-  <title>湖南科技大学虚拟仿真实验室</title>
-</head>
-<body>
-    <div class="head">
-            <div class="binner">
-            </div>
-            <nav class="nav" role="navigation">
-                <ul>
-                <div class="container">
-                    <li><a href="#">首页</a></li>
-                    <li><a href="#">实验中心概要</a></li>
-                    <li><a href="#">机构与队伍</a></li>
-                    <li><a href="#">管理制度</a></li>
-                    <li><a href="#">仪器设备</a></li>
-                    <li><a href="#">合作交流</a></li>
-                    <li><a href="#">下载中心</a></li>
-                </div>
-                </ul>
-            </nav>
-    </div>
+<?php include("head.php"); ?>
     <div class="container">
         <div class="body row">
             <div class="col-xs-3 sidebar">
@@ -67,11 +39,11 @@
                         校内导航 <span class="pull-right caret"></span>
                       </div>
                       <ul class="dropdown-menu" role="menu">
-                        <a href="#"><li>湖南科技大学计算机科学与工程学院</li></a>
-                        <a href="#"><li>湖南科技大学机电工程学院</li></a>
-                        <a href="#"><li>学科建设处</li></a>
-                        <a href="#"><li>科学技术处</li></a>
-                        <a href="#"><li>国有资产管理处</li></a>
+                        <li><a href="#">湖南科技大学计算机科学与工程学院</a></li>
+                        <li><a href="#">湖南科技大学机电工程学院</a></li>
+                        <li><a href="#">学科建设处</a></li>
+                        <li><a href="#">科学技术处</a></li>
+                        <li><a href="#">国有资产管理处</a></li>
                       </ul>
                     </div>
                 </div>
@@ -152,15 +124,51 @@
             </div><!-- mainbar -->
         </div><!--body row -->
     </div>
-
-   <div class="foot-bar">
-            <h5>版权所有@2011 湖南科技大学虚拟仿真实验教学中心</h5>
-            <p></p>
+    <div class="to-top">
+    <p><b>Top</b><p>
     </div>
 
-<!--                  scripts                    -->
-    <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script src="js/main.js"></script>
-</body>
-</html>
+<?php include("bottom.php"); ?>
+
+
+
+
+<!--<div class="container">
+        <hr>
+        <div class="box">
+            <div class="box-head">
+                <h4>公告通知</h4>
+            </div>
+            <ul class="newslist clearfix" id="newthu_news">
+                <li>                        
+                    <div class="ydate ydate_2" id="div_ydate_1"><span>17</span>2014.10</div>                        
+                    <div class="tn">                         
+                        <h3>
+                            <a href="#" target="_blank">清华大学第24次教育工作讨论会闭幕</a>
+                        </h3>    
+                        <p id="news_summary_1">10月16日下午，清华大学第24次教育工作讨论会闭幕式在主楼后厅举行。校长陈吉宁在闭幕式上讲话。校党委书记陈旭，副书记史宗恺、邓卫......</p>                         
+                     </div>                    
+                 </li>
+                 <li>                        
+                    <div class="ydate ydate_2" id="div_ydate_1"><span>17</span>2014.10</div>                        
+                    <div class="tn">                         
+                        <h3>
+                            <a href="#" target="_blank">清华大学第24次教育工作讨论会闭幕</a>
+                        </h3>    
+                        <p id="news_summary_1">10月16日下午，清华大学第24次教育工作讨论会闭幕式在主楼后厅举行。校长陈吉宁在闭幕式上讲话。校党委书记陈旭，副书记史宗恺、邓卫......</p>                         
+                     </div>                    
+                 </li>
+                 <li>                        
+                    <div class="ydate ydate_2" id="div_ydate_1"><span>17</span>2014.10</div>                        
+                    <div class="tn">                         
+                        <h3>
+                            <a href="#" target="_blank">清华大学第24次教育工作讨论会闭幕</a>
+                        </h3>    
+                        <p id="news_summary_1">10月16日下午，清华大学第24次教育工作讨论会闭幕式在主楼后厅举行。校长陈吉宁在闭幕式上讲话。校党委书记陈旭，副书记史宗恺、邓卫......</p>                         
+                     </div>                    
+                 </li>
+            </ul>
+        </div>
+
+        
+    </div>-->

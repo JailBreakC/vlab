@@ -1,0 +1,18 @@
+ 数据库
+
+ 用户     vlab_user id student_id pw name mail major add_time
+ 管理员   vlab_admin id user_name pw phone mail level name add_time
+ 中心介绍 vlab_disc id content add_time pic
+ 新闻     vlab_news id title content add_time
+ 教师     vlab_teacher id name sex age phone title major degree add_time web_page disc photo
+ 制度     vlab_rule id title content add_time
+ 职称     vlab_title id title
+ 学历学位 vlab_degree id dgree
+ 虚拟资源 vlab_resource id title pic content
+ 仪器设备 vlab_device id name type price num maker  buy_time pic
+
+管路员权限设置
+
+ 超级管理员  修改任何人密码，查看全部信息，新增超级、普通管理员、录入员。
+ 普通管理员  修改自己密码，查看全部信息，新增普通管理员、录入员。
+ 录入员      修改自己密码。

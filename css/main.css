@@ -1,10 +1,23 @@
+/* html5 */
+article,
+aside,
+dialog,
+footer,
+header,
+section,
+footer,
+nav,
+figure,
+menu {
+  display: block;
+}
 body {
   color: #444;
-  background: #E9E9E9;
+  background: white;
   line-height: 20px;
-  font-size: 12px;
-  font-family: "Lucida Sans Unicode", "Lucida Grande", Tahoma, Arial, Helvetica, sans-serif;
+  font-family: "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
   margin: 0px;
+  min-width: 1100px;
 }
 .more {
   color: white;
@@ -13,47 +26,55 @@ body {
   color: white;
 }
 .container {
-  width: 990px;
+  width: 1030px;
 }
 .head {
   position: relative;
   margin-bottom: 10px;
+  background: #ffffff url(../images/bg.jpg) repeat-x top;
 }
 .binner {
-  width: 100%;
-  height: 260px;
-  background: url(../images/banner.jpg) no-repeat;
-  background-size: cover;
+  text-align: center;
+}
+.binner img {
+  width: 1160px;
+  margin: 20px;
+  margin-bottom: 54px;
 }
 .nav ul {
   list-style: none;
   padding: 0;
   overflow: auto;
+  border-top: solid 1px #DCDCDC;
 }
 .nav > ul li {
   float: left;
-  background-color: #55606E;
-  padding: 15px 37px;
-  font-weight: bold;
 }
-.nav > ul li:hover {
-  background-color: #343A41;
+.nav > ul li a:hover {
+  background-color: #5876aa;
+  color: white;
+  text-decoration: none;
 }
 .nav li > a {
-  color: #FFF;
+  color: black;
+  display: block;
+  line-height: 42px;
+  font-size: 15px;
+  padding: 0 30px;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
 }
 .nav ul {
-  background-color: #55606E;
   margin-bottom: 0px;
 }
 .box {
   background: #FFF;
   box-shadow: 4px 5px 5px #808080;
   padding: 10px;
-  margin: 10px 0;
+  margin: 20px 0;
 }
 .box > .box-head {
-  background: #55606E;
+  background: #5876aa;
   color: #FFF;
   font-weight: bold;
   padding: 2px 10px;
@@ -66,14 +87,15 @@ body {
   display: block;
   padding: 5px 10px;
   margin: -3px -10px 10px -10px;
-  background: #24AFB2;
+  background: #5CA0EB;
   color: #FFF;
   font-weight: bold;
   cursor: pointer;
   -webkit-transition: all .2s ease;
+  transition: all .2s ease;
 }
 .box .btn-group:hover {
-  background-color: #55606E;
+  background-color: #5876aa;
 }
 .box .dropdown-menu {
   border-radius: 0px;
@@ -82,6 +104,7 @@ body {
 }
 .box .dropdown-menu a {
   -webkit-transition: all .2s ease;
+  transition: all .2s ease;
 }
 .box .dropdown-menu a:hover {
   background-color: #24AFB2;
@@ -100,10 +123,10 @@ body {
   color: black;
   padding: 7px 10px;
   -webkit-transition: all .2s ease;
+  transition: all .2s ease;
 }
 .box ul > a:hover {
   color: white;
-  font-weight: bold;
   background-color: #24AFB2;
 }
 .fast-link img {
@@ -118,8 +141,103 @@ body {
 }
 .foot-bar {
   text-align: center;
-  background: #55606E;
+  background: #5876aa;
   color: white;
   margin-top: 80px;
   padding: 50px;
+}
+.top_warp {
+  border-top: solid 8px #5876aa;
+  padding: 15px 0px;
+  overflow: auto;
+}
+.top_warp img {
+  float: left;
+}
+.top_warp .top_words {
+  float: right;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 25px;
+  color: #5876aa;
+}
+.thumbnail {
+  position: relative;
+  overflow: hidden;
+}
+.thumbnail .caption {
+  position: absolute;
+  bottom: -53px;
+  left: 0px;
+  background: #5CA0EB;
+  width: 100%;
+  color: #FFF;
+  text-align: center;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+.thumbnail .caption.show {
+  bottom: 0px;
+}
+.sidebar {
+  margin-top: -83px;
+}
+.text {
+  font-size: 16px;
+  line-height: 29px;
+  text-indent: 2em;
+}
+.to-top {
+  position: fixed;
+  bottom: 100px;
+  right: 100px;
+  padding: 10px 0;
+  background-color: #405999;
+  border-radius: 23px;
+  color: #FFF;
+  font-size: 20px;
+  height: 45px;
+  width: 45px;
+  text-align: center;
+  cursor: pointer;
+}
+.newslist {
+  margin: 0 5px;
+  border-bottom: 1px solid #E9E8EA;
+  padding: 40px 0;
+  margin-bottom: 14px;
+}
+.newslist li {
+  float: left;
+  _display: inline;
+  width: 300px;
+  margin: 0 15px;
+  list-style: none;
+}
+.ydate_2 {
+  border: 1px solid #EDEAF1;
+  color: #5B317D;
+  background: #EDEAF1;
+}
+.ydate {
+  width: 58px;
+  border: 1px solid #D8D8D8;
+  color: #7D7D7D;
+  text-align: center;
+  font-size: 12px;
+  float: left;
+  _display: inline;
+  padding-bottom: 5px;
+}
+.ydate span {
+  display: block;
+  font-size: 24px;
+  line-height: 24px;
+  padding: 8px 0 2px 0;
+  zoom: 1;
+}
+.newslist .tn {
+  margin-left: 80px;
+  width: 220px;
+  _width: 217px;
 }
