@@ -8,7 +8,7 @@
 <body style="background:">
     <div class="container">
         <form class="form" action="admin.php" method="post">
-            <table style="width:400px;margin:250px auto" class="table">
+            <table style="width:400px;margin:250px auto" class="table table-bordered">
                 <tr>
                     <td>用户名</td>
                     <td>密码</td>

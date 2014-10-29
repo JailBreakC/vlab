@@ -11,12 +11,12 @@ if(isset( $_SESSION['user']))
 
 if(!$login && isset($_POST['admin_name']) && isset($_POST['admin_pw'])){
 
-    echo $_POST['admin_name'].$_POST['admin_pw'];
+    //echo $_POST['admin_name'].$_POST['admin_pw'];
     $ip = $_SERVER['REMOTE_ADDR'];
     $time = date('Y-m-d H:i:s');
     $user_name = $_POST['admin_name'];
     $password = $_POST['admin_pw'];
-    echo $password = md5($password);
+    $password = md5($password);
 
     $query = 'select * from vlab_admin
               where user_name = ? and pw = ? and level >= 1';
@@ -30,6 +30,10 @@ if(!$login && isset($_POST['admin_name']) && isset($_POST['admin_pw'])){
     }
 
     $row = $result -> fetchAll();
+    if(!$row){
+        echo '用户名或密码不正确';
+        exit();
+    }
     $row = $row[0];
     if($row['user_name'] !='' ){
         //更新session信息

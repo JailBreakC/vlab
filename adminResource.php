@@ -1,6 +1,11 @@
 <div class="container">
-    <h2>实验中心介绍</h2>
+    <h2>中心虚拟资源介绍</h2>
     <hr>
+    <div class="alert alert-info" style="overflow:auto">
+      <p class="pull-right">上次保存时间：<input disabled="disabled" id="addTime" type="text">  
+      本次保存时间：<input id="nowTime" type="text"></p>
+    </div>
+    <p><input id="title" placeholder="标题" type="text" class="form-control"></p>
     <div class="btn-toolbar" data-role="editor-toolbar" data-target="#editor">
       <div class="btn-group">
         <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" title="" data-original-title="Font"><i class="icon-font"></i><b class="caret"></b></a>
@@ -52,11 +57,17 @@
         <a class="btn btn-default" data-edit="redo" title="" data-original-title="Redo (Ctrl/Cmd+Y)"><i class="icon-repeat"></i></a>
       </div>
       <input type="text" data-edit="inserttext" id="voiceBtn" x-webkit-speech="" style="display: none;">
-      <div id="save" class="btn btn-default pull-right">保存</div>
+      <button id="save" class="btn btn-primary pull-right">保存修改</button>
+      <button id="new" class="btn btn-success pull-right">新增文章</button>
     </div>
-    <div id="editor" style="overflow:scroll;height:500px;border: solid 2px #8188AC;margin:10px 0;"></div>
-    <div class="alert alert-info" style="overflow:auto">
-      <p class="pull-right">上次修改时间：<input disabled="disabled" id="addTime" type="text"></p>
-      <p class="pull-right">本次修改时间：<input id="nowTime" type="text"></p>
-    </div>
+    <div id="editor" style="overflow:scroll;height:400px;border: solid 2px #8188AC;margin:10px 0;"></div>
+    <table class="table table-hover table-bordered">
+        <tr>
+          <th>序号</th>
+          <th>标题</th>
+          <th>日期</th>
+          <th>文章</th>
+          <th>操作</th>
+        </tr>
+    </table>
 </div>

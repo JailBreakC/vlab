@@ -24,8 +24,12 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">管理员管理</a></li>
             <li><a href="admin.php?page=adminCenter">实验中心介绍</a></li>
+            <li><a href="admin.php?page=adminNews">新闻公告</a></li>
+            <li><a href="admin.php?page=adminResource">中心虚拟资源</a></li>
+            <li><a href="admin.php?page=adminDevice">仪器设备</a></li>
+            <li><a href="admin.php?page=adminRule">管理制度</a></li>
+            <li><a href="#">机构成员</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">预设值管理 <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
@@ -33,11 +37,7 @@
                 <li><a href="#">专业</a></li>
               </ul>
             </li>
-            <li><a href="#">机构成员</a></li>
-            <li><a href="#">管理制度</a></li>
-            <li><a href="#">中心虚拟资源</a></li>
-            <li><a href="#">新闻公告</a></li>
-            <li><a href="#">仪器设备</a></li>
+            <li class=""><a href="admin.php">管理员管理</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->

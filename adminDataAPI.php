@@ -102,6 +102,16 @@ if(isset($_POST['query']) && isset($_POST['id'])){
         }
 
     }
+}else if(isset($_POST['delete']) && isset($_POST['id']) && isset($_SESSION['user'])){
+    include('connDB.php');
+    $delete = $_POST['delete'];
+    $id = $_POST['id'];
+    $query = "DELETE FROM $delete WHERE id = $id";
+    $result = $pdo -> prepare($query);
+    if(!$result -> execute())
+        echo 'sql删除失败';
+    else
+        echo 'success';
 }else {
     echo "请输入正确的参数";
 }

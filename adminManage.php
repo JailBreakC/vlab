@@ -8,10 +8,12 @@
         exit();
     }
     $all_admin = $result -> fetchAll();
-    print_r($all_admin);
+    //print_r($all_admin);
 ?>
 <div class="container">
-    <table class="table table-borderd table-hover">
+    <h2>管理员管理</h2>
+    <hr>
+    <table class="table table-bordered table-hover">
         <tr>
             <th>用户名</th>
             <th>密码</th>
