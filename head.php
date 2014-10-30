@@ -9,14 +9,6 @@
   <link rel="stylesheet" href="css/main.css">
   <title>湖南科技大学虚拟仿真实验室</title>
   <script type="text/javascript" src="js/htmlshiv.js"></script>
-  <!--[if lt IE9]> 
-  <script>
-    document.ready(function(){
-     alert('xx');
-     document.getElementsByTagName('body').className = 'ie8';
-    })
-  </script>
-  <![endif]-->
 </head>
 <body>
     <div class="head">

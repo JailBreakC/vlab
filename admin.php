@@ -47,7 +47,7 @@ if(!$login && isset($_POST['admin_name']) && isset($_POST['admin_pw'])){
         }
         setcookie(session_name(), session_id(), 0, "/"); 
         
-        echo json_encode($row);
+        // echo json_encode($row);
     }
     else{
         echo json_encode(FALSE);

@@ -56,7 +56,6 @@
     </div>
     <div id="editor" style="overflow:scroll;height:500px;border: solid 2px #8188AC;margin:10px 0;"></div>
     <div class="alert alert-info" style="overflow:auto">
-      <p class="pull-right">上次修改时间：<input disabled="disabled" id="addTime" type="text"></p>
-      <p class="pull-right">本次修改时间：<input id="nowTime" type="text"></p>
+      <p class="pull-right">上次修改时间：<input disabled="disabled" id="addTime" type="text">  本次修改时间：<input id="nowTime" type="text"></p>
     </div>
 </div>

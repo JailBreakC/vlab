@@ -1,13 +1,15 @@
 <?php
 session_start();
+//可访问表单控制
+$allowed = array('vlab_disc', 'vlab_resource', 'vlab_news', 'vlab_rule',
+ 'vlab_major', 'vlab_teacher', 'vlab_title', 'vlab_device', 'vlab_degree');
+
     //获取数据可以无需登录
 if(isset($_POST['query']) && isset($_POST['id'])){
     include('connDB.php');
     $q = $_POST['query'];
     $id = $_POST['id'];
-    //匹配可以进行读取的表单。
-    $allowed = ['vlab_disc', 'vlab_resource', 'vlab_news', 'vlab_rule', 'vlab_teacher', 'vlab_title',
-    'vlab_device', 'vlab_degree'];
+
     if(in_array($q, $allowed)){
         if($id == 'all'){
             //获取整个表单的数据
@@ -30,6 +32,7 @@ if(isset($_POST['query']) && isset($_POST['id'])){
         }
         else{
             $row = $result -> fetchAll();
+            //print_r($row);
             echo json_encode($row);
         }
     }
@@ -40,9 +43,6 @@ if(isset($_POST['query']) && isset($_POST['id'])){
     $save = $_POST['save'];
     $id = $_POST['id'];
     $data = $_POST['data'];
-    //匹配可以进行读取的表单。
-    $allowed = ['vlab_disc', 'vlab_resource', 'vlab_news', 'vlab_rule', 'vlab_teacher', 'vlab_title',
-    'vlab_device', 'vlab_degree'];
     if(in_array($save, $allowed)){
             //若未指定id则新增数据
         if($id == 'no'){
@@ -75,8 +75,7 @@ if(isset($_POST['query']) && isset($_POST['id'])){
                 echo 'success';
         }
         else{
-            $query = "update ". $save . " set ";//item_number = ? where item_id = id;
-            $length = count($data);
+            $query = "update ". $save . " set ";
             $i = 1;
             foreach($data as $key => $v) {
                 if($i < $length){
@@ -102,16 +101,20 @@ if(isset($_POST['query']) && isset($_POST['id'])){
         }
 
     }
+    //若处于登录状态，可删除数据。
 }else if(isset($_POST['delete']) && isset($_POST['id']) && isset($_SESSION['user'])){
     include('connDB.php');
     $delete = $_POST['delete'];
     $id = $_POST['id'];
-    $query = "DELETE FROM $delete WHERE id = $id";
-    $result = $pdo -> prepare($query);
-    if(!$result -> execute())
-        echo 'sql删除失败';
-    else
-        echo 'success';
+    if(in_array($delete, $allowed)){
+        $query = "DELETE FROM $delete WHERE id = $id";
+        //echo $query;
+        $result = $pdo -> prepare($query);
+        if(!$result -> execute())
+            echo 'sql删除失败';
+        else
+            echo 'success';
+    }
 }else {
     echo "请输入正确的参数";
 }

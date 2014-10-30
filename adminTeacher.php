@@ -1,30 +1,39 @@
 <div class="container">
+<style>input {
+width: 100px;
+}</style>
     <div class="container">
-        <h2>仪器与设备</h2>
+        <h2>机构成员</h2>
         <hr>
         <table class="table table-bordered table-hover">
             <tr>
                 <th>序号</th>
-                <th>名称</th>
-                <th>型号</th>
-                <th>单价</th>
-                <th>数量</th>
-                <th>厂家</th>
-                <th>购买时间</th>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>年龄</th>
+                <th>手机</th>
+                <th>职称</th>
+                <th>专业</th>
+                <th>学历学位</th>
+                <th>加入时间</th>
+                <th>个人主页</th>
                 <th>操作</th>
             </tr>
             <tr id="editTr">
                 <td id="id"></td>
                 <td><input id="name" type="text"></td>
-                <td><input id="type" type="text"></td>
-                <td><input id="price" type="text"></td>
-                <td><input id="num" type="text"></td>
-                <td><input id="maker" type="text"></td>
-                <td><input id="buy_time" type="text"></td>
+                <td><input id="sex" type="text"></td>
+                <td><input id="age" type="text"></td>
+                <td><input id="phone" type="text"></td>
+                <td><input id="title" type="text"></td>
+                <td><input id="major" type="text"></td>
+                <td><input id="degree" type="text"></td>
+                <td><input id="add_time" type="text"></td>
+                <td><input id="web_page" type="text"></td>
                 <td><button class="btn btn-xs btn-primary">↓</button></td>
             </tr>
         </table>
-        <h3>设备简介：</h3>
+        <h3>成员简介：</h3>
         <div class="btn-toolbar" data-role="editor-toolbar" data-target="#editor">
           <div class="btn-group">
             <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" title="" data-original-title="Font"><i class="icon-font"></i><b class="caret"></b></a>
@@ -77,20 +86,24 @@
           </div>
           <input type="text" data-edit="inserttext" id="voiceBtn" x-webkit-speech="" style="display: none;">
           <button id="save" class="btn btn-primary pull-right">保存修改</button>
-          <button id="new" class="btn btn-success pull-right">新增设备信息</button>
+          <button id="new" class="btn btn-success pull-right">新增成员</button>
         </div>
         <div id="editor" style="overflow:scroll;height:400px;border: solid 2px #8188AC;margin:10px 0;"></div>
         <table id="showTable" class="table table-bordered table-hover" style="cursor:pointer;">
             <tr>
                 <th>序号</th>
-                <th>名称</th>
-                <th>型号</th>
-                <th>单价</th>
-                <th>数量</th>
-                <th>厂家</th>
-                <th>购买时间</th>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>年龄</th>
+                <th>手机</th>
+                <th>职称</th>
+                <th>专业</th>
+                <th>学历学位</th>
+                <th>加入时间</th>
+                <th>个人主页</th>
                 <th>操作</th>
             </tr>
+            
         </table>
     </div>
 
