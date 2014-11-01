@@ -1,4 +1,7 @@
 <div class="container">
+    <h2>实验中心轮播大图</h2>
+    <hr>
+    <hr>
     <h2>实验中心介绍</h2>
     <hr>
     <div class="btn-toolbar" data-role="editor-toolbar" data-target="#editor">

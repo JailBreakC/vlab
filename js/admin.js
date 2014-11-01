@@ -1,65 +1,8 @@
 $(document).ready(function(){
     $('#editor').wysiwyg();
+    var t = transfer();
     var page = window.location.href.split('=')[1];
-    //发送数据
-    var sendText = function(save, id, data) {
-            $.ajax({
-                type:"post",
-                url:"adminDataAPI.php",
-                data:{'save':save, 'id':id, 'data':data},
-                dataType:"text",
-                success:function(ret){
-                    if(ret === 'success'){
-                        alert("更新成功");
-                        window.location.reload()
-                    }else{
-                        alert("更新失败");
-                    }
-                },
-                error:function(ret){
-                    alert("网络故障，稍后重试 " + ret);
-                }
-            });
-        };
-    //获取数据
-    var getText = function(query, id, fn) {
-        var data;
-        $.ajax({
-                type:"post",
-                url:"adminDataAPI.php",
-                data:{'query':query, 'id':id},
-                dataType:"text",
-                success:function(ret){
-                    //console.log(ret);
-                    data = JSON.parse(ret);
-                    fn(data);
-                },
-                error:function(ret){
-                    alert("网络故障，稍后重试 " + ret);
-                }
-        });
-        return data;
-    }
-    //删除数据
-    var deleteText = function(deleteTable, id) {
-        $.ajax({
-                type:"post",
-                url:"adminDataAPI.php",
-                data:{'delete':deleteTable, 'id':id},
-                dataType:"text",
-                success:function(ret){
-                    if(ret === 'success'){
-                        alert("删除成功");
-                        window.location.reload()
-                    }else{
-                        alert("删除失败");
-                    }
-                },
-                error:function(ret){
-                    alert("网络故障，稍后重试 " + ret);
-                }
-        });
-    }
+
     //获取当前日期
     var getDate = function() {
         var date = new Date();
@@ -73,12 +16,12 @@ $(document).ready(function(){
         $('#nowTime').attr('value',getDate());
     }
     if( page === 'adminCenter') {
-        getText('vlab_disc', 'last', parseCenter);
+        t.getText('vlab_disc', 'last', parseCenter);
         $('#save').click(function() {
             var data = {}
             data.content = $('#editor').html();
             data.add_time = $('#nowTime').val();
-            sendText('vlab_disc', 'no', data);
+            t.sendText('vlab_disc', 'no', data);
         })
     }
     //加载仪器设备列表
@@ -112,7 +55,7 @@ $(document).ready(function(){
         }
     }
     if( page === 'adminDevice') {
-        getText('vlab_device', 'all', parseDevice)
+        t.getText('vlab_device', 'all', parseDevice)
         $('#new').click(function() {
             var data = {};
             $('#editTr').children().each(function(index,ele) {
@@ -121,7 +64,7 @@ $(document).ready(function(){
                     data[id] = $(ele).find('input').val();
             });
             data.disc = $('#editor').html();
-            sendText('vlab_device', 'no', data);
+            t.sendText('vlab_device', 'no', data);
         });
         $('#save').click(function() {
             var data = {};
@@ -133,17 +76,17 @@ $(document).ready(function(){
             data.disc = $('#editor').html();
             var id = $('#id').html()
             if(id)
-                sendText('vlab_device', id, data);
+                t.sendText('vlab_device', id, data);
             else
                 alert('请先读取要修改的文章');
         });
         $('.table').on('click', '.delete', function() {
             var id = $(this).closest('tr').children().eq(0).text();
-            deleteText('vlab_device', id);
+            t.deleteText('vlab_device', id);
         });
         $('.table').on('click', '.items', function() {
             var id = $(this).find('td').eq(0).html();
-            getText('vlab_device', id, parseItems);
+            t.getText('vlab_device', id, parseItems);
         })
     }
     //加载新闻公告列表(中心资源，管理制度通用)
@@ -169,16 +112,17 @@ $(document).ready(function(){
         $('#addTime').val(data.add_time);
         $('#nowTime').val(getDate());
     }
-    if(page === 'adminNews') {
+    if(page === 'adminNews' || page === 'adminMessage') {
         $('#nowTime').attr('value',getDate());
-        getText('vlab_news', 'all', parseNewsTable);
+        var table =  page === 'adminNews' ? 'vlab_news' : 'vlab_message';
+        t.getText(table, 'all', parseNewsTable);
 
         $('#new').click(function() {
             var data = {};
             data.title = $('#title').val();
             data.content = $('#editor').html();
             data.add_time = $('#nowTime').val();
-            sendText('vlab_news', 'no', data);
+            t.sendText(table, 'no', data);
             $('#save').attr('data-target-id','');
         });
         $('#save').click(function() {
@@ -188,7 +132,7 @@ $(document).ready(function(){
                 data.title = $('#title').val();
                 data.content = $('#editor').html();
                 data.add_time = $('#nowTime').val();
-                sendText('vlab_news', id, data);
+                t.sendText(table, id, data);
             }else{
                 alert('请先读取要修改的文章');
             }
@@ -197,25 +141,25 @@ $(document).ready(function(){
         $('.table').on('click', '.read', function() {
             var id = $(this).closest('tr').children().eq(0).html();
             $('#save').attr('data-target-id', id);
-            getText('vlab_news', id, parseNews);
+            t.getText(table, id, parseNews);
         });
 
         $('.table').on('click', '.delete', function() {
             var id = $(this).closest('tr').children().eq(0).html();
-            deleteText('vlab_news', id);
+            t.deleteText(table, id);
         });
 
     }
     if(page === 'adminRule') {
         $('#nowTime').attr('value',getDate());
-        getText('vlab_rule', 'all', parseNewsTable);
+        t.getText('vlab_rule', 'all', parseNewsTable);
 
         $('#new').click(function() {
             var data = {};
             data.title = $('#title').val();
             data.content = $('#editor').html();
             data.add_time = $('#nowTime').val();
-            sendText('vlab_rule', 'no', data);
+            t.sendText('vlab_rule', 'no', data);
             $('#save').attr('data-target-id','');
         });
         $('#save').click(function() {
@@ -225,7 +169,7 @@ $(document).ready(function(){
                 data.title = $('#title').val();
                 data.content = $('#editor').html();
                 data.add_time = $('#nowTime').val();
-                sendText('vlab_rule', id, data);
+                t.sendText('vlab_rule', id, data);
             }else{
                 alert('请先读取要修改的文章');
             }
@@ -234,25 +178,25 @@ $(document).ready(function(){
         $('.table').on('click', '.read', function() {
             var id = $(this).closest('tr').children().eq(0).html();
             $('#save').attr('data-target-id', id);
-            getText('vlab_rule', id, parseNews);
+            t.getText('vlab_rule', id, parseNews);
         });
 
         $('.table').on('click', '.delete', function() {
             var id = $(this).closest('tr').children().eq(0).html();
-            deleteText('vlab_news', id);
+            t.deleteText('vlab_news', id);
         });
 
     }
     if(page === 'adminResource') {
         $('#nowTime').attr('value',getDate());
-        getText('vlab_resource', 'all', parseNewsTable);
+        t.getText('vlab_resource', 'all', parseNewsTable);
 
         $('#new').click(function() {
             var data = {};
             data.title = $('#title').val();
             data.content = $('#editor').html();
             data.add_time = $('#nowTime').val();
-            sendText('vlab_resource', 'no', data);
+            t.sendText('vlab_resource', 'no', data);
             $('#save').attr('data-target-id','');
         });
         $('#save').click(function() {
@@ -262,7 +206,7 @@ $(document).ready(function(){
                 data.title = $('#title').val();
                 data.content = $('#editor').html();
                 data.add_time = $('#nowTime').val();
-                sendText('vlab_resource', id, data);
+                t.sendText('vlab_resource', id, data);
             }else{
                 alert('请先读取要修改的文章');
             }
@@ -271,12 +215,12 @@ $(document).ready(function(){
         $('.table').on('click', '.read', function() {
             var id = $(this).closest('tr').children().eq(0).html();
             $('#save').attr('data-target-id', id);
-            getText('vlab_resource', id, parseNews);
+            t.getText('vlab_resource', id, parseNews);
         });
 
         $('.table').on('click', '.delete', function() {
             var id = $(this).closest('tr').children().eq(0).html();
-            deleteText('vlab_resource', id);
+            t.deleteText('vlab_resource', id);
         });
 
     }
@@ -302,7 +246,7 @@ $(document).ready(function(){
         }
     }
     if(page === 'adminTeacher') {
-        getText('vlab_teacher', 'all', parseTeacher);
+        t.getText('vlab_teacher', 'all', parseTeacher);
         $('#new').click(function() {
             var data = {};
             $('#editTr').children().each(function(index,ele) {
@@ -311,7 +255,7 @@ $(document).ready(function(){
                     data[id] = $(ele).find('input').val();
             });
             data.disc = $('#editor').html();
-            sendText('vlab_teacher', 'no', data);
+            t.sendText('vlab_teacher', 'no', data);
         });
         $('#save').click(function() {
             var data = {};
@@ -323,17 +267,17 @@ $(document).ready(function(){
             data.disc = $('#editor').html();
             var id = $('#id').html()
             if(id)
-                sendText('vlab_teacher', id, data);
+                t.sendText('vlab_teacher', id, data);
             else
                 alert('请先读取要修改的文章');
         });
         $('.table').on('click', '.delete', function() {
             var id = $(this).closest('tr').children().eq(0).text();
-            deleteText('vlab_teacher', id);
+            t.deleteText('vlab_teacher', id);
         });
         $('.table').on('click', '.items', function() {
             var id = $(this).find('td').eq(0).html();
-            getText('vlab_teacher', id, parseItems);
+            t.getText('vlab_teacher', id, parseItems);
         })
     }
     //解析预设值(title,degree,major)
@@ -352,10 +296,10 @@ $(document).ready(function(){
     }
     if(page === 'adminTitle' || page === 'adminMajor') {
         if(page === 'adminTitle'){
-            getText('vlab_title', 'all', parseTitle('title'));
-            getText('vlab_degree', 'all', parseTitle('degree'));
+            t.getText('vlab_title', 'all', parseTitle('title'));
+            t.getText('vlab_degree', 'all', parseTitle('degree'));
         }else{
-            getText('vlab_major', 'all', parseTitle('major'));
+            t.getText('vlab_major', 'all', parseTitle('major'));
         }
         var newData = function(table) {
             var data = {};
@@ -364,7 +308,7 @@ $(document).ready(function(){
                 if(id)
                     data[id] = $(ele).find('input').val();
             });
-            sendText(table, 'no', data);
+            t.sendText(table, 'no', data);
         }
         $('.new-title').click(function() {
             newData('vlab_title');
@@ -379,7 +323,7 @@ $(document).ready(function(){
         $('.row').on('click', '.delete', function() {
             var id = $(this).closest('tr').children().eq(0).html();
             var table = $(this).closest('table').attr('id');
-            deleteText(table, id);
+            t.deleteText(table, id);
         });
     }
 });

@@ -31,7 +31,8 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
             <li><a href="admin.php?page=adminCenter">实验中心介绍</a></li>
-            <li><a href="admin.php?page=adminNews">新闻公告</a></li>
+            <li><a href="admin.php?page=adminNews">新闻</a></li>
+            <li><a href="admin.php?page=adminMessage">公告</a></li>
             <li><a href="admin.php?page=adminResource">中心虚拟资源</a></li>
             <li><a href="admin.php?page=adminDevice">仪器设备</a></li>
             <li><a href="admin.php?page=adminRule">管理制度</a></li>

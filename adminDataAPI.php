@@ -1,7 +1,7 @@
 <?php
 session_start();
 //可访问表单控制
-$allowed = array('vlab_disc', 'vlab_resource', 'vlab_news', 'vlab_rule',
+$allowed = array('vlab_disc', 'vlab_resource', 'vlab_news', 'vlab_message', 'vlab_rule',
  'vlab_major', 'vlab_teacher', 'vlab_title', 'vlab_device', 'vlab_degree');
 
     //获取数据可以无需登录
@@ -9,19 +9,27 @@ if(isset($_POST['query']) && isset($_POST['id'])){
     include('connDB.php');
     $q = $_POST['query'];
     $id = $_POST['id'];
-
-    if(in_array($q, $allowed)){
+    if(in_array($q, $allowed)) {
+        $field = '*';
+        if(!isset($_POST['field']))
+        {   
+            $field = '';
+            print_r($_POST['field']);
+            foreach ($_POST['field'] as $key => $value) {
+                $field .= $value . ' ';
+            }
+        }
         if($id == 'all'){
             //获取整个表单的数据
-            $query = 'select * from ' . $q;
+            $query = "SELECT $field FROM $q";
             $result = $pdo -> prepare($query);
         }else if($id == 'last'){
             //获取最后一行数据
-            $query = 'select * from ' . $q . ' where id in (select max(id) from ' . $q . ')';
+            $query = "SELECT $field FROM $q WHERE id IN (SELECT MAX(id) FROM $q )";
             $result = $pdo -> prepare($query);
         }else{
             //获取指定行的数据
-            $query = 'select * from ' . $q . ' where id = ?';
+            $query = "SELECT $field FROM $q WHERE id = ?";
             $result = $pdo -> prepare($query);
             $result -> bindParam(1,$id);
         }
@@ -77,6 +85,7 @@ if(isset($_POST['query']) && isset($_POST['id'])){
         else{
             $query = "update ". $save . " set ";
             $i = 1;
+            $length = count($data);
             foreach($data as $key => $v) {
                 if($i < $length){
                     $query .= $key . '=?,';

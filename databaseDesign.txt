@@ -4,6 +4,7 @@
  管理员   vlab_admin id user_name pw phone mail level name add_time
  中心介绍 vlab_disc id content add_time pic
  新闻     vlab_news id title content add_time
+ 公告     vlab_message id title content add_time
  教师     vlab_teacher id name sex age phone title major degree add_time web_page disc photo
  制度     vlab_rule id title content add_time
  职称     vlab_title id title

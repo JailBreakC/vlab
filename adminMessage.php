@@ -1,5 +1,5 @@
 <div class="container">
-    <h2>新闻</h2>
+    <h2>公告</h2>
     <hr>
     <div class="alert alert-info" style="overflow:auto">
       <p class="pull-right">上次保存时间：<input disabled="disabled" id="addTime" type="text">  
