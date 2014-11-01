@@ -2,7 +2,7 @@
     include('connDB.php');
     
     if(!isset($_GET['id'])){
-    $needed = array('vlab_news' => array('id', 'title', 'add_time')
+    $needed = array('vlab_message' => array('id', 'title', 'add_time')
                      );
     $res = array();$query = array();
     foreach ($needed as $k => $subArr) {
@@ -23,7 +23,7 @@
   }
   else{
     $id = $_GET['id'];
-    $disc = "SELECT * FROM vlab_news WHERE id = $id";
+    $disc = "SELECT * FROM vlab_message WHERE id = $id";
     $res = $pdo -> prepare($disc);
     $res -> execute();
     $res =  $res -> fetchAll();
@@ -35,14 +35,14 @@ include('head.php');
 <div id="fr">
       <div class="fr_title">
         <div class="fr_je">通知公告</div>
-        <p>您现在的位置：<a href="index.php">首页</a> &gt; <span><a href="news.php">通知公告</a> &gt; </span></p>
+        <p>您现在的位置：<a href="index.php">首页</a> &gt; <span><a href="message.php">通知公告</a> &gt; </span></p>
       </div>
       <div class="fr3_cot">         
         <ul>
         <?php 
-              foreach ($res['vlab_news'] as $key => $value) {
+              foreach ($res['vlab_message'] as $key => $value) {
                   $title = $value['title']; $id = $value['id']; $time = $value['add_time'];
-                  echo "<li><a href='news.php?id=$id' title='$title'>$title</a><span class='date'>$time</span></li>";
+                  echo "<li><a href='message.php?id=$id' title='$title'>$title</a><span class='date'>$time</span></li>";
               }
             ?>
         </ul>
@@ -55,7 +55,7 @@ include('head.php');
   <div id="fr">
       <div class="fr_title">
         <div class="fr_je"></div>
-        <p><a href="index.php">首页</a><span> &gt; </span><a href="news.php">通知公告</a> &gt;  正文</p>
+        <p><a href="index.php">首页</a><span> &gt; </span><a href="message.php">通知公告</a> &gt;  正文</p>
       </div>
       <div class="fr3_cot">
       <div class="walk_te"><?php echo $res['title'] ?></div>

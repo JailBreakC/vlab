@@ -37,13 +37,13 @@
   <div class="nav1"></div>
   <div id="nav">
     <ul>
-      <li><a href="#" title="" id="menu1">网站首页</a></li>
+      <li><a href="index.php" title="" id="menu1">网站首页</a></li>
       <li><a href="disc.php" title="" id="menu2">实验中心概要</a></li>
       <li><a href="teacher.php" title="" id="menu3">机构与队伍</a></li>
       <li><a href="manage.php" title="" id="menu4">管理制度</a></li>
       <li><a href="devices.php" title="" id="menu5">仪器设备</a></li>
       <li><a href="news.php" title="" id="menu7">中心动态</a></li>
-      <li><a href="notice.php" title="" id="menu8">通知公告</a></li>
+      <li><a href="message.php" title="" id="menu8">通知公告</a></li>
       <li style="background:none"><a href="contact.php" title="" id="menu10">联系我们</a></li>
     </ul>
   </div>
@@ -188,4 +188,5 @@
                 });
         </script> 
         </div>
+      </div>
       </div>

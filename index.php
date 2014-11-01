@@ -28,7 +28,7 @@
 ?>
 
 <?php include("head.php"); ?>
-    </div>    <div id="fr">
+    <div id="fr">
       <div class="gs">
         <div class="gs_t">
           <div class="gs_ti">中心简介</div>
@@ -36,7 +36,7 @@
         </div>
         <div class="gs_cot"> <a class="iframe cboxElement" href="disc.php"><img src="images/discpic.jpg" width="262" height="176"></a>
           <p style="TEXT-INDENT: 2em"><?php echo substr($res['vlab_disc'][0]['content'],0,850); ?>
-            ...<a href="disc.php" target="_blank">详情</a></p>
+            ...<a href="disc.php">详情</a></p>
         </div>
       </div>
       <div class="js">
@@ -87,7 +87,7 @@
                       $title = $value['title']; $id = $value['id'];
                       echo "<div class='pic'><a><img src='images/soft1.jpg' width='205' height='145' 
                   alt='$title></a></div>
-                  <span><a href='#' target='_blank'>$title</a></span> </li><li>";
+                  <span><a href='#'>$title</a></span> </li><li>";
                     }
                   
                   ?>
