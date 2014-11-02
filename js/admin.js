@@ -183,7 +183,7 @@ $(document).ready(function(){
 
         $('.table').on('click', '.delete', function() {
             var id = $(this).closest('tr').children().eq(0).html();
-            t.deleteText('vlab_news', id);
+            t.deleteText('vlab_rule', id);
         });
 
     }
@@ -224,6 +224,7 @@ $(document).ready(function(){
         });
 
     }
+
     //加载机构成员列表
     var parseTeacher = function(data) {
         var tr = [];
@@ -235,8 +236,8 @@ $(document).ready(function(){
                     + '  <td>' + data[i].age + '</td>'
                     + '  <td>' + data[i].phone + '</td>'
                     + '  <td>' + data[i].title + '</td>'
-                    + '  <td>' + data[i].major + '</td>'
                     + '  <td>' + data[i].degree + '</td>'
+                    + '  <td>' + data[i].major + '</td>'
                     + '  <td>' + data[i].add_time + '</td>'
                     + '  <td>' + data[i].web_page + '</td>'
                     + '  <td><button class="read btn btn-xs btn-primary">修改</button>'
@@ -250,9 +251,9 @@ $(document).ready(function(){
         $('#new').click(function() {
             var data = {};
             $('#editTr').children().each(function(index,ele) {
-                var id = $(ele).find('input').attr('id');
+                var id = $(ele).children().first().attr('id');
                 if(id)
-                    data[id] = $(ele).find('input').val();
+                    data[id] = $('#' + id).val();
             });
             data.disc = $('#editor').html();
             t.sendText('vlab_teacher', 'no', data);
@@ -260,9 +261,9 @@ $(document).ready(function(){
         $('#save').click(function() {
             var data = {};
             $('#editTr').children().each(function(index,ele) {
-                var id = $(ele).find('input').attr('id');
+                var id = $(ele).children().first().attr('id');
                 if(id)
-                    data[id] = $(ele).find('input').val();
+                    data[id] = $('#' + id).val();
             });
             data.disc = $('#editor').html();
             var id = $('#id').html()

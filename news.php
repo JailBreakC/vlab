@@ -34,8 +34,8 @@ include('head.php');
 <?php if (!isset($_GET['id'])) : ?>
 <div id="fr">
       <div class="fr_title">
-        <div class="fr_je">通知公告</div>
-        <p>您现在的位置：<a href="index.php">首页</a> &gt; <span><a href="news.php">通知公告</a> &gt; </span></p>
+        <div class="fr_je">中心动态</div>
+        <p>您现在的位置：<a href="index.php">首页</a> &gt; <span><a href="news.php">中心动态</a> &gt; </span></p>
       </div>
       <div class="fr3_cot">         
         <ul>
@@ -46,16 +46,17 @@ include('head.php');
               }
             ?>
         </ul>
+        <!--
         <div class="fy">
           <div id="pages" class="text-c"><a class="a1">47条</a> <a href="/html/news/index.html" class="a1">上一页</a> <span>1</span> <a href="/html/news/2.html">2</a> <a href="/html/news/2.html" class="a1">下一页</a></div>
-        </div>
+        </div>-->
      </div>
     </div>
 <?php else: ?>
   <div id="fr">
       <div class="fr_title">
         <div class="fr_je"></div>
-        <p><a href="index.php">首页</a><span> &gt; </span><a href="news.php">通知公告</a> &gt;  正文</p>
+        <p><a href="index.php">首页</a><span> &gt; </span><a href="news.php">中心动态</a> &gt;  正文</p>
       </div>
       <div class="fr3_cot">
       <div class="walk_te"><?php echo $res['title'] ?></div>

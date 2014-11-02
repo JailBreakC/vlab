@@ -85,9 +85,9 @@
                   <?php 
                     foreach ($res['vlab_resource'] as $key => $value) {
                       $title = $value['title']; $id = $value['id'];
-                      echo "<div class='pic'><a><img src='images/soft1.jpg' width='205' height='145' 
+                      echo "<div class='pic'><a href='resource.php?id=$id'><img src='images/soft$id.jpg' width='205' height='145' 
                   alt='$title></a></div>
-                  <span><a href='#'>$title</a></span> </li><li>";
+                  <span><a href='resource.php?id=$id'>$title</a></span> </li><li>";
                     }
                   
                   ?>

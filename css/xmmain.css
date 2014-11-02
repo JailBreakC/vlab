@@ -329,9 +329,9 @@ body {
 	font-size: 14px;
 }
 #fr {
-	width: 737px;
+	width: 735px;
 	height: auto;
-	float: right;
+	float: left;
 	position: relative;
 	overflow: hidden;
 	margin-bottom:10px;

@@ -1,7 +1,7 @@
 <?php 
     include('connDB.php');
-    $needed = array('vlab_teacher' => array('id', 'name', 'age', 'sex', 'title', 'major', 
-                    'degree', 'web_page'));
+    $needed = array('vlab_device' => array('id', 'name', 'type', 'price', 'num', 'maker', 
+                    'buy_time'));
 
     $res = array();$query = array();
     foreach ($needed as $k => $subArr) {
@@ -25,6 +25,9 @@ include('head.php');
 * {
 -moz-box-sizing: content-box;
 box-sizing: content-box;
+}
+td {
+font-size: 12px;
 }
 .table-bordered>thead>tr>th, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>tbody>tr>td, .table-bordered>tfoot>tr>td {
 border: 1px solid #DDD;
@@ -56,40 +59,39 @@ border: 1px solid #DDD;
 <div id="fr">
       <div class="fr_title">
         <div class="fr_je">通知公告</div>
-        <p>您现在的位置：<a href="index.php">首页</a> &gt; <span><a href="teacher.php">通知公告</a> &gt; </span></p>
+        <p>您现在的位置：<a href="index.php">首页</a> &gt; <span><a href="device.php">通知公告</a> &gt; </span></p>
       </div>
       <div class="fr3_cot">         
         <table class="table table-bordered table-hover table-condensed">
           <tr>
-            <th>姓名</th>
-            <th>年龄</th>
-            <th>性别</th>
-            <th>职称</th>
-            <th>学历学位</th>
-            <th>专业</th>
-            <th>主页</th>
+            <th>名称</th>
+            <th>型号</th>
+            <th>数量</th>
+            <th>单价（元）</th>
+            <th>厂家</th>
+            <th>购置日期</th>
+            <th>详情</th>
           </tr>
         <?php 
-              foreach ($res['vlab_teacher'] as $key => $value) {
-                  $id = $value['id']; $name = $value['name']; $age = $value['age']; $sex = $value['sex'];
-                  $title = $value['title']; $degree = $value['degree']; $major = $value['major'];
-                  $web_page = $value['web_page'];
+              foreach ($res['vlab_device'] as $key => $value) {
+                  $id = $value['id']; $name = $value['name']; $type = $value['type'];
+                  $price = $value['price']; $num = $value['num']; $maker = $value['maker'];
+                  $buy_time = $value['buy_time'];
                   echo "<tr>
                           <td>$name</td>
-                          <td>$age</td>
-                          <td>$sex</td>
-                          <td>$title</td>
-                          <td>$degree</td>
-                          <td>$major</td>
-                          <td><a href='$web_page' target='_blank'>$web_page</a></td>
+                          <td>$type</td>
+                          <td>$num</td>
+                          <td>$price</td>
+                          <td>$maker</td>
+                          <td>$buy_time</td>
+                          <td><a href='device.php?id=$id'>详情</a></td>
                         </tr>";
               }
         ?>
         </table>
 
-        <!--
         <div class="fy">
           <div id="pages" class="text-c"><a class="a1">47条</a> <a href="/html/news/index.html" class="a1">上一页</a> <span>1</span> <a href="/html/news/2.html">2</a> <a href="/html/news/2.html" class="a1">下一页</a></div>
-        </div>-->
+        </div>
      </div>
 </div>

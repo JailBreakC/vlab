@@ -1,6 +1,5 @@
 <?php 
     include('connDB.php');
-    
     if(!isset($_GET['id'])){
     $needed = array('vlab_message' => array('id', 'title', 'add_time')
                      );
@@ -46,11 +45,12 @@ include('head.php');
               }
             ?>
         </ul>
+        <!--
         <div class="fy">
           <div id="pages" class="text-c"><a class="a1">47条</a> <a href="/html/news/index.html" class="a1">上一页</a> <span>1</span> <a href="/html/news/2.html">2</a> <a href="/html/news/2.html" class="a1">下一页</a></div>
-        </div>
+        </div>-->
      </div>
-    </div>
+</div>
 <?php else: ?>
   <div id="fr">
       <div class="fr_title">

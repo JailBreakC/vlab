@@ -1,3 +1,26 @@
+<?php 
+include('connDB.php');
+    $needed = array('vlab_major' => array('id', 'major'),
+                    'vlab_title' => array('id', 'title'),
+                    'vlab_degree' => array('id', 'degree')
+                     );
+    $res = array();$query = array();
+    foreach ($needed as $k => $subArr) {
+        $query[$k] = "SELECT ";
+        $length = count($subArr);$i = 1;
+        foreach ($subArr as $key => $field) {
+            if($i < $length)
+                $query[$k] .= $field . ', ';
+            else
+                $query[$k] .= $field . ' ';
+            $i++;
+        }
+        $query[$k] .= "FROM " . $k;
+        $res[$k] = $pdo -> prepare($query[$k]);
+        $res[$k] -> execute();
+        $res[$k] = $res[$k] -> fetchAll();
+    }
+?>
 <div class="container">
 <style>input {
 width: 100px;
@@ -13,8 +36,8 @@ width: 100px;
                 <th>年龄</th>
                 <th>手机</th>
                 <th>职称</th>
-                <th>专业</th>
                 <th>学历学位</th>
+                <th>专业</th>
                 <th>加入时间</th>
                 <th>个人主页</th>
                 <th>操作</th>
@@ -25,9 +48,33 @@ width: 100px;
                 <td><input id="sex" type="text"></td>
                 <td><input id="age" type="text"></td>
                 <td><input id="phone" type="text"></td>
-                <td><input id="title" type="text"></td>
-                <td><input id="major" type="text"></td>
-                <td><input id="degree" type="text"></td>
+                <td><select id="title">
+                      <?php 
+                      foreach ($res['vlab_title'] as $key => $value) {
+                        $value = $value['title'];
+                      echo "<option value='$value'>$value</option>";
+                      }
+                      ?>
+                  </select>
+                </td>
+                <td><select id="degree">
+                      <?php 
+                      foreach ($res['vlab_degree'] as $key => $value) {
+                        $value = $value['degree'];
+                      echo "<option value='$value'>$value</option>";
+                      }
+                      ?>
+                  </select>
+                </td>
+                <td><select id="major">
+                      <?php 
+                      foreach ($res['vlab_major'] as $key => $value) {
+                        $value = $value['major'];
+                      echo "<option value='$value'>$value</option>";
+                      }
+                      ?>
+                  </select>
+                </td>
                 <td><input id="add_time" type="text"></td>
                 <td><input id="web_page" type="text"></td>
                 <td><button class="btn btn-xs btn-primary">↓</button></td>
