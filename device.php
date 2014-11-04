@@ -58,10 +58,22 @@ border: 1px solid #DDD;
 }</style>
 <div id="fr">
       <div class="fr_title">
-        <div class="fr_je">通知公告</div>
-        <p>您现在的位置：<a href="index.php">首页</a> &gt; <span><a href="device.php">通知公告</a> &gt; </span></p>
+        <div class="fr_je">仪器设备</div>
+        <p>您现在的位置：<a href="index.php">首页</a> &gt; <span><a href="device.php">仪器设备</a> &gt; </span></p>
       </div>
-      <div class="fr3_cot">         
+      <div class="fr3_cot">    
+      <?php 
+      $id = '';
+      if(isset($_GET['id']))
+        $id = $_GET['id'];
+      if($id == '2')
+        include('t2.html');
+      else if($id == '3')
+        include('t3.html');
+      else
+        include('t1.html');
+           ?>
+      <!--     
         <table class="table table-bordered table-hover table-condensed">
           <tr>
             <th>名称</th>
@@ -72,7 +84,7 @@ border: 1px solid #DDD;
             <th>购置日期</th>
             <th>详情</th>
           </tr>
-        <?php 
+        <?php /*
               foreach ($res['vlab_device'] as $key => $value) {
                   $id = $value['id']; $name = $value['name']; $type = $value['type'];
                   $price = $value['price']; $num = $value['num']; $maker = $value['maker'];
@@ -86,12 +98,17 @@ border: 1px solid #DDD;
                           <td>$buy_time</td>
                           <td><a href='device.php?id=$id'>详情</a></td>
                         </tr>";
-              }
+              }*/
         ?>
         </table>
-
+        !-->
         <div class="fy">
-          <div id="pages" class="text-c"><a class="a1">47条</a> <a href="/html/news/index.html" class="a1">上一页</a> <span>1</span> <a href="/html/news/2.html">2</a> <a href="/html/news/2.html" class="a1">下一页</a></div>
+          <div id="pages" class="text-c">3条
+          <a href="device.php?id=1" class="a1">1</a> 
+          <a href="device.php?id=2" class="a1">2</a> 
+          <a href="device.php?id=3" class="a1">3</a> </div>
         </div>
      </div>
+     </div>
 </div>
+<?php include('bottom.php'); ?>

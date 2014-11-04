@@ -55,10 +55,16 @@ border: 1px solid #DDD;
 }</style>
 <div id="fr">
       <div class="fr_title">
-        <div class="fr_je">通知公告</div>
-        <p>您现在的位置：<a href="index.php">首页</a> &gt; <span><a href="teacher.php">通知公告</a> &gt; </span></p>
+        <div class="fr_je">机构与队伍</div>
+        <p>您现在的位置：<a href="index.php">首页</a> &gt; <span><a href="teacher.php">机构与队伍</a></span></p>
       </div>
-      <div class="fr3_cot">         
+      <div class="fr3_cot">    
+
+      <?php 
+      $id = '';
+      include('teacherFile.html');
+           ?>
+      <!--
         <table class="table table-bordered table-hover table-condensed">
           <tr>
             <th>姓名</th>
@@ -70,6 +76,7 @@ border: 1px solid #DDD;
             <th>主页</th>
           </tr>
         <?php 
+            /*
               foreach ($res['vlab_teacher'] as $key => $value) {
                   $id = $value['id']; $name = $value['name']; $age = $value['age']; $sex = $value['sex'];
                   $title = $value['title']; $degree = $value['degree']; $major = $value['major'];
@@ -83,13 +90,10 @@ border: 1px solid #DDD;
                           <td>$major</td>
                           <td><a href='$web_page' target='_blank'>$web_page</a></td>
                         </tr>";
-              }
+              }*/
         ?>
         </table>
-
-        <!--
-        <div class="fy">
-          <div id="pages" class="text-c"><a class="a1">47条</a> <a href="/html/news/index.html" class="a1">上一页</a> <span>1</span> <a href="/html/news/2.html">2</a> <a href="/html/news/2.html" class="a1">下一页</a></div>
-        </div>-->
+      -->
      </div>
 </div>
+<?php include('bottom.php');?>

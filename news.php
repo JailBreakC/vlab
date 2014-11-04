@@ -15,7 +15,7 @@
                 $query[$k] .= $field . ' ';
             $i++;
         }
-        $query[$k] .= "FROM " . $k;
+        $query[$k] .= "FROM $k order by add_time desc";
         $res[$k] = $pdo -> prepare($query[$k]);
         $res[$k] -> execute();
         $res[$k] = $res[$k] -> fetchAll();

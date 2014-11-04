@@ -44,7 +44,6 @@ if(isset($_POST['query']) && isset($_POST['id'])){
             echo json_encode($row);
         }
     }
-
         //若处于登录状态，则可以进行数据的修改
 }else if(isset($_POST['save']) && isset($_POST['id']) && isset($_POST['data']) && isset($_SESSION['user'])){
     include('connDB.php');

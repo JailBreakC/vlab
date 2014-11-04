@@ -1,14 +1,11 @@
 $ ->
-    
-    $('.thumbnail').hover (->
-        $(this).find('.caption').addClass('show');
-    ),->
-        $(this).find('.caption').removeClass('show');
-    $('.to-top').click ->
-        $(window).scrollTop(0);
     `
-    $('#myTab a').click(function (e) {
-      e.preventDefault()
-      $(this).tab('show')
-    })
+    var t = transfer();
+    var parseDisc = function(data) {
+        data = data[0];
+        console.log(data);
+        data = data['content'].split(0,200);
+        $('#disc').html(data);
+    }
+    t.getText('vlab_disc', 'no', parseDisc);
     `

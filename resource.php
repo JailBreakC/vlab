@@ -14,7 +14,7 @@
                 $query[$k] .= $field . ' ';
             $i++;
         }
-        $query[$k] .= "FROM " . $k;
+        $query[$k] .= "FROM $k order by add_time desc";
         $res[$k] = $pdo -> prepare($query[$k]);
         $res[$k] -> execute();
         $res[$k] = $res[$k] -> fetchAll();
@@ -54,7 +54,7 @@ include('head.php');
 <?php else: ?>
   <div id="fr">
       <div class="fr_title">
-        <div class="fr_je"></div>
+        <div class="fr_je">中心资源</div>
         <p><a href="index.php">首页</a><span> &gt; </span><a href="resource.php">中心资源</a> &gt;  正文</p>
       </div>
       <div class="fr3_cot">

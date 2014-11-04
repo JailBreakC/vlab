@@ -1,7 +1,8 @@
 <?php 
     include('connDB.php');
-    $needed = array('vlab_rule' => array('id', 'title', 'content')
+    $needed = array('vlab_rule' => array('id', 'title', 'content', 'add_time')
                     );
+    if(!isset($_GET['id'])){
 
     $res = array();$query = array();
     foreach ($needed as $k => $subArr) {
@@ -19,6 +20,14 @@
         $res[$k] -> execute();
         $res[$k] = $res[$k] -> fetchAll();
     }
+  }else {
+    $id = $_GET['id'];
+    $disc = "SELECT * FROM vlab_rule WHERE id = $id";
+    $res = $pdo -> prepare($disc);
+    $res -> execute();
+    $res =  $res -> fetchAll();
+    $res = $res[0];
+  }
 include('head.php');
 ?>
 <style>
@@ -57,28 +66,49 @@ color: inherit;
 .panel-body {
 padding: 15px;
 }
-
-
 </style>
-<div id="fr">
+<?php if(isset($_GET['id'])) :?>
+     <?php 
+      //print_r($res);
+                  $title = $res['title']; $content = $res['content'];
+                  $time = $res['add_time'];
+        ?>
+       <div id="fr">
       <div class="fr_title">
         <div class="fr_je">管理制度</div>
-        <p>您现在的位置：<a href="index.php">首页</a> &gt; <span><a href="rule.php">管理制度</a> &gt; </span></p>
+        <p><a href="index.php">首页</a><span> &gt; </span><a href="rule.php">管理制度</a> &gt;  正文</p>
+      </div>
+      <div class="fr3_cot">
+      <div class="walk_te"><?php echo $title ?></div>
+      <div class="fgx">时间:<?php echo $time ?></div>
+        <div class="walk_cot">
+          <div style="LAYOUT-GRID:  15.6pt none" class="Section0">
+            <?php echo $content ?>
+          </div>
+        </div>
+      </div>
+    </div>
+      
+
+
+</div>
+<?php else : ?>
+  <div id="fr">
+  <div class="fr_title">
+        <div class="fr_je">管理制度</div>
+        <p>您现在的位置：<a href="index.php">首页</a> &gt; <span><a href="rule.php">管理制度</a></span></p>
       </div>
       <div class="fr3_cot">         
+        <ul>
         <?php 
               foreach ($res['vlab_rule'] as $key => $value) {
-                  $id = $value['id']; $title = $value['title']; $content = $value['content'];
-                  echo "
-                  <div class='panel panel-default'>
-                    <div class='panel-heading'>
-                      <h3 class='panel-title'>$title</h3>
-                    </div>
-                    <div class='panel-body'>
-                      $content
-                    </div>
-                  </div>";
+                  $title = $value['title']; $id = $value['id']; $time = $value['add_time'];
+                  echo "<li><a href='rule.php?id=$id' title='$title'>$title</a><span class='date'>$time</span></li>";
               }
-        ?>
-     </div>
-</div>
+            ?>
+      </ul>
+  </div>
+  </div>
+<?php endif; ?>
+
+<?php include('bottom.php'); ?>

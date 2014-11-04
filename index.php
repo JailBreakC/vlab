@@ -16,7 +16,7 @@
                 $query[$k] .= $field . ' ';
             $i++;
         }
-        $query[$k] .= "FROM " . $k;
+        $query[$k] .= "FROM $k order by add_time desc";
         $res[$k] = $pdo -> prepare($query[$k]);
         $res[$k] -> execute();
         $res[$k] = $res[$k] -> fetchAll();
@@ -25,17 +25,21 @@
     $dres = $pdo -> prepare($disc);
     $dres -> execute();
     $res['vlab_disc'] =  $dres -> fetchAll();
-?>
-
-<?php include("head.php"); ?>
+    echo '<noscript>';
+    print_r($res['vlab_resource']);
+    echo '</noscript>';
+include("head.php"); ?>
     <div id="fr">
       <div class="gs">
         <div class="gs_t">
           <div class="gs_ti">中心简介</div>
           <p class="more"><a href="disc.php">+更多</a></p>
         </div>
-        <div class="gs_cot"> <a class="iframe cboxElement" href="disc.php"><img src="images/discpic.jpg" width="262" height="176"></a>
-          <p style="TEXT-INDENT: 2em"><?php echo substr($res['vlab_disc'][0]['content'],0,850); ?>
+        <div class="gs_cot"> <img src="images/discpic.jpg" width="262" height="176">
+          <p style="TEXT-INDENT: 0em">
+          <?php $str = strip_tags($res['vlab_disc'][0]['content']);
+                echo mb_substr($str,0,260,'utf-8'); 
+          ?>
             ...<a href="disc.php">详情</a></p>
         </div>
       </div>
@@ -60,7 +64,7 @@
           <div class="js_ti">通知公告</div>
           <p class="more"><a href="message.php">+更多</a></p>
         </div>
-        <style> .js_cot a{text-overflow: ellipsis;white-space: nowrap;overflow: hidden;}</style>
+        <style> a{text-overflow: ellipsis;white-space: nowrap;overflow: hidden;}</style>
         <div class="js_cot">
           <ul>
               <?php 
@@ -81,15 +85,20 @@
           <div class="multipleColumn">
             <div class="bd">
               <div class="picList" style="position: relative; width: 735px; height: 396px;"> 
-                <ul style="position: absolute; width: 725px; left: 0px; top: 0px; display: none;"><li>
+                <ul style="position: absolute; width: 725px; left: 0px; top: 0px; display: none;">
                   <?php 
+                    $i = 1;
                     foreach ($res['vlab_resource'] as $key => $value) {
+                      $i++;
                       $title = $value['title']; $id = $value['id'];
-                      echo "<div class='pic'><a href='resource.php?id=$id'><img src='images/soft$id.jpg' width='205' height='145' 
-                  alt='$title></a></div>
-                  <span><a href='resource.php?id=$id'>$title</a></span> </li><li>";
+                      echo "<li><div class='pic'><a href='resource.php?id=$id'><img src='images/soft$id.jpg' width='205' height='145' 
+                            alt='$title></a></div>
+                            <span><a href='resource.php?id=$id'>$title</a></span> </li>";
+                      if($i%6 == 0){
+                        echo "</ul>
+                        <ul style='position: absolute; width: 725px; left: 0px; top: 0px; display: none;'>";
+                      }
                     }
-                  
                   ?>
                 </ul>
                
