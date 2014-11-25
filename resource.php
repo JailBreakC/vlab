@@ -34,7 +34,7 @@ include('head.php');
 <div id="fr">
       <div class="fr_title">
         <div class="fr_je">中心资源</div>
-        <p>您现在的位置：<a href="index.php">首页</a> &gt; <span><a href="resource.php">中心资源</a> &gt; </span></p>
+        <p>您现在的位置：<a href="index.php">首页</a> &gt; <span><a href="resource.php">中心资源</a></span></p>
       </div>
       <div class="fr3_cot">         
         <ul>

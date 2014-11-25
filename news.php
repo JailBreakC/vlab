@@ -35,7 +35,7 @@ include('head.php');
 <div id="fr">
       <div class="fr_title">
         <div class="fr_je">中心动态</div>
-        <p>您现在的位置：<a href="index.php">首页</a> &gt; <span><a href="news.php">中心动态</a> &gt; </span></p>
+        <p>您现在的位置：<a href="index.php">首页</a> &gt; <span><a href="news.php">中心动态</a></span></p>
       </div>
       <div class="fr3_cot">         
         <ul>
@@ -55,7 +55,7 @@ include('head.php');
 <?php else: ?>
   <div id="fr">
       <div class="fr_title">
-        <div class="fr_je"></div>
+        <div class="fr_je">中心动态</div>
         <p><a href="index.php">首页</a><span> &gt; </span><a href="news.php">中心动态</a> &gt;  正文</p>
       </div>
       <div class="fr3_cot">

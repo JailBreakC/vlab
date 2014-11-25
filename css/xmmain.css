@@ -330,6 +330,7 @@ body {
 }
 #fr {
 	width: 735px;
+	margin-left: 10px;
 	height: auto;
 	float: left;
 	position: relative;

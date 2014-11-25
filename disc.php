@@ -11,7 +11,7 @@ include('head.php');
 <div id="fr">
       <div class="fr_title">
         <div class="fr_je">中心简介</div>
-        <p><a href="index.php">首页</a><span> &gt; </span><a href="disc.php">中心简介</a> &gt;  正文</p>
+        <p><a href="index.php">首页</a><span> &gt; </span><a href="disc.php">中心简介</a></p>
       </div>
       <div class="fr3_cot">
         <div class="walk_te">中心简介</div>

@@ -59,7 +59,7 @@ border: 1px solid #DDD;
 <div id="fr">
       <div class="fr_title">
         <div class="fr_je">仪器设备</div>
-        <p>您现在的位置：<a href="index.php">首页</a> &gt; <span><a href="device.php">仪器设备</a> &gt; </span></p>
+        <p>您现在的位置：<a href="index.php">首页</a> &gt; <span><a href="device.php">仪器设备</a> </span></p>
       </div>
       <div class="fr3_cot">    
       <?php 
