@@ -89,7 +89,7 @@ include("head.php"); ?>
                   <?php 
                     $i = 1;
                     foreach ($res['vlab_resource'] as $key => $value) {
-                      $i++;
+
                       $title = $value['title']; $id = $value['id']; $pic = $value['pic'];
                       echo "<li><div class='pic'><a href='resource.php?id=$id'><img src='$pic' width='205' height='145' 
                             alt='$title></a></div>
@@ -98,6 +98,7 @@ include("head.php"); ?>
                         echo "</ul>
                         <ul style='position: absolute; width: 725px; left: 0px; top: 0px; display: none;'>";
                       }
+                      $i++;
                     }
                   ?>
                 </ul>
