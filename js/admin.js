@@ -343,17 +343,17 @@ $(document).ready(function(){
     }
     //解析预设值(title,degree,major)
     var parseTitle = function(attr){
-        return function(data) {
-                var tr = [];
-                for(var i in data) {
-                    tr[i] = '<tr>'
-                            +'    <td>' + data[i].id + '</td>'
-                            +'    <td>' + data[i][attr] + '</td>'
-                            +'    <td><button class="delete btn btn-danger">删除</button></td>'
-                            +'</tr>';
-                    $('#vlab_' + attr).append(tr[i]);
-            }
-    }
+            return function(data) {
+                    var tr = [];
+                    for(var i in data) {
+                        tr[i] = '<tr>'
+                                +'    <td>' + data[i].id + '</td>'
+                                +'    <td>' + data[i][attr] + '</td>'
+                                +'    <td><button class="delete btn btn-danger">删除</button></td>'
+                                +'</tr>';
+                        $('#vlab_' + attr).append(tr[i]);
+                }
+        }
     }
     if(page === 'adminTitle' || page === 'adminMajor') {
         if(page === 'adminTitle'){
@@ -387,4 +387,24 @@ $(document).ready(function(){
             t.deleteText(table, id);
         });
     }
+    if(page === 'adminList') {
+        $('#listeditor').on('click', 'li>button', function(){
+            $(this).parent().clone().appendTo($(this).parent().parent());
+        });
+        $('.save').click(function(){
+            var data = {};
+            $('.mainTitle').each(function(index, ele){
+                data[index].title.val = $(ele).children('input').val();
+                $(ele).find('.subTitle').each(function(idx, el){
+                    data[index].title.subTitle[idx].val = $(el).children('input').val()
+                    $(el).find('.content').each(function(i,e){
+                        data[index].title.subTitle[idx].content.href = $(e).children('input').eq(0).val();
+                        data[index].title.subTitle[idx].content.text = $(e).children('input').eq(1).val();
+                    });
+                });
+            });
+            console.log(data);
+        });
+    }
+
 });

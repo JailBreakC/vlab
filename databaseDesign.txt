@@ -12,6 +12,10 @@
  专业     vlab_major id major
  虚拟资源 vlab_resource id title pic add_time content
  仪器设备 vlab_device id name type price num maker  buy_time pic
+ 首页轮播图 vlab_banner id pic
+ 侧边栏标题 vlab_list id title
+ 侧边栏副标题 vlab_list_sub id title_id sub_title
+ 侧边栏内容 vlab_list_item id sub_title_id content
 
 管路员权限设置
 

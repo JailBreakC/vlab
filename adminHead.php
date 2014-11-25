@@ -44,6 +44,7 @@
                 <li><a href="admin.php?page=adminMajor">专业</a></li>
               </ul>
             </li>
+            <li class=""><a href="admin.php?page=adminList">侧栏管理</a></li>
             <li class=""><a href="admin.php">管理员管理</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
