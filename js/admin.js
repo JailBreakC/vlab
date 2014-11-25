@@ -10,13 +10,42 @@ $(document).ready(function(){
     }
     //加载简介中心文章
     var parseCenter = function(content) {
-        content = content[0]
+        content = content[0];
         $('#editor').html(content.content);
         $('#addTime').attr('value',content.add_time);
         $('#nowTime').attr('value',getDate());
     }
+
+    var uploadFile = function(fn, table, id){
+        $('#centerPic').fileupload({
+            url:'picUpload.php',
+            formData:{update:table, id:id},
+            done: function(e, result) {
+                console.log(result.result);
+                var rs = JSON.parse(result.result);
+                if(rs.state !== 'failed'){
+                    fn&&fn(rs);
+               }else{
+                    alert('uploading failed');
+                }
+            }
+        });
+    }
     if( page === 'adminCenter') {
         t.getText('vlab_disc', 'last', parseCenter);
+        var addImg = function(rs){
+            $('#bannerCt').append('<img id="'+rs.id+'" class="col-xs-12 img-thumbnail" src="' + rs.msg + 
+            '"><button class="delete btn btn-xs btn-danger pull-right">删除</button>');
+        //alert('succeed');
+        }
+        uploadFile(addImg, 'vlab_banner');
+        $('#bannerCt').on('click', '.delete', function(){
+            var img = $(this).prev()
+            var id = img.attr('id');
+            t.deleteText('vlab_banner', id, 'norefresh');
+            img.remove();
+            $(this).remove();
+        });
         $('#save').click(function() {
             var data = {}
             data.content = $('#editor').html();
@@ -54,8 +83,9 @@ $(document).ready(function(){
                 $('#'+i).val(data[i]);
         }
     }
+    //-------------处理adminDevice.php----------------
     if( page === 'adminDevice') {
-        t.getText('vlab_device', 'all', parseDevice)
+        t.getText('vlab_device', 'all', parseDevice, ['id', 'name', 'type', 'price', 'num', 'maker', 'buy_time'])
         $('#new').click(function() {
             var data = {};
             $('#editTr').children().each(function(index,ele) {
@@ -115,7 +145,7 @@ $(document).ready(function(){
     if(page === 'adminNews' || page === 'adminMessage') {
         $('#nowTime').attr('value',getDate());
         var table =  page === 'adminNews' ? 'vlab_news' : 'vlab_message';
-        t.getText(table, 'all', parseNewsTable);
+        t.getText(table, 'all', parseNewsTable, ['id', 'title', 'add_time']);
 
         $('#new').click(function() {
             var data = {};
@@ -152,7 +182,7 @@ $(document).ready(function(){
     }
     if(page === 'adminRule') {
         $('#nowTime').attr('value',getDate());
-        t.getText('vlab_rule', 'all', parseNewsTable);
+        t.getText('vlab_rule', 'all', parseNewsTable, ['id', 'title', 'add_time']);
 
         $('#new').click(function() {
             var data = {};
@@ -187,18 +217,44 @@ $(document).ready(function(){
         });
 
     }
+    var parseResource = function(data) {
+        data = data[0];
+        $('#editor').html(data.content);
+        $('#title').val(data.title);
+        $('#addTime').val(data.add_time);
+        $('#nowTime').val(getDate());
+        $('#img').attr('src', data.pic);
+    }
     if(page === 'adminResource') {
-        $('#nowTime').attr('value',getDate());
-        t.getText('vlab_resource', 'all', parseNewsTable);
+        var changeImg = function(rs){
+            $('#img').attr('src', rs.msg);
+        }
+        //绑定图像上传事件，不更新数据表，只获取图片地址
+        uploadFile(changeImg, 'vlab_resource');
 
+        $('#nowTime').attr('value',getDate());
+        t.getText('vlab_resource', 'all', parseNewsTable, ['id', 'title', 'add_time']);
+        
         $('#new').click(function() {
             var data = {};
             data.title = $('#title').val();
             data.content = $('#editor').html();
             data.add_time = $('#nowTime').val();
-            t.sendText('vlab_resource', 'no', data);
+
+            //新增实例时需要写入图片地址
+            data.pic = $('#img').attr('src');
+
+            var appendEle = function(data) {
+                var ele = "<tr><td>NaN</td><td>"+data.title+"(修改前请刷新)</td><td>"+data.add_time
+                + "</td><td><button class='read btn btn-xs btn-primary'>读取文章</button></td> "
+                + " <td><button class='read btn btn-xs btn-primary'>修改</button>"
+                + "<button class='delete btn btn-xs btn-danger'>删除</button></td></tr>"
+                $('.table>tbody').append(ele);
+            }
+            t.sendText('vlab_resource', 'no', data, appendEle, 'norefresh');
             $('#save').attr('data-target-id','');
         });
+
         $('#save').click(function() {
             var data = {};
             var id = $('#save').attr('data-target-id');
@@ -206,6 +262,7 @@ $(document).ready(function(){
                 data.title = $('#title').val();
                 data.content = $('#editor').html();
                 data.add_time = $('#nowTime').val();
+                data.pic = $('#img').attr('src');
                 t.sendText('vlab_resource', id, data);
             }else{
                 alert('请先读取要修改的文章');
@@ -215,7 +272,9 @@ $(document).ready(function(){
         $('.table').on('click', '.read', function() {
             var id = $(this).closest('tr').children().eq(0).html();
             $('#save').attr('data-target-id', id);
-            t.getText('vlab_resource', id, parseNews);
+            t.getText('vlab_resource', id, parseResource);
+            //注册头像事件
+            uploadFile(changeImg, 'vlab_resource', id);
         });
 
         $('.table').on('click', '.delete', function() {
@@ -247,7 +306,8 @@ $(document).ready(function(){
         }
     }
     if(page === 'adminTeacher') {
-        t.getText('vlab_teacher', 'all', parseTeacher);
+        t.getText('vlab_teacher', 'all', parseTeacher, ['id', 'name', 'sex', 'age',
+         'phone', 'title', 'major', 'degree', 'add_time', 'web_page']);
         $('#new').click(function() {
             var data = {};
             $('#editTr').children().each(function(index,ele) {

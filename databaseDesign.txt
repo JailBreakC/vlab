@@ -10,7 +10,7 @@
  职称     vlab_title id title
  学历学位 vlab_degree id dgree
  专业     vlab_major id major
- 虚拟资源 vlab_resource id title pic content
+ 虚拟资源 vlab_resource id title pic add_time content
  仪器设备 vlab_device id name type price num maker  buy_time pic
 
 管路员权限设置

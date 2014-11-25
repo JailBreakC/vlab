@@ -2,31 +2,34 @@
 <head>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>湖南科技大学虚拟仿真实验室</title>
 <meta name="keywords" content="湖南科技大学虚拟仿真实验室">
 <meta name="description" content="湖南科技大学虚拟仿真实验室">
+<title>湖南科技大学虚拟仿真实验室</title>
+<link rel="icon" href="images/logo.jpg">
 <link href="css/xmmain.css" rel="stylesheet" type="text/css">
-<style type="text/css" adt="123"></style><style id="stylish-1" class="stylish" type="text/css">body {
-  font-family: 'Microsoft Yahei'!important;
-}</style>
-<style type="text/css">object,embed{                -webkit-animation-duration:.001s;-webkit-animation-name:playerInserted;                -ms-animation-duration:.001s;-ms-animation-name:playerInserted;                -o-animation-duration:.001s;-o-animation-name:playerInserted;                animation-duration:.001s;animation-name:playerInserted;}                @-webkit-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}                @-ms-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}                @-o-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}                @keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}</style><style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
-.en-markup-crop-options {
-    top: 18px !important;
-    left: 50% !important;
-    margin-left: -100px !important;
-    width: 200px !important;
-    border: 2px rgba(255,255,255,.38) solid !important;
-    border-radius: 4px !important;
-}
+<style type="text/css">
+  body {
+    font-family: 'Microsoft Yahei'!important;
+  }
+  object,embed{                -webkit-animation-duration:.001s;-webkit-animation-name:playerInserted;                -ms-animation-duration:.001s;-ms-animation-name:playerInserted;                -o-animation-duration:.001s;-o-animation-name:playerInserted;                animation-duration:.001s;animation-name:playerInserted;}                @-webkit-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}                @-ms-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}                @-o-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}                @keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}</style><style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+  .en-markup-crop-options {
+      top: 18px !important;
+      left: 50% !important;
+      margin-left: -100px !important;
+      width: 200px !important;
+      border: 2px rgba(255,255,255,.38) solid !important;
+      border-radius: 4px !important;
+  }
 
-.en-markup-crop-options div div:first-of-type {
-    margin-left: 0px !important;
-}
-</style></head>
+  .en-markup-crop-options div div:first-of-type {
+      margin-left: 0px !important;
+  }
+</style>
+</head>
 
 <body>
 <div id="all"> <div id="top">
-  <div class="logo"> <img src="images/logo.jpg" alt="湖南科技大学虚拟仿真实验室"></div>
+  <div class="logo"> <img src="images/logo.png" alt="湖南科技大学虚拟仿真实验室"></div>
   <div class="tell">
     <p class="tell_t"> <span class="t1"><a href="">首页</a></span> <span class="t2"><a href="disc.php">关于我们</a></span> <span class="t3"><a href="contact.php">联系我们</a></span> </p>
   </div>
@@ -55,19 +58,27 @@
   <div class="focusBox" style="margin:0 auto">
     <div class="tempWrap" style="overflow:hidden; position:relative; width:1000px">
     <ul class="pic" style="width: 5000px; left: 2000px; position: relative; overflow: hidden; padding: 0px; margin: 0px;">
-      <li style="float: left; width: 1000px;"><img src="images/banner/1.jpg"></li>
-      <li style="float: left; width: 1000px;"><img src="images/banner/2.jpg"></li>
-      <li style="float: left; width: 1000px;"><img src="images/banner/3.jpg"></li>
-      <li style="float: left; width: 1000px;"><img src="images/banner/4.jpg"></li>
-      <li style="float: left; width: 1000px;"><img src="images/banner/5.jpg"></li>
+      <?php
+      include('connDB.php');
+      $query = "SELECT * FROM `vlab_banner`";
+      $result = $pdo->prepare($query);
+      if($result->execute()){
+        $pic = $result->fetchAll();
+        $len = count($pic);
+        foreach ($pic as $key => $p) {
+          $id = $p['id']; $src = $p['pic'];
+          echo '<li style="float: left; width: 1000px;"><img src='.$src.'></li>';
+        }
+      }
+      ?>
     </ul></div>
     <a class="prev" href="javascript:void(0)"></a> <a class="next" href="javascript:void(0)"></a>
     <ul class="hd">
-      <li class=""></li>
-      <li class=""></li>
       <li class="on"></li>
-      <li class=""></li>
-       <li class=""></li>
+    <?php 
+    for($i = 1; $i < $len; $i++)
+        echo '<li class=""></li>';
+    ?>
     </ul>
   </div>
     <script type="text/javascript">

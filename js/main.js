@@ -1,5 +1,6 @@
 (function() {
   $(function() {
+    return 
     var t = transfer();
     var parseDisc = function(data) {
         data = data[0];

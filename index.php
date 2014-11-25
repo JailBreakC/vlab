@@ -90,8 +90,8 @@ include("head.php"); ?>
                     $i = 1;
                     foreach ($res['vlab_resource'] as $key => $value) {
                       $i++;
-                      $title = $value['title']; $id = $value['id'];
-                      echo "<li><div class='pic'><a href='resource.php?id=$id'><img src='images/soft$id.jpg' width='205' height='145' 
+                      $title = $value['title']; $id = $value['id']; $pic = $value['pic'];
+                      echo "<li><div class='pic'><a href='resource.php?id=$id'><img src='$pic' width='205' height='145' 
                             alt='$title></a></div>
                             <span><a href='resource.php?id=$id'>$title</a></span> </li>";
                       if($i%6 == 0){

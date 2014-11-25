@@ -5,7 +5,7 @@ $(function(){
     
     window.transfer = function(){
         return {
-            sendText : function(save, id, data) {
+            sendText : function(save, id, data, fn, norefresh) {
                     $.ajax({
                         type:"post",
                         url:"adminDataAPI.php",
@@ -13,8 +13,10 @@ $(function(){
                         dataType:"text",
                         success:function(ret){
                             if(ret === 'success'){
+                                fn&&fn(data);
                                 alert("更新成功");
-                                window.location.reload()
+                                if(!norefresh)
+                                    window.location.reload()
                             }else{
                                 alert("更新失败");
                             }
@@ -28,6 +30,7 @@ $(function(){
             getText : function(query, id, fn, field) {
                 field = field || '';
                 var data;
+                console.log(field);
                 $.ajax({
                         type:"post",
                         url:"adminDataAPI.php",
@@ -45,7 +48,7 @@ $(function(){
                 return data;
             },
             //删除数据
-            deleteText : function(deleteTable, id) {
+            deleteText : function(deleteTable, id, norefresh) {
                 $.ajax({
                         type:"post",
                         url:"adminDataAPI.php",
@@ -53,8 +56,10 @@ $(function(){
                         dataType:"text",
                         success:function(ret){
                             if(ret === 'success'){
-                                alert("删除成功");
-                                window.location.reload()
+                                if(!norefresh){
+                                    alert("删除成功");
+                                    window.location.reload()
+                                }
                             }else{
                                 alert("删除失败");
                             }

@@ -1,10 +1,25 @@
 <div class="container">
     <h2>实验中心轮播大图</h2>
-    <h3>图片上传功能暂未实现，如有大图请暂时通过发送至我的邮箱的方式来更新 admin@vgee.cn</h3>
-    <hr>
-    <hr>
+    <p>请务必保证上传图片大小为960*220px</p>
+      <div id="bannerCt" style="overflow:hidden">
+      <?php
+      include('connDB.php');
+      $query = "SELECT * FROM `vlab_banner`";
+      $result = $pdo->prepare($query);
+      if($result->execute()){
+        $pic = $result->fetchAll();
+        foreach ($pic as $key => $p) {
+          $id = $p['id']; $src = $p['pic'];
+          echo "<img id='$id' class='col-xs-12 img-thumbnail' src='$src'>
+          <button class='delete btn btn-xs btn-danger pull-right'>删除</button>";
+        }
+      }
+      ?>
+      </div>
+      <input id="centerPic" class="btn btn-md btn-primary" type="file" name='files'>
     <h2>实验中心介绍</h2>
     <hr>
+
     <div class="btn-toolbar" data-role="editor-toolbar" data-target="#editor">
       <div class="btn-group">
         <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" title="" data-original-title="Font"><i class="icon-font"></i><b class="caret"></b></a>

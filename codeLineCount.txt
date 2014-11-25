@@ -1,0 +1,2836 @@
+@base: #5876AA;
+/* html5 */
+article,aside,dialog,footer,header,section,footer,nav,figure,menu{display:block;} 
+
+body {
+    color: #444;
+    background: white;
+    line-height: 20px;
+    font-family: "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+    margin: 0px;
+    min-width: 1100px;
+}
+.more{
+    color: white;
+}
+.more:hover{
+    color:white;
+}
+.container{
+    width: 1030px;
+}
+.head{
+    position: relative;
+    margin-bottom: 10px;
+    background: #FFF url(../images/bg.jpg) repeat-x top;
+}
+.binner {
+    text-align: center;
+}
+.binner img {
+    width: 1160px;
+    margin: 20px;
+    margin-bottom: 54px;
+    
+} 
+.nav ul {
+    list-style: none;
+    padding: 0;
+    overflow: auto;
+    border-top: solid 1px #DCDCDC;
+}
+.nav>ul li {
+    float: left;
+}
+.nav>ul li a:hover {
+    background-color: @base;
+    color: white;
+    text-decoration: none;
+}
+.nav li>a {
+    color: black;
+    display: block;
+    line-height: 42px;
+    font-size: 15px;
+    padding: 0 30px; 
+    -webkit-transition:all .2s ease;
+    transition: all .2s ease;
+}
+.nav ul {
+    margin-bottom: 0px;
+}
+.box {
+    background: #FFF;
+    box-shadow: 4px 5px 5px #808080;
+    padding: 10px;
+    margin: 20px 0;
+}
+.box>.box-head {
+    background: @base;
+    color: #FFF;
+    font-weight: bold;
+    padding: 2px 10px;
+    margin: -10px -10px 10px -10px;
+}
+.box>.box-head h5 {
+    font-weight: bold;
+}
+.box .btn-group {
+    display: block;
+    padding: 5px 10px;
+    margin: -3px -10px 10px -10px;
+    background: #5CA0EB;
+    color: #FFF;
+    font-weight: bold;
+    cursor:pointer;
+    -webkit-transition:all .2s ease;
+    transition: all .2s ease;
+}
+.box .btn-group:hover{
+    background-color: @base;
+}
+.box .dropdown-menu {
+    border-radius: 0px;
+    margin: 0;
+    padding: 0;
+}
+.box .dropdown-menu a {
+    -webkit-transition:all .2s ease;
+    transition: all .2s ease;
+}
+.box .dropdown-menu a:hover {
+    background-color: #24AFB2;
+    color: white;
+}
+.box .caret {
+    margin-top: 8px;
+}
+.box ul.link {
+    padding-left: 0px;
+    margin: -10px;
+    list-style: none;
+}
+.box  ul.link>a {
+    display: block;
+    color: black;
+    padding: 7px 10px;
+    -webkit-transition:all .2s ease;
+    transition: all .2s ease;
+}
+.box ul>a:hover{
+    color: white;
+    background-color: #24AFB2;
+}
+.fast-link img {
+    width: 200px;
+}
+.fast-link {
+    margin-bottom: 10px;
+}
+.dropdown-menu li {
+    font-size: 12px;
+    padding: 3px 0px;
+}
+.foot-bar{
+    text-align: center;
+    background: @base;
+    color: white;
+    margin-top: 80px;
+    padding: 50px;
+}
+.top_warp {
+    border-top: solid 8px @base;
+    padding: 15px 0px;
+    overflow: auto;
+}
+.top_warp img{
+    float: left;
+}
+.top_warp .top_words {
+    float: right;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 25px;
+    color: @base;
+}
+.thumbnail {
+    position: relative;
+    overflow: hidden;
+}
+.thumbnail .caption {
+    position: absolute;
+    bottom: -53px;
+    left: 0px;
+    background: #5CA0EB;
+    width: 100%;
+    color: #FFF;
+    text-align: center;
+    -webkit-transition:all .2s ease;
+    transition: all .2s ease;
+}
+.thumbnail .caption.show {
+    bottom: 0px;
+}
+.sidebar{
+    margin-top: -83px;
+}
+.text {
+    font-size: 16px;
+    line-height: 29px;
+    text-indent: 2em;
+}
+.to-top{
+    position: fixed;
+    bottom: 100px;
+    right: 100px;
+    padding: 10px 0;
+    background-color: #405999;
+    border-radius: 23px;
+    color: #FFF;
+    font-size: 20px;
+    height: 45px;
+    width: 45px;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+
+
+
+.newslist {
+    margin: 0 5px;
+    border-bottom: 1px solid #E9E8EA;
+    padding: 40px 0;
+    margin-bottom: 14px;
+}
+.newslist li {
+float: left;
+_display: inline;
+width: 300px;
+margin: 0 15px;
+list-style: none;
+}
+.ydate_2 {
+border: 1px solid #EDEAF1;
+color: #5B317D;
+background: #EDEAF1;
+}
+.ydate {
+width: 58px;
+border: 1px solid #D8D8D8;
+color: #7D7D7D;
+text-align: center;
+font-size: 12px;
+float: left;
+_display: inline;
+padding-bottom: 5px;
+}
+.ydate span {
+display: block;
+font-size: 24px;
+line-height: 24px;
+padding: 8px 0 2px 0;
+zoom: 1;
+}
+.newslist .tn {
+margin-left: 80px;
+width: 220px;
+_width: 217px;
+}
+$(document).ready(function(){
+    $('#editor').wysiwyg();
+    var t = transfer();
+    var page = window.location.href.split('=')[1];
+
+    //获取当前日期
+    var getDate = function() {
+        var date = new Date();
+        return date = date.getFullYear() + '-' + (date.getMonth()+1) + '-' + date.getDate();
+    }
+    //加载简介中心文章
+    var parseCenter = function(content) {
+        content = content[0];
+        $('#editor').html(content.content);
+        $('#addTime').attr('value',content.add_time);
+        $('#nowTime').attr('value',getDate());
+    }
+
+    var uploadFile = function(fn, table, id){
+        $('#centerPic').fileupload({
+            url:'picUpload.php',
+            formData:{update:table, id:id},
+            done: function(e, result) {
+                console.log(result.result);
+                var rs = JSON.parse(result.result);
+                if(rs.state !== 'failed'){
+                    fn&&fn(rs);
+               }else{
+                    alert('uploading failed');
+                }
+            }
+        });
+    }
+    if( page === 'adminCenter') {
+        t.getText('vlab_disc', 'last', parseCenter);
+        var addImg = function(rs){
+            $('#bannerCt').append('<img id="'+rs.id+'" class="col-xs-12 img-thumbnail" src="' + rs.msg + 
+            '"><button class="delete btn btn-xs btn-danger pull-right">删除</button>');
+        //alert('succeed');
+        }
+        uploadFile(addImg, 'vlab_banner');
+        $('#bannerCt').on('click', '.delete', function(){
+            var img = $(this).prev()
+            var id = img.attr('id');
+            t.deleteText('vlab_banner', id, 'norefresh');
+            img.remove();
+            $(this).remove();
+        });
+        $('#save').click(function() {
+            var data = {}
+            data.content = $('#editor').html();
+            data.add_time = $('#nowTime').val();
+            t.sendText('vlab_disc', 'no', data);
+        })
+    }
+    //加载仪器设备列表
+    var parseDevice = function(data) {
+        var tr = [];
+        for(var i in data){
+            tr[i] = '<tr class="items">'
+                + '<td>'+ data[i].id + '</td>'
+                + '<td>' + data[i].name + '</td>'
+                + '<td>' + data[i].type + '</td>'
+                + '<td>' + data[i].price + '</td>'
+                + '<td>' + data[i].num + '</td>'
+                + '<td>' + data[i].maker + '</td>'
+                + '<td>' + data[i].buy_time + '</td>'
+                + '<td><button class="btn btn-xs btn-primary">修改</button>   '
+                +      '<button class="delete btn btn-xs btn-danger">删除</button>'
+                + '</td>'
+            + '</tr>'
+            $('#showTable').append(tr[i]);
+        }
+    }
+    //加载仪器设备文章到编辑器
+    var parseItems = function(data) {
+        data = data[0];
+        $('#editor').html(data.disc);
+        for(var i in data){
+            if(i === 'id')
+                $('#id').html(data[i])
+            else
+                $('#'+i).val(data[i]);
+        }
+    }
+    //-------------处理adminDevice.php----------------
+    if( page === 'adminDevice') {
+        t.getText('vlab_device', 'all', parseDevice, ['id', 'name', 'type', 'price', 'num', 'maker', 'buy_time'])
+        $('#new').click(function() {
+            var data = {};
+            $('#editTr').children().each(function(index,ele) {
+                var id = $(ele).find('input').attr('id');
+                if(id)
+                    data[id] = $(ele).find('input').val();
+            });
+            data.disc = $('#editor').html();
+            t.sendText('vlab_device', 'no', data);
+        });
+        $('#save').click(function() {
+            var data = {};
+            $('#editTr').children().each(function(index,ele) {
+                var id = $(ele).find('input').attr('id');
+                if(id)
+                    data[id] = $(ele).find('input').val();
+            });
+            data.disc = $('#editor').html();
+            var id = $('#id').html()
+            if(id)
+                t.sendText('vlab_device', id, data);
+            else
+                alert('请先读取要修改的文章');
+        });
+        $('.table').on('click', '.delete', function() {
+            var id = $(this).closest('tr').children().eq(0).text();
+            t.deleteText('vlab_device', id);
+        });
+        $('.table').on('click', '.items', function() {
+            var id = $(this).find('td').eq(0).html();
+            t.getText('vlab_device', id, parseItems);
+        })
+    }
+    //加载新闻公告列表(中心资源，管理制度通用)
+    var parseNewsTable = function(data) {
+        var tr = []
+        for(var i in data){
+            tr[i] = '<tr>'
+                    +'  <td>' + data[i].id + '</td>'
+                    +'  <td>' + data[i].title + '</td>'
+                    +'  <td>' + data[i].add_time + '</td>'
+                    +'  <td><button class="read btn btn-xs btn-primary">读取文章</button></td>'
+                    +'  <td><button class="read btn btn-xs btn-primary">修改</button>'
+                    +'      <button class="delete btn btn-xs btn-danger">删除</button></td>'
+                    +'</tr>'
+            $('.table').append(tr[i]);
+        }
+    }
+    //加载新闻内容到编辑器(中心资源，管理制度通用)
+    var parseNews = function(data) {
+        data = data[0];
+        $('#editor').html(data.content);
+        $('#title').val(data.title);
+        $('#addTime').val(data.add_time);
+        $('#nowTime').val(getDate());
+    }
+    if(page === 'adminNews' || page === 'adminMessage') {
+        $('#nowTime').attr('value',getDate());
+        var table =  page === 'adminNews' ? 'vlab_news' : 'vlab_message';
+        t.getText(table, 'all', parseNewsTable, ['id', 'title', 'add_time']);
+
+        $('#new').click(function() {
+            var data = {};
+            data.title = $('#title').val();
+            data.content = $('#editor').html();
+            data.add_time = $('#nowTime').val();
+            t.sendText(table, 'no', data);
+            $('#save').attr('data-target-id','');
+        });
+        $('#save').click(function() {
+            var data = {};
+            var id = $('#save').attr('data-target-id');
+            if(id){
+                data.title = $('#title').val();
+                data.content = $('#editor').html();
+                data.add_time = $('#nowTime').val();
+                t.sendText(table, id, data);
+            }else{
+                alert('请先读取要修改的文章');
+            }
+        });
+
+        $('.table').on('click', '.read', function() {
+            var id = $(this).closest('tr').children().eq(0).html();
+            $('#save').attr('data-target-id', id);
+            t.getText(table, id, parseNews);
+        });
+
+        $('.table').on('click', '.delete', function() {
+            var id = $(this).closest('tr').children().eq(0).html();
+            t.deleteText(table, id);
+        });
+
+    }
+    if(page === 'adminRule') {
+        $('#nowTime').attr('value',getDate());
+        t.getText('vlab_rule', 'all', parseNewsTable, ['id', 'title', 'add_time']);
+
+        $('#new').click(function() {
+            var data = {};
+            data.title = $('#title').val();
+            data.content = $('#editor').html();
+            data.add_time = $('#nowTime').val();
+            t.sendText('vlab_rule', 'no', data);
+            $('#save').attr('data-target-id','');
+        });
+        $('#save').click(function() {
+            var data = {};
+            var id = $('#save').attr('data-target-id');
+            if(id){
+                data.title = $('#title').val();
+                data.content = $('#editor').html();
+                data.add_time = $('#nowTime').val();
+                t.sendText('vlab_rule', id, data);
+            }else{
+                alert('请先读取要修改的文章');
+            }
+        });
+
+        $('.table').on('click', '.read', function() {
+            var id = $(this).closest('tr').children().eq(0).html();
+            $('#save').attr('data-target-id', id);
+            t.getText('vlab_rule', id, parseNews);
+        });
+
+        $('.table').on('click', '.delete', function() {
+            var id = $(this).closest('tr').children().eq(0).html();
+            t.deleteText('vlab_rule', id);
+        });
+
+    }
+    var parseResource = function(data) {
+        data = data[0];
+        $('#editor').html(data.content);
+        $('#title').val(data.title);
+        $('#addTime').val(data.add_time);
+        $('#nowTime').val(getDate());
+        $('#img').attr('src', data.pic);
+    }
+    if(page === 'adminResource') {
+        var changeImg = function(rs){
+            $('#img').attr('src', rs.msg);
+        }
+        //绑定图像上传事件，不更新数据表，只获取图片地址
+        uploadFile(changeImg, 'vlab_resource');
+
+        $('#nowTime').attr('value',getDate());
+        t.getText('vlab_resource', 'all', parseNewsTable, ['id', 'title', 'add_time']);
+        
+        $('#new').click(function() {
+            var data = {};
+            data.title = $('#title').val();
+            data.content = $('#editor').html();
+            data.add_time = $('#nowTime').val();
+
+            //新增实例时需要写入图片地址
+            data.pic = $('#img').attr('src');
+
+            var appendEle = function(data) {
+                var ele = "<tr><td>NaN</td><td>"+data.title+"(修改前请刷新)</td><td>"+data.add_time
+                + "</td><td><button class='read btn btn-xs btn-primary'>读取文章</button></td> "
+                + " <td><button class='read btn btn-xs btn-primary'>修改</button>"
+                + "<button class='delete btn btn-xs btn-danger'>删除</button></td></tr>"
+                $('.table>tbody').append(ele);
+            }
+            t.sendText('vlab_resource', 'no', data, appendEle, 'norefresh');
+            $('#save').attr('data-target-id','');
+        });
+
+        $('#save').click(function() {
+            var data = {};
+            var id = $('#save').attr('data-target-id');
+            if(id){
+                data.title = $('#title').val();
+                data.content = $('#editor').html();
+                data.add_time = $('#nowTime').val();
+                data.pic = $('#img').attr('src');
+                t.sendText('vlab_resource', id, data);
+            }else{
+                alert('请先读取要修改的文章');
+            }
+        });
+
+        $('.table').on('click', '.read', function() {
+            var id = $(this).closest('tr').children().eq(0).html();
+            $('#save').attr('data-target-id', id);
+            t.getText('vlab_resource', id, parseResource);
+            //注册头像事件
+            uploadFile(changeImg, 'vlab_resource', id);
+        });
+
+        $('.table').on('click', '.delete', function() {
+            var id = $(this).closest('tr').children().eq(0).html();
+            t.deleteText('vlab_resource', id);
+        });
+
+    }
+
+    //加载机构成员列表
+    var parseTeacher = function(data) {
+        var tr = [];
+        for(var i in data){
+            tr[i] = '<tr class="items">'
+                    + '  <td>' + data[i].id + '</td>'
+                    + '  <td>' + data[i].name + '</td>'
+                    + '  <td>' + data[i].sex + '</td>'
+                    + '  <td>' + data[i].age + '</td>'
+                    + '  <td>' + data[i].phone + '</td>'
+                    + '  <td>' + data[i].title + '</td>'
+                    + '  <td>' + data[i].degree + '</td>'
+                    + '  <td>' + data[i].major + '</td>'
+                    + '  <td>' + data[i].add_time + '</td>'
+                    + '  <td>' + data[i].web_page + '</td>'
+                    + '  <td><button class="read btn btn-xs btn-primary">修改</button>'
+                    +'      <button class="delete btn btn-xs btn-danger">删除</button></td>'
+                    +'</tr>';
+            $('#showTable').append(tr[i]);
+        }
+    }
+    if(page === 'adminTeacher') {
+        t.getText('vlab_teacher', 'all', parseTeacher, ['id', 'name', 'sex', 'age',
+         'phone', 'title', 'major', 'degree', 'add_time', 'web_page']);
+        $('#new').click(function() {
+            var data = {};
+            $('#editTr').children().each(function(index,ele) {
+                var id = $(ele).children().first().attr('id');
+                if(id)
+                    data[id] = $('#' + id).val();
+            });
+            data.disc = $('#editor').html();
+            t.sendText('vlab_teacher', 'no', data);
+        });
+        $('#save').click(function() {
+            var data = {};
+            $('#editTr').children().each(function(index,ele) {
+                var id = $(ele).children().first().attr('id');
+                if(id)
+                    data[id] = $('#' + id).val();
+            });
+            data.disc = $('#editor').html();
+            var id = $('#id').html()
+            if(id)
+                t.sendText('vlab_teacher', id, data);
+            else
+                alert('请先读取要修改的文章');
+        });
+        $('.table').on('click', '.delete', function() {
+            var id = $(this).closest('tr').children().eq(0).text();
+            t.deleteText('vlab_teacher', id);
+        });
+        $('.table').on('click', '.items', function() {
+            var id = $(this).find('td').eq(0).html();
+            t.getText('vlab_teacher', id, parseItems);
+        })
+    }
+    //解析预设值(title,degree,major)
+    var parseTitle = function(attr){
+        return function(data) {
+                var tr = [];
+                for(var i in data) {
+                    tr[i] = '<tr>'
+                            +'    <td>' + data[i].id + '</td>'
+                            +'    <td>' + data[i][attr] + '</td>'
+                            +'    <td><button class="delete btn btn-danger">删除</button></td>'
+                            +'</tr>';
+                    $('#vlab_' + attr).append(tr[i]);
+            }
+    }
+    }
+    if(page === 'adminTitle' || page === 'adminMajor') {
+        if(page === 'adminTitle'){
+            t.getText('vlab_title', 'all', parseTitle('title'));
+            t.getText('vlab_degree', 'all', parseTitle('degree'));
+        }else{
+            t.getText('vlab_major', 'all', parseTitle('major'));
+        }
+        var newData = function(table) {
+            var data = {};
+            $('#' + table).children().each(function(index,ele) {
+                var id = $(ele).find('input').attr('id');
+                if(id)
+                    data[id] = $(ele).find('input').val();
+            });
+            t.sendText(table, 'no', data);
+        }
+        $('.new-title').click(function() {
+            newData('vlab_title');
+        });
+        $('.new-degree').click(function() {
+            newData('vlab_degree');
+        });
+        $('.new-major').click(function() {
+            newData('vlab_major');
+        });
+
+        $('.row').on('click', '.delete', function() {
+            var id = $(this).closest('tr').children().eq(0).html();
+            var table = $(this).closest('table').attr('id');
+            t.deleteText(table, id);
+        });
+    }
+});
+(function() {
+     if (! 
+     /*@cc_on!@*/
+     0) return;  
+     var e = "abbr, article, aside, audio, canvas, datalist, details, dialog, eventsource, figure, footer, header, hgroup, mark, menu, meter, nav, output, progress, section, time, video".split(', ');
+     var i= e.length;
+     while (i--){
+         document.createElement(e[i])
+     } 
+     document.getElementsByTagName('body').className = 'ie8'
+})()
+//nav 切换 by kenshin
+
+$(function(){
+    $('#nav li').hover(function(){
+        $(this).children('a').children('span').css('visibility', 'visible').css({top : '-14px', '_top' : '-30px'}, 'fast');
+    }, function(e){
+        e.stopPropagation();
+        $(this).children('a').children('span').stop().css({'top' : 0, 'visibility' : 'hidden'});
+    });
+});
+$ ->
+    `
+    var t = transfer();
+    var parseDisc = function(data) {
+        data = data[0];
+        console.log(data);
+        data = data['content'].split(0,200);
+        $('#disc').html(data);
+    }
+    t.getText('vlab_disc', 'no', parseDisc);
+    `
+$(function(){
+    //发送数据
+    if(window.transfer)
+        throw "变量名冲突：请检查是transfer变量是否被占用";
+    
+    window.transfer = function(){
+        return {
+            sendText : function(save, id, data, fn, norefresh) {
+                    $.ajax({
+                        type:"post",
+                        url:"adminDataAPI.php",
+                        data:{'save':save, 'id':id, 'data':data},
+                        dataType:"text",
+                        success:function(ret){
+                            if(ret === 'success'){
+                                fn&&fn(data);
+                                alert("更新成功");
+                                if(!norefresh)
+                                    window.location.reload()
+                            }else{
+                                alert("更新失败");
+                            }
+                        },
+                        error:function(ret){
+                            alert("网络故障，稍后重试 " + ret);
+                        }
+                    });
+                },
+            //获取数据
+            getText : function(query, id, fn, field) {
+                field = field || '';
+                var data;
+                console.log(field);
+                $.ajax({
+                        type:"post",
+                        url:"adminDataAPI.php",
+                        data:{'query':query, 'id':id, 'field':field},
+                        dataType:"text",
+                        success:function(ret){
+                            //console.log(ret);
+                            data = JSON.parse(ret);
+                            fn(data);
+                        },
+                        error:function(ret){
+                            alert("网络故障，稍后重试 " + ret);
+                        }
+                });
+                return data;
+            },
+            //删除数据
+            deleteText : function(deleteTable, id, norefresh) {
+                $.ajax({
+                        type:"post",
+                        url:"adminDataAPI.php",
+                        data:{'delete':deleteTable, 'id':id},
+                        dataType:"text",
+                        success:function(ret){
+                            if(ret === 'success'){
+                                if(!norefresh){
+                                    alert("删除成功");
+                                    window.location.reload()
+                                }
+                            }else{
+                                alert("删除失败");
+                            }
+                        },
+                        error:function(ret){
+                            alert("网络故障，稍后重试 " + ret);
+                        }
+                });
+            }
+        }
+    }
+});
+<?php 
+ob_start();
+session_start();
+$login = 0;
+include('connDB.php');
+if(isset( $_SESSION['user']))
+    if( $_SESSION['user']['user_name'] != null && $_SESSION['user']['user_name'] != '' )
+    {
+        $login = 1;
+    }
+
+if(!$login && isset($_POST['admin_name']) && isset($_POST['admin_pw'])){
+
+    //echo $_POST['admin_name'].$_POST['admin_pw'];
+    $ip = $_SERVER['REMOTE_ADDR'];
+    $time = date('Y-m-d H:i:s');
+    $user_name = $_POST['admin_name'];
+    $password = $_POST['admin_pw'];
+    $password = md5($password);
+
+    $query = 'select * from vlab_admin
+              where user_name = ? and pw = ? and level >= 1';
+    $result = $pdo -> prepare($query);
+    $result -> bindParam(1,$user_name);
+    $result -> bindParam(2,$password);
+
+    if(!$result -> execute()) {
+        echo '用户名或密码不正确';
+        exit();
+    }
+
+    $row = $result -> fetchAll();
+    if(!$row){
+        echo '用户名或密码不正确';
+        exit();
+    }
+    $row = $row[0];
+    if($row['user_name'] !='' ){
+        //更新session信息
+        $_SESSION['user'] = $row;
+        
+        if(isset($_POST['checked']) && $_POST['checked'] == 1)
+        {
+            $lifeTime = 30 * 24 * 3600; 
+            //保存session一个月
+            setcookie(session_name(), session_id(), time() + $lifeTime, "/"); 
+        }
+        setcookie(session_name(), session_id(), 0, "/"); 
+        
+        // echo json_encode($row);
+    }
+    else{
+        echo json_encode(FALSE);
+    }
+}
+else if(!$login){
+    include('adminLogin.php');
+    exit();
+}
+include('adminHead.php');
+if(isset($_GET['page'])){
+    include($_GET['page'].'.php');
+}else{
+    include('adminManage.php');
+}
+include('adminFoot.php');
+?>
+
+
+
+
+
+<div class="container">
+    <h2>实验中心轮播大图</h2>
+      <div id="bannerCt" style="overflow:hidden">
+      <?php
+      include('connDB.php');
+      $query = "SELECT * FROM `vlab_banner`";
+      $result = $pdo->prepare($query);
+      if($result->execute()){
+        $pic = $result->fetchAll();
+        foreach ($pic as $key => $p) {
+          $id = $p['id']; $src = $p['pic'];
+          echo "<img id='$id' class='col-xs-12 img-thumbnail' src='$src'>
+          <button class='delete btn btn-xs btn-danger pull-right'>删除</button>";
+        }
+      }
+      ?>
+      </div>
+      <input id="centerPic" class="btn btn-md btn-primary" type="file" name='files'>
+    <h2>实验中心介绍</h2>
+    <hr>
+
+    <div class="btn-toolbar" data-role="editor-toolbar" data-target="#editor">
+      <div class="btn-group">
+        <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" title="" data-original-title="Font"><i class="icon-font"></i><b class="caret"></b></a>
+          <ul class="dropdown-menu">
+          <li><a data-edit="fontName Serif" style="font-family:'Serif'">Serif</a></li><li><a data-edit="fontName Sans" style="font-family:'Sans'">Sans</a></li><li><a data-edit="fontName Arial" style="font-family:'Arial'">Arial</a></li><li><a data-edit="fontName Arial Black" style="font-family:'Arial Black'">Arial Black</a></li><li><a data-edit="fontName Courier" style="font-family:'Courier'">Courier</a></li><li><a data-edit="fontName Courier New" style="font-family:'Courier New'">Courier New</a></li><li><a data-edit="fontName Comic Sans MS" style="font-family:'Comic Sans MS'">Comic Sans MS</a></li><li><a data-edit="fontName Helvetica" style="font-family:'Helvetica'">Helvetica</a></li><li><a data-edit="fontName Impact" style="font-family:'Impact'">Impact</a></li><li><a data-edit="fontName Lucida Grande" style="font-family:'Lucida Grande'">Lucida Grande</a></li><li><a data-edit="fontName Lucida Sans" style="font-family:'Lucida Sans'">Lucida Sans</a></li><li><a data-edit="fontName Tahoma" style="font-family:'Tahoma'">Tahoma</a></li><li><a data-edit="fontName Times" style="font-family:'Times'">Times</a></li><li><a data-edit="fontName Times New Roman" style="font-family:'Times New Roman'">Times New Roman</a></li><li><a data-edit="fontName Verdana" style="font-family:'Verdana'">Verdana</a></li></ul>
+        </div>
+      <div class="btn-group">
+        <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" title="" data-original-title="Font Size"><i class="icon-text-height"></i>&nbsp;<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+          <li><a data-edit="fontSize 5"><font size="5">Huge</font></a></li>
+          <li><a data-edit="fontSize 3"><font size="3">Normal</font></a></li>
+          <li><a data-edit="fontSize 1"><font size="1">Small</font></a></li>
+          </ul>
+      </div>
+      <div class="btn-group">
+        <a class="btn btn-default" data-edit="bold" title="" data-original-title="Bold (Ctrl/Cmd+B)"><i class="icon-bold"></i></a>
+        <a class="btn btn-default" data-edit="italic" title="" data-original-title="Italic (Ctrl/Cmd+I)"><i class="icon-italic"></i></a>
+        <a class="btn btn-default" data-edit="strikethrough" title="" data-original-title="Strikethrough"><i class="icon-strikethrough"></i></a>
+        <a class="btn btn-default" data-edit="underline" title="" data-original-title="Underline (Ctrl/Cmd+U)"><i class="icon-underline"></i></a>
+      </div>
+      <div class="btn-group">
+        <a class="btn btn-default" data-edit="insertunorderedlist" title="" data-original-title="Bullet list"><i class="icon-list-ul"></i></a>
+        <a class="btn btn-default" data-edit="insertorderedlist" title="" data-original-title="Number list"><i class="icon-list-ol"></i></a>
+        <a class="btn btn-default" data-edit="outdent" title="" data-original-title="Reduce indent (Shift+Tab)"><i class="icon-indent-left"></i></a>
+        <a class="btn btn-default" data-edit="indent" title="" data-original-title="Indent (Tab)"><i class="icon-indent-right"></i></a>
+      </div>
+      <div class="btn-group">
+        <a class="btn btn-info" data-edit="justifyleft" title="" data-original-title="Align Left (Ctrl/Cmd+L)"><i class="icon-align-left"></i></a>
+        <a class="btn btn-default" data-edit="justifycenter" title="" data-original-title="Center (Ctrl/Cmd+E)"><i class="icon-align-center"></i></a>
+        <a class="btn btn-default" data-edit="justifyright" title="" data-original-title="Align Right (Ctrl/Cmd+R)"><i class="icon-align-right"></i></a>
+        <a class="btn btn-default" data-edit="justifyfull" title="" data-original-title="Justify (Ctrl/Cmd+J)"><i class="icon-align-justify"></i></a>
+      </div>
+      <div class="btn-group">
+          <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" title="" data-original-title="Hyperlink"><i class="icon-link"></i></a>
+            <div class="dropdown-menu input-append">
+                <input class="span2" placeholder="URL" type="text" data-edit="createLink">
+                <button class="btn btn-default" type="button">Add</button>
+        </div>
+        <a class="btn btn-default" data-edit="unlink" title="" data-original-title="Remove Hyperlink"><i class="icon-cut"></i></a>
+
+      </div>
+      
+      <div class="btn-group">
+        <a class="btn btn-default" title="" id="pictureBtn" data-original-title="Insert picture (or just drag &amp; drop)"><i class="icon-picture"></i></a>
+        <input type="file" data-role="magic-overlay" data-target="#pictureBtn" data-edit="insertImage" style="opacity: 0; position: absolute; top: 0px; left: 0px; width: 37px; height: 30px;">
+      </div>
+      <div class="btn-group">
+        <a class="btn btn-default" data-edit="undo" title="" data-original-title="Undo (Ctrl/Cmd+Z)"><i class="icon-undo"></i></a>
+        <a class="btn btn-default" data-edit="redo" title="" data-original-title="Redo (Ctrl/Cmd+Y)"><i class="icon-repeat"></i></a>
+      </div>
+      <input type="text" data-edit="inserttext" id="voiceBtn" x-webkit-speech="" style="display: none;">
+      <div id="save" class="btn btn-default pull-right">保存</div>
+    </div>
+    <div id="editor" style="overflow:scroll;height:500px;border: solid 2px #8188AC;margin:10px 0;"></div>
+    <div class="alert alert-info" style="overflow:auto">
+      <p class="pull-right">上次修改时间：<input disabled="disabled" id="addTime" type="text">  本次修改时间：<input id="nowTime" type="text"></p>
+    </div>
+</div>
+<?php
+session_start();
+//可访问表单控制
+$allowed = array('vlab_disc', 'vlab_resource', 'vlab_news', 'vlab_message', 'vlab_rule',
+ 'vlab_major', 'vlab_teacher', 'vlab_title', 'vlab_device', 'vlab_degree', 'vlab_banner');
+
+    //获取数据可以无需登录
+if(isset($_POST['query']) && isset($_POST['id'])){
+    include('connDB.php');
+    $q = $_POST['query'];
+    $id = $_POST['id'];
+    if(in_array($q, $allowed)) {
+        $field = '*';
+        if(isset($_POST['field']) && $_POST['field'])
+        {   
+            $field = '';
+            //print_r($_POST['field']);
+            $len = count($_POST['field']);
+            $i = 1;
+            foreach ($_POST['field'] as $key => $value) {
+                if($i<$len) $field .= $value . ', ';
+                else $field .= $value;
+                $i++;
+            }
+            //echo $field;
+        }
+        if($id == 'all'){
+            //获取整个表单的数据
+            $query = "SELECT $field FROM $q";
+            $result = $pdo -> prepare($query);
+        }else if($id == 'last'){
+            //获取最后一行数据
+            $query = "SELECT $field FROM $q WHERE id IN (SELECT MAX(id) FROM $q )";
+            $result = $pdo -> prepare($query);
+        }else{
+            //获取指定行的数据
+            $query = "SELECT $field FROM $q WHERE id = ?";
+            $result = $pdo -> prepare($query);
+            $result -> bindParam(1,$id);
+        }
+        //echo $query;
+        if(!$result -> execute()) {
+            echo 'getting data failed!';
+            exit();
+        }
+        else{
+            $result->setFetchMode(PDO::FETCH_ASSOC);
+            $row = $result -> fetchAll();
+            //print_r($row);
+            echo json_encode($row);
+        }
+    }
+        //若处于登录状态，则可以进行数据的修改
+}else if(isset($_POST['save']) && isset($_POST['id']) && isset($_POST['data']) && isset($_SESSION['user'])){
+    include('connDB.php');
+    $save = $_POST['save'];
+    $id = $_POST['id'];
+    $data = $_POST['data'];
+    if(in_array($save, $allowed)){
+            //若未指定id则新增数据
+        if($id == 'no'){
+            //拼凑SQL语句
+            $query = "insert into " . $save . "(";
+            $value = " value(";
+            $length = count($data);
+            $i = 1;
+            foreach($data as $key => $v) {
+                if($i < $length){
+                    $query .= $key . ','; $value .= '?,';
+                }
+                else {
+                    $query .= $key . ')'; $value .= '?)';
+                }
+                $i++;
+            }
+            $query .= $value;
+            //echo $query;
+            $result = $pdo -> prepare($query);
+            $i = 1;
+            foreach($data as $key => $v) {
+                //此处必须绑定$data[$key]，若绑定$v则所有绑定值都相同
+                $result -> bindParam($i,$data[$key]);
+                $i++;
+            }
+            if(!$result -> execute())
+                echo 'sql查询失败';
+            else
+                echo 'success';
+        }
+        else{
+            $query = "update ". $save . " set ";
+            $i = 1;
+            $length = count($data);
+            foreach($data as $key => $v) {
+                if($i < $length){
+                    $query .= $key . '=?,';
+                }
+                else {
+                    $query .= $key . '=? where id =' . $id;
+                }
+                $i++;
+            }
+            //echo $query;
+            $result = $pdo -> prepare($query);
+            $i = 1;
+            foreach($data as $key => $v) {
+                //此处必须绑定$data[$key]，若绑定$v则所有绑定值都相同
+                $result -> bindParam($i,$data[$key]);
+                $i++;
+            }
+            if(!$result -> execute())
+                echo 'sql更新失败';
+            else
+                echo 'success';
+        }
+
+    }
+    //若处于登录状态，可删除数据。
+}else if(isset($_POST['delete']) && isset($_POST['id']) && isset($_SESSION['user'])){
+    include('connDB.php');
+    $delete = $_POST['delete'];
+    $id = $_POST['id'];
+    if(in_array($delete, $allowed)){
+        $query = "DELETE FROM $delete WHERE id = $id";
+        //echo $query;
+        $result = $pdo -> prepare($query);
+        if(!$result -> execute())
+            echo 'sql删除失败';
+        else
+            echo 'success';
+    }
+}else {
+    echo "请输入正确的参数";
+}
+?>
+<div class="container">
+    <div class="container">
+        <h2>仪器与设备</h2>
+        <hr>
+        <table class="table table-bordered table-hover">
+            <tr>
+                <th>序号</th>
+                <th>名称</th>
+                <th>型号</th>
+                <th>单价</th>
+                <th>数量</th>
+                <th>厂家</th>
+                <th>购买时间</th>
+                <th>操作</th>
+            </tr>
+            <tr id="editTr">
+                <td id="id"></td>
+                <td><input id="name" type="text"></td>
+                <td><input id="type" type="text"></td>
+                <td><input id="price" type="text"></td>
+                <td><input id="num" type="text"></td>
+                <td><input id="maker" type="text"></td>
+                <td><input id="buy_time" type="text"></td>
+                <td><button class="btn btn-xs btn-primary">↓</button></td>
+            </tr>
+        </table>
+        <h3>设备简介：</h3>
+        <div class="btn-toolbar" data-role="editor-toolbar" data-target="#editor">
+          <div class="btn-group">
+            <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" title="" data-original-title="Font"><i class="icon-font"></i><b class="caret"></b></a>
+              <ul class="dropdown-menu">
+              <li><a data-edit="fontName Serif" style="font-family:'Serif'">Serif</a></li><li><a data-edit="fontName Sans" style="font-family:'Sans'">Sans</a></li><li><a data-edit="fontName Arial" style="font-family:'Arial'">Arial</a></li><li><a data-edit="fontName Arial Black" style="font-family:'Arial Black'">Arial Black</a></li><li><a data-edit="fontName Courier" style="font-family:'Courier'">Courier</a></li><li><a data-edit="fontName Courier New" style="font-family:'Courier New'">Courier New</a></li><li><a data-edit="fontName Comic Sans MS" style="font-family:'Comic Sans MS'">Comic Sans MS</a></li><li><a data-edit="fontName Helvetica" style="font-family:'Helvetica'">Helvetica</a></li><li><a data-edit="fontName Impact" style="font-family:'Impact'">Impact</a></li><li><a data-edit="fontName Lucida Grande" style="font-family:'Lucida Grande'">Lucida Grande</a></li><li><a data-edit="fontName Lucida Sans" style="font-family:'Lucida Sans'">Lucida Sans</a></li><li><a data-edit="fontName Tahoma" style="font-family:'Tahoma'">Tahoma</a></li><li><a data-edit="fontName Times" style="font-family:'Times'">Times</a></li><li><a data-edit="fontName Times New Roman" style="font-family:'Times New Roman'">Times New Roman</a></li><li><a data-edit="fontName Verdana" style="font-family:'Verdana'">Verdana</a></li></ul>
+            </div>
+          <div class="btn-group">
+            <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" title="" data-original-title="Font Size"><i class="icon-text-height"></i>&nbsp;<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+              <li><a data-edit="fontSize 5"><font size="5">Huge</font></a></li>
+              <li><a data-edit="fontSize 3"><font size="3">Normal</font></a></li>
+              <li><a data-edit="fontSize 1"><font size="1">Small</font></a></li>
+              </ul>
+          </div>
+          <div class="btn-group">
+            <a class="btn btn-default" data-edit="bold" title="" data-original-title="Bold (Ctrl/Cmd+B)"><i class="icon-bold"></i></a>
+            <a class="btn btn-default" data-edit="italic" title="" data-original-title="Italic (Ctrl/Cmd+I)"><i class="icon-italic"></i></a>
+            <a class="btn btn-default" data-edit="strikethrough" title="" data-original-title="Strikethrough"><i class="icon-strikethrough"></i></a>
+            <a class="btn btn-default" data-edit="underline" title="" data-original-title="Underline (Ctrl/Cmd+U)"><i class="icon-underline"></i></a>
+          </div>
+          <div class="btn-group">
+            <a class="btn btn-default" data-edit="insertunorderedlist" title="" data-original-title="Bullet list"><i class="icon-list-ul"></i></a>
+            <a class="btn btn-default" data-edit="insertorderedlist" title="" data-original-title="Number list"><i class="icon-list-ol"></i></a>
+            <a class="btn btn-default" data-edit="outdent" title="" data-original-title="Reduce indent (Shift+Tab)"><i class="icon-indent-left"></i></a>
+            <a class="btn btn-default" data-edit="indent" title="" data-original-title="Indent (Tab)"><i class="icon-indent-right"></i></a>
+          </div>
+          <div class="btn-group">
+            <a class="btn btn-info" data-edit="justifyleft" title="" data-original-title="Align Left (Ctrl/Cmd+L)"><i class="icon-align-left"></i></a>
+            <a class="btn btn-default" data-edit="justifycenter" title="" data-original-title="Center (Ctrl/Cmd+E)"><i class="icon-align-center"></i></a>
+            <a class="btn btn-default" data-edit="justifyright" title="" data-original-title="Align Right (Ctrl/Cmd+R)"><i class="icon-align-right"></i></a>
+            <a class="btn btn-default" data-edit="justifyfull" title="" data-original-title="Justify (Ctrl/Cmd+J)"><i class="icon-align-justify"></i></a>
+          </div>
+          <div class="btn-group">
+              <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" title="" data-original-title="Hyperlink"><i class="icon-link"></i></a>
+                <div class="dropdown-menu input-append">
+                    <input class="span2" placeholder="URL" type="text" data-edit="createLink">
+                    <button class="btn btn-default" type="button">Add</button>
+            </div>
+            <a class="btn btn-default" data-edit="unlink" title="" data-original-title="Remove Hyperlink"><i class="icon-cut"></i></a>
+
+          </div>
+          
+          <div class="btn-group">
+            <a class="btn btn-default" title="" id="pictureBtn" data-original-title="Insert picture (or just drag &amp; drop)"><i class="icon-picture"></i></a>
+            <input type="file" data-role="magic-overlay" data-target="#pictureBtn" data-edit="insertImage" style="opacity: 0; position: absolute; top: 0px; left: 0px; width: 37px; height: 30px;">
+          </div>
+          <div class="btn-group">
+            <a class="btn btn-default" data-edit="undo" title="" data-original-title="Undo (Ctrl/Cmd+Z)"><i class="icon-undo"></i></a>
+            <a class="btn btn-default" data-edit="redo" title="" data-original-title="Redo (Ctrl/Cmd+Y)"><i class="icon-repeat"></i></a>
+          </div>
+          <input type="text" data-edit="inserttext" id="voiceBtn" x-webkit-speech="" style="display: none;">
+          <button id="save" class="btn btn-primary pull-right">保存修改</button>
+          <button id="new" class="btn btn-success pull-right">新增设备信息</button>
+        </div>
+        <div id="editor" style="overflow:scroll;height:400px;border: solid 2px #8188AC;margin:10px 0;"></div>
+        <table id="showTable" class="table table-bordered table-hover" style="cursor:pointer;">
+            <tr>
+                <th>序号</th>
+                <th>名称</th>
+                <th>型号</th>
+                <th>单价</th>
+                <th>数量</th>
+                <th>厂家</th>
+                <th>购买时间</th>
+                <th>操作</th>
+            </tr>
+        </table>
+    </div>
+
+</div>
+    
+
+
+
+
+    <div class="foot-bar" style="text-align:center;padding:100px 0;">
+            <h5>版权所有@2014 湖南科技大学虚拟仿真实验教学中心</h5>
+            <p><a href="http://www.vgee.cn" title="访问我的主页" target="_blank">Powered by JailBreak</a></p>
+    </div>
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.ui.widget.js"></script>
+    <script type="text/javascript" src="js/jquery.iframe-transport.js"></script>
+    <script type="text/javascript" src="js/jquery.fileupload.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery.hotkeys.js"></script>
+    <script type="text/javascript" src="js/bootstrap-wysiwyg.js"></script>
+    <script type="text/javascript" src="js/htmlshiv.js"></script>
+    <script type="text/javascript" src="js/transfer.js" ></script>
+    <script type="text/javascript" src="js/admin.js"></script>    
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>湖南科技大学虚拟仿真实验室后台管理中心</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+    <link href="css/fonts/font-awesome.css" rel="stylesheet">
+    <style>
+    .foot-bar{
+      color: #1B5E9B;
+      background: #CFE5F8;
+      margin-top: 50px;
+    }
+    </style>
+<body>
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="admin.php">HNUST</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a href="admin.php?page=adminCenter">实验中心介绍</a></li>
+            <li><a href="admin.php?page=adminResource">中心虚拟资源</a></li>
+            <li><a href="admin.php?page=adminDevice">仪器设备</a></li>
+            <li><a href="admin.php?page=adminTeacher">机构成员</a></li>
+            <li><a href="admin.php?page=adminRule">管理制度</a></li>
+            <li><a href="admin.php?page=adminNews">中心动态</a></li>
+            <li><a href="admin.php?page=adminMessage">通知公告</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">预设值管理 <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="admin.php?page=adminTitle">职称|学位</a></li>
+                <li><a href="admin.php?page=adminMajor">专业</a></li>
+              </ul>
+            </li>
+            <li class=""><a href="admin.php">管理员管理</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>湖南科技大学虚拟仿真实验室后台管理中心</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+</head>
+<body style="background:">
+    <div class="container">
+        <form class="form" action="admin.php" method="post">
+            <table style="width:400px;margin:250px auto" class="table">
+                <tr>
+                    <td>用户名</td>
+                    <td>密码</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="admin_name"></td>
+                    <td><input type="password" name="admin_pw"></td>
+                    <td><button type="submit" class="btn btn-primary">GO</button>
+                </tr>
+            </table>
+        </form>
+    </div>
+    
+</body>
+</html>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <table id="vlab_major" class="table table-bordered">
+                <tr>
+                    <th>序号</th>
+                    <th>专业</th>
+                    <th>操作</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input id="major" type="text" class="form-control"></td>
+                    <td><button class="new-major btn btn-primary">添加</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<?php 
+    $query = 'select * from vlab_admin where level >= 1';
+    $result = $pdo -> prepare($query);
+    $result -> bindParam(1,$user_name);
+    $result -> bindParam(2,$password);
+    if(!$result -> execute()) {
+        echo '查询错误！';
+        exit();
+    }
+    $all_admin = $result -> fetchAll();
+    //print_r($all_admin);
+?>
+<div class="container">
+    <h2>管理员管理</h2>
+    <hr>
+    <table class="table table-bordered table-hover">
+        <tr>
+            <th>用户名</th>
+            <th>密码</th>
+            <th>手机号</th>
+            <th>邮箱</th>
+            <th>权限</th>
+            <th>姓名</th>
+        </tr>
+        <?php 
+       
+            foreach($all_admin as $admin){
+                echo'<tr>'.
+                      '<td style="width:55px">'.$admin['user_name'].'</td>'.
+                      '<td>'.'</td>'.
+                      '<td>'.$admin['phone'].'</td>'.
+                      '<td>'.$admin['mail'].'</td>'.
+                      '<td>'.$admin['level'].'</td>'.
+                      '<td>'.$admin['name'].'</td>'.
+                    '</tr>';
+            }
+            /*echo'<tr>'.
+                      '<td><input name="user_name" type="text" value=""></td>'.
+                      '<td><input name="pw" type="text"></td>'.
+                      '<td><input name="phone" type="text" value=""></td>'.
+                      '<td><input name="mail" type="text" value=""></td>'.
+                      '<td> <select name="authority">
+                                <option value="1">超级管理员</option>
+                                <option value="2">普通管理员</option>
+                                <option value="3">录入员</option>
+                            </select></td>'.
+                      '<td><input name="name" type="text"></td>'.
+                      '<td><a>新增</a></td>'.
+                    '</tr>';
+            */
+        ?>
+    </table>
+</div>
+<div class="container">
+    <h2>公告</h2>
+    <hr>
+    <div class="alert alert-info" style="overflow:auto">
+      <p class="pull-right">上次保存时间：<input disabled="disabled" id="addTime" type="text">  
+      本次保存时间：<input id="nowTime" type="text"></p>
+    </div>
+    <p><input id="title" placeholder="标题" type="text" class="form-control"></p>
+    <div class="btn-toolbar" data-role="editor-toolbar" data-target="#editor">
+      <div class="btn-group">
+        <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" title="" data-original-title="Font"><i class="icon-font"></i><b class="caret"></b></a>
+          <ul class="dropdown-menu">
+          <li><a data-edit="fontName Serif" style="font-family:'Serif'">Serif</a></li><li><a data-edit="fontName Sans" style="font-family:'Sans'">Sans</a></li><li><a data-edit="fontName Arial" style="font-family:'Arial'">Arial</a></li><li><a data-edit="fontName Arial Black" style="font-family:'Arial Black'">Arial Black</a></li><li><a data-edit="fontName Courier" style="font-family:'Courier'">Courier</a></li><li><a data-edit="fontName Courier New" style="font-family:'Courier New'">Courier New</a></li><li><a data-edit="fontName Comic Sans MS" style="font-family:'Comic Sans MS'">Comic Sans MS</a></li><li><a data-edit="fontName Helvetica" style="font-family:'Helvetica'">Helvetica</a></li><li><a data-edit="fontName Impact" style="font-family:'Impact'">Impact</a></li><li><a data-edit="fontName Lucida Grande" style="font-family:'Lucida Grande'">Lucida Grande</a></li><li><a data-edit="fontName Lucida Sans" style="font-family:'Lucida Sans'">Lucida Sans</a></li><li><a data-edit="fontName Tahoma" style="font-family:'Tahoma'">Tahoma</a></li><li><a data-edit="fontName Times" style="font-family:'Times'">Times</a></li><li><a data-edit="fontName Times New Roman" style="font-family:'Times New Roman'">Times New Roman</a></li><li><a data-edit="fontName Verdana" style="font-family:'Verdana'">Verdana</a></li></ul>
+        </div>
+      <div class="btn-group">
+        <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" title="" data-original-title="Font Size"><i class="icon-text-height"></i>&nbsp;<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+          <li><a data-edit="fontSize 5"><font size="5">Huge</font></a></li>
+          <li><a data-edit="fontSize 3"><font size="3">Normal</font></a></li>
+          <li><a data-edit="fontSize 1"><font size="1">Small</font></a></li>
+          </ul>
+      </div>
+      <div class="btn-group">
+        <a class="btn btn-default" data-edit="bold" title="" data-original-title="Bold (Ctrl/Cmd+B)"><i class="icon-bold"></i></a>
+        <a class="btn btn-default" data-edit="italic" title="" data-original-title="Italic (Ctrl/Cmd+I)"><i class="icon-italic"></i></a>
+        <a class="btn btn-default" data-edit="strikethrough" title="" data-original-title="Strikethrough"><i class="icon-strikethrough"></i></a>
+        <a class="btn btn-default" data-edit="underline" title="" data-original-title="Underline (Ctrl/Cmd+U)"><i class="icon-underline"></i></a>
+      </div>
+      <div class="btn-group">
+        <a class="btn btn-default" data-edit="insertunorderedlist" title="" data-original-title="Bullet list"><i class="icon-list-ul"></i></a>
+        <a class="btn btn-default" data-edit="insertorderedlist" title="" data-original-title="Number list"><i class="icon-list-ol"></i></a>
+        <a class="btn btn-default" data-edit="outdent" title="" data-original-title="Reduce indent (Shift+Tab)"><i class="icon-indent-left"></i></a>
+        <a class="btn btn-default" data-edit="indent" title="" data-original-title="Indent (Tab)"><i class="icon-indent-right"></i></a>
+      </div>
+      <div class="btn-group">
+        <a class="btn btn-info" data-edit="justifyleft" title="" data-original-title="Align Left (Ctrl/Cmd+L)"><i class="icon-align-left"></i></a>
+        <a class="btn btn-default" data-edit="justifycenter" title="" data-original-title="Center (Ctrl/Cmd+E)"><i class="icon-align-center"></i></a>
+        <a class="btn btn-default" data-edit="justifyright" title="" data-original-title="Align Right (Ctrl/Cmd+R)"><i class="icon-align-right"></i></a>
+        <a class="btn btn-default" data-edit="justifyfull" title="" data-original-title="Justify (Ctrl/Cmd+J)"><i class="icon-align-justify"></i></a>
+      </div>
+      <div class="btn-group">
+          <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" title="" data-original-title="Hyperlink"><i class="icon-link"></i></a>
+            <div class="dropdown-menu input-append">
+                <input class="span2" placeholder="URL" type="text" data-edit="createLink">
+                <button class="btn btn-default" type="button">Add</button>
+        </div>
+        <a class="btn btn-default" data-edit="unlink" title="" data-original-title="Remove Hyperlink"><i class="icon-cut"></i></a>
+
+      </div>
+      
+      <div class="btn-group">
+        <a class="btn btn-default" title="" id="pictureBtn" data-original-title="Insert picture (or just drag &amp; drop)"><i class="icon-picture"></i></a>
+        <input type="file" data-role="magic-overlay" data-target="#pictureBtn" data-edit="insertImage" style="opacity: 0; position: absolute; top: 0px; left: 0px; width: 37px; height: 30px;">
+      </div>
+      <div class="btn-group">
+        <a class="btn btn-default" data-edit="undo" title="" data-original-title="Undo (Ctrl/Cmd+Z)"><i class="icon-undo"></i></a>
+        <a class="btn btn-default" data-edit="redo" title="" data-original-title="Redo (Ctrl/Cmd+Y)"><i class="icon-repeat"></i></a>
+      </div>
+      <input type="text" data-edit="inserttext" id="voiceBtn" x-webkit-speech="" style="display: none;">
+      <button id="save" class="btn btn-primary pull-right">保存修改</button>
+      <button id="new" class="btn btn-success pull-right">新增公告</button>
+    </div>
+    <div id="editor" style="overflow:scroll;height:400px;border: solid 2px #8188AC;margin:10px 0;"></div>
+    <table class="table table-hover table-bordered">
+        <tr>
+          <th>序号</th>
+          <th>标题</th>
+          <th>日期</th>
+          <th>文章</th>
+          <th>操作</th>
+        </tr>
+    </table>
+</div>
+<div class="container">
+    <h2>中心动态</h2>
+    <hr>
+    <div class="alert alert-info" style="overflow:auto">
+      <p class="pull-right">上次保存时间：<input disabled="disabled" id="addTime" type="text">  
+      本次保存时间：<input id="nowTime" type="text"></p>
+    </div>
+    <p><input id="title" placeholder="标题" type="text" class="form-control"></p>
+    <div class="btn-toolbar" data-role="editor-toolbar" data-target="#editor">
+      <div class="btn-group">
+        <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" title="" data-original-title="Font"><i class="icon-font"></i><b class="caret"></b></a>
+          <ul class="dropdown-menu">
+          <li><a data-edit="fontName Serif" style="font-family:'Serif'">Serif</a></li><li><a data-edit="fontName Sans" style="font-family:'Sans'">Sans</a></li><li><a data-edit="fontName Arial" style="font-family:'Arial'">Arial</a></li><li><a data-edit="fontName Arial Black" style="font-family:'Arial Black'">Arial Black</a></li><li><a data-edit="fontName Courier" style="font-family:'Courier'">Courier</a></li><li><a data-edit="fontName Courier New" style="font-family:'Courier New'">Courier New</a></li><li><a data-edit="fontName Comic Sans MS" style="font-family:'Comic Sans MS'">Comic Sans MS</a></li><li><a data-edit="fontName Helvetica" style="font-family:'Helvetica'">Helvetica</a></li><li><a data-edit="fontName Impact" style="font-family:'Impact'">Impact</a></li><li><a data-edit="fontName Lucida Grande" style="font-family:'Lucida Grande'">Lucida Grande</a></li><li><a data-edit="fontName Lucida Sans" style="font-family:'Lucida Sans'">Lucida Sans</a></li><li><a data-edit="fontName Tahoma" style="font-family:'Tahoma'">Tahoma</a></li><li><a data-edit="fontName Times" style="font-family:'Times'">Times</a></li><li><a data-edit="fontName Times New Roman" style="font-family:'Times New Roman'">Times New Roman</a></li><li><a data-edit="fontName Verdana" style="font-family:'Verdana'">Verdana</a></li></ul>
+        </div>
+      <div class="btn-group">
+        <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" title="" data-original-title="Font Size"><i class="icon-text-height"></i>&nbsp;<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+          <li><a data-edit="fontSize 5"><font size="5">Huge</font></a></li>
+          <li><a data-edit="fontSize 3"><font size="3">Normal</font></a></li>
+          <li><a data-edit="fontSize 1"><font size="1">Small</font></a></li>
+          </ul>
+      </div>
+      <div class="btn-group">
+        <a class="btn btn-default" data-edit="bold" title="" data-original-title="Bold (Ctrl/Cmd+B)"><i class="icon-bold"></i></a>
+        <a class="btn btn-default" data-edit="italic" title="" data-original-title="Italic (Ctrl/Cmd+I)"><i class="icon-italic"></i></a>
+        <a class="btn btn-default" data-edit="strikethrough" title="" data-original-title="Strikethrough"><i class="icon-strikethrough"></i></a>
+        <a class="btn btn-default" data-edit="underline" title="" data-original-title="Underline (Ctrl/Cmd+U)"><i class="icon-underline"></i></a>
+      </div>
+      <div class="btn-group">
+        <a class="btn btn-default" data-edit="insertunorderedlist" title="" data-original-title="Bullet list"><i class="icon-list-ul"></i></a>
+        <a class="btn btn-default" data-edit="insertorderedlist" title="" data-original-title="Number list"><i class="icon-list-ol"></i></a>
+        <a class="btn btn-default" data-edit="outdent" title="" data-original-title="Reduce indent (Shift+Tab)"><i class="icon-indent-left"></i></a>
+        <a class="btn btn-default" data-edit="indent" title="" data-original-title="Indent (Tab)"><i class="icon-indent-right"></i></a>
+      </div>
+      <div class="btn-group">
+        <a class="btn btn-info" data-edit="justifyleft" title="" data-original-title="Align Left (Ctrl/Cmd+L)"><i class="icon-align-left"></i></a>
+        <a class="btn btn-default" data-edit="justifycenter" title="" data-original-title="Center (Ctrl/Cmd+E)"><i class="icon-align-center"></i></a>
+        <a class="btn btn-default" data-edit="justifyright" title="" data-original-title="Align Right (Ctrl/Cmd+R)"><i class="icon-align-right"></i></a>
+        <a class="btn btn-default" data-edit="justifyfull" title="" data-original-title="Justify (Ctrl/Cmd+J)"><i class="icon-align-justify"></i></a>
+      </div>
+      <div class="btn-group">
+          <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" title="" data-original-title="Hyperlink"><i class="icon-link"></i></a>
+            <div class="dropdown-menu input-append">
+                <input class="span2" placeholder="URL" type="text" data-edit="createLink">
+                <button class="btn btn-default" type="button">Add</button>
+        </div>
+        <a class="btn btn-default" data-edit="unlink" title="" data-original-title="Remove Hyperlink"><i class="icon-cut"></i></a>
+
+      </div>
+      
+      <div class="btn-group">
+        <a class="btn btn-default" title="" id="pictureBtn" data-original-title="Insert picture (or just drag &amp; drop)"><i class="icon-picture"></i></a>
+        <input type="file" data-role="magic-overlay" data-target="#pictureBtn" data-edit="insertImage" style="opacity: 0; position: absolute; top: 0px; left: 0px; width: 37px; height: 30px;">
+      </div>
+      <div class="btn-group">
+        <a class="btn btn-default" data-edit="undo" title="" data-original-title="Undo (Ctrl/Cmd+Z)"><i class="icon-undo"></i></a>
+        <a class="btn btn-default" data-edit="redo" title="" data-original-title="Redo (Ctrl/Cmd+Y)"><i class="icon-repeat"></i></a>
+      </div>
+      <input type="text" data-edit="inserttext" id="voiceBtn" x-webkit-speech="" style="display: none;">
+      <button id="save" class="btn btn-primary pull-right">保存修改</button>
+      <button id="new" class="btn btn-success pull-right">新增公告</button>
+    </div>
+    <div id="editor" style="overflow:scroll;height:400px;border: solid 2px #8188AC;margin:10px 0;"></div>
+    <table class="table table-hover table-bordered">
+        <tr>
+          <th>序号</th>
+          <th>标题</th>
+          <th>日期</th>
+          <th>文章</th>
+          <th>操作</th>
+        </tr>
+    </table>
+</div>
+<div class="container">
+    <h2>中心虚拟资源介绍</h2>
+    <hr>
+    <h3>首页展示缩略图</h3>
+    <p>建议上传图片大小200*140px</p>
+    
+    <center><img id="img" src="images/vlab_resource/default.jpg"></center>
+    <input id="centerPic" class="btn btn-sm btn-primary" type="file" name='files'>
+    <hr>
+    <div class="alert alert-info" style="overflow:auto">
+      <p class="pull-right">上次保存时间：<input disabled="disabled" id="addTime" type="text">  
+      本次保存时间：<input id="nowTime" type="text"></p>
+    </div>
+    <p><input id="title" placeholder="标题" type="text" class="form-control"></p>
+    <div class="btn-toolbar" data-role="editor-toolbar" data-target="#editor">
+      <div class="btn-group">
+        <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" title="" data-original-title="Font"><i class="icon-font"></i><b class="caret"></b></a>
+          <ul class="dropdown-menu">
+          <li><a data-edit="fontName Serif" style="font-family:'Serif'">Serif</a></li><li><a data-edit="fontName Sans" style="font-family:'Sans'">Sans</a></li><li><a data-edit="fontName Arial" style="font-family:'Arial'">Arial</a></li><li><a data-edit="fontName Arial Black" style="font-family:'Arial Black'">Arial Black</a></li><li><a data-edit="fontName Courier" style="font-family:'Courier'">Courier</a></li><li><a data-edit="fontName Courier New" style="font-family:'Courier New'">Courier New</a></li><li><a data-edit="fontName Comic Sans MS" style="font-family:'Comic Sans MS'">Comic Sans MS</a></li><li><a data-edit="fontName Helvetica" style="font-family:'Helvetica'">Helvetica</a></li><li><a data-edit="fontName Impact" style="font-family:'Impact'">Impact</a></li><li><a data-edit="fontName Lucida Grande" style="font-family:'Lucida Grande'">Lucida Grande</a></li><li><a data-edit="fontName Lucida Sans" style="font-family:'Lucida Sans'">Lucida Sans</a></li><li><a data-edit="fontName Tahoma" style="font-family:'Tahoma'">Tahoma</a></li><li><a data-edit="fontName Times" style="font-family:'Times'">Times</a></li><li><a data-edit="fontName Times New Roman" style="font-family:'Times New Roman'">Times New Roman</a></li><li><a data-edit="fontName Verdana" style="font-family:'Verdana'">Verdana</a></li></ul>
+        </div>
+      <div class="btn-group">
+        <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" title="" data-original-title="Font Size"><i class="icon-text-height"></i>&nbsp;<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+          <li><a data-edit="fontSize 5"><font size="5">Huge</font></a></li>
+          <li><a data-edit="fontSize 3"><font size="3">Normal</font></a></li>
+          <li><a data-edit="fontSize 1"><font size="1">Small</font></a></li>
+          </ul>
+      </div>
+      <div class="btn-group">
+        <a class="btn btn-default" data-edit="bold" title="" data-original-title="Bold (Ctrl/Cmd+B)"><i class="icon-bold"></i></a>
+        <a class="btn btn-default" data-edit="italic" title="" data-original-title="Italic (Ctrl/Cmd+I)"><i class="icon-italic"></i></a>
+        <a class="btn btn-default" data-edit="strikethrough" title="" data-original-title="Strikethrough"><i class="icon-strikethrough"></i></a>
+        <a class="btn btn-default" data-edit="underline" title="" data-original-title="Underline (Ctrl/Cmd+U)"><i class="icon-underline"></i></a>
+      </div>
+      <div class="btn-group">
+        <a class="btn btn-default" data-edit="insertunorderedlist" title="" data-original-title="Bullet list"><i class="icon-list-ul"></i></a>
+        <a class="btn btn-default" data-edit="insertorderedlist" title="" data-original-title="Number list"><i class="icon-list-ol"></i></a>
+        <a class="btn btn-default" data-edit="outdent" title="" data-original-title="Reduce indent (Shift+Tab)"><i class="icon-indent-left"></i></a>
+        <a class="btn btn-default" data-edit="indent" title="" data-original-title="Indent (Tab)"><i class="icon-indent-right"></i></a>
+      </div>
+      <div class="btn-group">
+        <a class="btn btn-info" data-edit="justifyleft" title="" data-original-title="Align Left (Ctrl/Cmd+L)"><i class="icon-align-left"></i></a>
+        <a class="btn btn-default" data-edit="justifycenter" title="" data-original-title="Center (Ctrl/Cmd+E)"><i class="icon-align-center"></i></a>
+        <a class="btn btn-default" data-edit="justifyright" title="" data-original-title="Align Right (Ctrl/Cmd+R)"><i class="icon-align-right"></i></a>
+        <a class="btn btn-default" data-edit="justifyfull" title="" data-original-title="Justify (Ctrl/Cmd+J)"><i class="icon-align-justify"></i></a>
+      </div>
+      <div class="btn-group">
+          <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" title="" data-original-title="Hyperlink"><i class="icon-link"></i></a>
+            <div class="dropdown-menu input-append">
+                <input class="span2" placeholder="URL" type="text" data-edit="createLink">
+                <button class="btn btn-default" type="button">Add</button>
+        </div>
+        <a class="btn btn-default" data-edit="unlink" title="" data-original-title="Remove Hyperlink"><i class="icon-cut"></i></a>
+
+      </div>
+      
+      <div class="btn-group">
+        <a class="btn btn-default" title="" id="pictureBtn" data-original-title="Insert picture (or just drag &amp; drop)"><i class="icon-picture"></i></a>
+        <input type="file" data-role="magic-overlay" data-target="#pictureBtn" data-edit="insertImage" style="opacity: 0; position: absolute; top: 0px; left: 0px; width: 37px; height: 30px;">
+      </div>
+      <div class="btn-group">
+        <a class="btn btn-default" data-edit="undo" title="" data-original-title="Undo (Ctrl/Cmd+Z)"><i class="icon-undo"></i></a>
+        <a class="btn btn-default" data-edit="redo" title="" data-original-title="Redo (Ctrl/Cmd+Y)"><i class="icon-repeat"></i></a>
+      </div>
+      <input type="text" data-edit="inserttext" id="voiceBtn" x-webkit-speech="" style="display: none;">
+      <button id="save" class="btn btn-primary pull-right">保存修改</button>
+      <button id="new" class="btn btn-success pull-right">新增文章</button>
+    </div>
+    <div id="editor" style="overflow:scroll;height:400px;border: solid 2px #8188AC;margin:10px 0;"></div>
+    <table class="table table-hover table-bordered">
+        <tr>
+          <th>序号</th>
+          <th>标题</th>
+          <th>日期</th>
+          <th>文章</th>
+          <th>操作</th>
+        </tr>
+    </table>
+</div>
+<div class="container">
+    <h2>规章制度</h2>
+    <hr>
+    <div class="alert alert-info" style="overflow:auto">
+      <p class="pull-right">上次保存时间：<input disabled="disabled" id="addTime" type="text">  
+      本次保存时间：<input id="nowTime" type="text"></p>
+    </div>
+    <p><input id="title" placeholder="标题" type="text" class="form-control"></p>
+    <div class="btn-toolbar" data-role="editor-toolbar" data-target="#editor">
+      <div class="btn-group">
+        <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" title="" data-original-title="Font"><i class="icon-font"></i><b class="caret"></b></a>
+          <ul class="dropdown-menu">
+          <li><a data-edit="fontName Serif" style="font-family:'Serif'">Serif</a></li><li><a data-edit="fontName Sans" style="font-family:'Sans'">Sans</a></li><li><a data-edit="fontName Arial" style="font-family:'Arial'">Arial</a></li><li><a data-edit="fontName Arial Black" style="font-family:'Arial Black'">Arial Black</a></li><li><a data-edit="fontName Courier" style="font-family:'Courier'">Courier</a></li><li><a data-edit="fontName Courier New" style="font-family:'Courier New'">Courier New</a></li><li><a data-edit="fontName Comic Sans MS" style="font-family:'Comic Sans MS'">Comic Sans MS</a></li><li><a data-edit="fontName Helvetica" style="font-family:'Helvetica'">Helvetica</a></li><li><a data-edit="fontName Impact" style="font-family:'Impact'">Impact</a></li><li><a data-edit="fontName Lucida Grande" style="font-family:'Lucida Grande'">Lucida Grande</a></li><li><a data-edit="fontName Lucida Sans" style="font-family:'Lucida Sans'">Lucida Sans</a></li><li><a data-edit="fontName Tahoma" style="font-family:'Tahoma'">Tahoma</a></li><li><a data-edit="fontName Times" style="font-family:'Times'">Times</a></li><li><a data-edit="fontName Times New Roman" style="font-family:'Times New Roman'">Times New Roman</a></li><li><a data-edit="fontName Verdana" style="font-family:'Verdana'">Verdana</a></li></ul>
+        </div>
+      <div class="btn-group">
+        <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" title="" data-original-title="Font Size"><i class="icon-text-height"></i>&nbsp;<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+          <li><a data-edit="fontSize 5"><font size="5">Huge</font></a></li>
+          <li><a data-edit="fontSize 3"><font size="3">Normal</font></a></li>
+          <li><a data-edit="fontSize 1"><font size="1">Small</font></a></li>
+          </ul>
+      </div>
+      <div class="btn-group">
+        <a class="btn btn-default" data-edit="bold" title="" data-original-title="Bold (Ctrl/Cmd+B)"><i class="icon-bold"></i></a>
+        <a class="btn btn-default" data-edit="italic" title="" data-original-title="Italic (Ctrl/Cmd+I)"><i class="icon-italic"></i></a>
+        <a class="btn btn-default" data-edit="strikethrough" title="" data-original-title="Strikethrough"><i class="icon-strikethrough"></i></a>
+        <a class="btn btn-default" data-edit="underline" title="" data-original-title="Underline (Ctrl/Cmd+U)"><i class="icon-underline"></i></a>
+      </div>
+      <div class="btn-group">
+        <a class="btn btn-default" data-edit="insertunorderedlist" title="" data-original-title="Bullet list"><i class="icon-list-ul"></i></a>
+        <a class="btn btn-default" data-edit="insertorderedlist" title="" data-original-title="Number list"><i class="icon-list-ol"></i></a>
+        <a class="btn btn-default" data-edit="outdent" title="" data-original-title="Reduce indent (Shift+Tab)"><i class="icon-indent-left"></i></a>
+        <a class="btn btn-default" data-edit="indent" title="" data-original-title="Indent (Tab)"><i class="icon-indent-right"></i></a>
+      </div>
+      <div class="btn-group">
+        <a class="btn btn-info" data-edit="justifyleft" title="" data-original-title="Align Left (Ctrl/Cmd+L)"><i class="icon-align-left"></i></a>
+        <a class="btn btn-default" data-edit="justifycenter" title="" data-original-title="Center (Ctrl/Cmd+E)"><i class="icon-align-center"></i></a>
+        <a class="btn btn-default" data-edit="justifyright" title="" data-original-title="Align Right (Ctrl/Cmd+R)"><i class="icon-align-right"></i></a>
+        <a class="btn btn-default" data-edit="justifyfull" title="" data-original-title="Justify (Ctrl/Cmd+J)"><i class="icon-align-justify"></i></a>
+      </div>
+      <div class="btn-group">
+          <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" title="" data-original-title="Hyperlink"><i class="icon-link"></i></a>
+            <div class="dropdown-menu input-append">
+                <input class="span2" placeholder="URL" type="text" data-edit="createLink">
+                <button class="btn btn-default" type="button">Add</button>
+        </div>
+        <a class="btn btn-default" data-edit="unlink" title="" data-original-title="Remove Hyperlink"><i class="icon-cut"></i></a>
+
+      </div>
+      
+      <div class="btn-group">
+        <a class="btn btn-default" title="" id="pictureBtn" data-original-title="Insert picture (or just drag &amp; drop)"><i class="icon-picture"></i></a>
+        <input type="file" data-role="magic-overlay" data-target="#pictureBtn" data-edit="insertImage" style="opacity: 0; position: absolute; top: 0px; left: 0px; width: 37px; height: 30px;">
+      </div>
+      <div class="btn-group">
+        <a class="btn btn-default" data-edit="undo" title="" data-original-title="Undo (Ctrl/Cmd+Z)"><i class="icon-undo"></i></a>
+        <a class="btn btn-default" data-edit="redo" title="" data-original-title="Redo (Ctrl/Cmd+Y)"><i class="icon-repeat"></i></a>
+      </div>
+      <input type="text" data-edit="inserttext" id="voiceBtn" x-webkit-speech="" style="display: none;">
+      <button id="save" class="btn btn-primary pull-right">保存修改</button>
+      <button id="new" class="btn btn-success pull-right">新增规章</button>
+    </div>
+    <div id="editor" style="overflow:scroll;height:400px;border: solid 2px #8188AC;margin:10px 0;"></div>
+    <table class="table table-hover table-bordered">
+        <tr>
+          <th>序号</th>
+          <th>标题</th>
+          <th>日期</th>
+          <th>文章</th>
+          <th>操作</th>
+        </tr>
+    </table>
+</div>
+<?php 
+include('connDB.php');
+    $needed = array('vlab_major' => array('id', 'major'),
+                    'vlab_title' => array('id', 'title'),
+                    'vlab_degree' => array('id', 'degree')
+                     );
+    $res = array();$query = array();
+    foreach ($needed as $k => $subArr) {
+        $query[$k] = "SELECT ";
+        $length = count($subArr);$i = 1;
+        foreach ($subArr as $key => $field) {
+            if($i < $length)
+                $query[$k] .= $field . ', ';
+            else
+                $query[$k] .= $field . ' ';
+            $i++;
+        }
+        $query[$k] .= "FROM " . $k;
+        $res[$k] = $pdo -> prepare($query[$k]);
+        $res[$k] -> execute();
+        $res[$k] = $res[$k] -> fetchAll();
+    }
+?>
+<div class="container">
+<style>input {
+width: 100px;
+}</style>
+    <div class="container">
+        <h2>机构成员</h2>
+        <hr>
+        <table class="table table-bordered table-hover">
+            <tr>
+                <th>序号</th>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>年龄</th>
+                <th>手机</th>
+                <th>职称</th>
+                <th>学历学位</th>
+                <th>专业</th>
+                <th>加入时间</th>
+                <th>个人主页</th>
+                <th>操作</th>
+            </tr>
+            <tr id="editTr">
+                <td id="id"></td>
+                <td><input id="name" type="text"></td>
+                <td><input id="sex" type="text"></td>
+                <td><input id="age" type="text"></td>
+                <td><input id="phone" type="text"></td>
+                <td><select id="title">
+                      <?php 
+                      foreach ($res['vlab_title'] as $key => $value) {
+                        $value = $value['title'];
+                      echo "<option value='$value'>$value</option>";
+                      }
+                      ?>
+                  </select>
+                </td>
+                <td><select id="degree">
+                      <?php 
+                      foreach ($res['vlab_degree'] as $key => $value) {
+                        $value = $value['degree'];
+                      echo "<option value='$value'>$value</option>";
+                      }
+                      ?>
+                  </select>
+                </td>
+                <td><select id="major">
+                      <?php 
+                      foreach ($res['vlab_major'] as $key => $value) {
+                        $value = $value['major'];
+                      echo "<option value='$value'>$value</option>";
+                      }
+                      ?>
+                  </select>
+                </td>
+                <td><input id="add_time" type="text"></td>
+                <td><input id="web_page" type="text"></td>
+                <td><button class="btn btn-xs btn-primary">↓</button></td>
+            </tr>
+        </table>
+        <h3>成员简介：</h3>
+        <div class="btn-toolbar" data-role="editor-toolbar" data-target="#editor">
+          <div class="btn-group">
+            <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" title="" data-original-title="Font"><i class="icon-font"></i><b class="caret"></b></a>
+              <ul class="dropdown-menu">
+              <li><a data-edit="fontName Serif" style="font-family:'Serif'">Serif</a></li><li><a data-edit="fontName Sans" style="font-family:'Sans'">Sans</a></li><li><a data-edit="fontName Arial" style="font-family:'Arial'">Arial</a></li><li><a data-edit="fontName Arial Black" style="font-family:'Arial Black'">Arial Black</a></li><li><a data-edit="fontName Courier" style="font-family:'Courier'">Courier</a></li><li><a data-edit="fontName Courier New" style="font-family:'Courier New'">Courier New</a></li><li><a data-edit="fontName Comic Sans MS" style="font-family:'Comic Sans MS'">Comic Sans MS</a></li><li><a data-edit="fontName Helvetica" style="font-family:'Helvetica'">Helvetica</a></li><li><a data-edit="fontName Impact" style="font-family:'Impact'">Impact</a></li><li><a data-edit="fontName Lucida Grande" style="font-family:'Lucida Grande'">Lucida Grande</a></li><li><a data-edit="fontName Lucida Sans" style="font-family:'Lucida Sans'">Lucida Sans</a></li><li><a data-edit="fontName Tahoma" style="font-family:'Tahoma'">Tahoma</a></li><li><a data-edit="fontName Times" style="font-family:'Times'">Times</a></li><li><a data-edit="fontName Times New Roman" style="font-family:'Times New Roman'">Times New Roman</a></li><li><a data-edit="fontName Verdana" style="font-family:'Verdana'">Verdana</a></li></ul>
+            </div>
+          <div class="btn-group">
+            <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" title="" data-original-title="Font Size"><i class="icon-text-height"></i>&nbsp;<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+              <li><a data-edit="fontSize 5"><font size="5">Huge</font></a></li>
+              <li><a data-edit="fontSize 3"><font size="3">Normal</font></a></li>
+              <li><a data-edit="fontSize 1"><font size="1">Small</font></a></li>
+              </ul>
+          </div>
+          <div class="btn-group">
+            <a class="btn btn-default" data-edit="bold" title="" data-original-title="Bold (Ctrl/Cmd+B)"><i class="icon-bold"></i></a>
+            <a class="btn btn-default" data-edit="italic" title="" data-original-title="Italic (Ctrl/Cmd+I)"><i class="icon-italic"></i></a>
+            <a class="btn btn-default" data-edit="strikethrough" title="" data-original-title="Strikethrough"><i class="icon-strikethrough"></i></a>
+            <a class="btn btn-default" data-edit="underline" title="" data-original-title="Underline (Ctrl/Cmd+U)"><i class="icon-underline"></i></a>
+          </div>
+          <div class="btn-group">
+            <a class="btn btn-default" data-edit="insertunorderedlist" title="" data-original-title="Bullet list"><i class="icon-list-ul"></i></a>
+            <a class="btn btn-default" data-edit="insertorderedlist" title="" data-original-title="Number list"><i class="icon-list-ol"></i></a>
+            <a class="btn btn-default" data-edit="outdent" title="" data-original-title="Reduce indent (Shift+Tab)"><i class="icon-indent-left"></i></a>
+            <a class="btn btn-default" data-edit="indent" title="" data-original-title="Indent (Tab)"><i class="icon-indent-right"></i></a>
+          </div>
+          <div class="btn-group">
+            <a class="btn btn-info" data-edit="justifyleft" title="" data-original-title="Align Left (Ctrl/Cmd+L)"><i class="icon-align-left"></i></a>
+            <a class="btn btn-default" data-edit="justifycenter" title="" data-original-title="Center (Ctrl/Cmd+E)"><i class="icon-align-center"></i></a>
+            <a class="btn btn-default" data-edit="justifyright" title="" data-original-title="Align Right (Ctrl/Cmd+R)"><i class="icon-align-right"></i></a>
+            <a class="btn btn-default" data-edit="justifyfull" title="" data-original-title="Justify (Ctrl/Cmd+J)"><i class="icon-align-justify"></i></a>
+          </div>
+          <div class="btn-group">
+              <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" title="" data-original-title="Hyperlink"><i class="icon-link"></i></a>
+                <div class="dropdown-menu input-append">
+                    <input class="span2" placeholder="URL" type="text" data-edit="createLink">
+                    <button class="btn btn-default" type="button">Add</button>
+            </div>
+            <a class="btn btn-default" data-edit="unlink" title="" data-original-title="Remove Hyperlink"><i class="icon-cut"></i></a>
+
+          </div>
+          
+          <div class="btn-group">
+            <a class="btn btn-default" title="" id="pictureBtn" data-original-title="Insert picture (or just drag &amp; drop)"><i class="icon-picture"></i></a>
+            <input type="file" data-role="magic-overlay" data-target="#pictureBtn" data-edit="insertImage" style="opacity: 0; position: absolute; top: 0px; left: 0px; width: 37px; height: 30px;">
+          </div>
+          <div class="btn-group">
+            <a class="btn btn-default" data-edit="undo" title="" data-original-title="Undo (Ctrl/Cmd+Z)"><i class="icon-undo"></i></a>
+            <a class="btn btn-default" data-edit="redo" title="" data-original-title="Redo (Ctrl/Cmd+Y)"><i class="icon-repeat"></i></a>
+          </div>
+          <input type="text" data-edit="inserttext" id="voiceBtn" x-webkit-speech="" style="display: none;">
+          <button id="save" class="btn btn-primary pull-right">保存修改</button>
+          <button id="new" class="btn btn-success pull-right">新增成员</button>
+        </div>
+        <div id="editor" style="overflow:scroll;height:400px;border: solid 2px #8188AC;margin:10px 0;"></div>
+        <table id="showTable" class="table table-bordered table-hover" style="cursor:pointer;">
+            <tr>
+                <th>序号</th>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>年龄</th>
+                <th>手机</th>
+                <th>职称</th>
+                <th>专业</th>
+                <th>学历学位</th>
+                <th>加入时间</th>
+                <th>个人主页</th>
+                <th>操作</th>
+            </tr>
+            
+        </table>
+    </div>
+
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-6">
+            <table id="vlab_title" class="table table-bordered">
+                <tr>
+                    <th>序号</th>
+                    <th>职称</th>
+                    <th>操作</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input id="title" type="text" class="form-control"></td>
+                    <td><button class="new-title btn btn-primary">添加</button></td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-xs-6">
+            <table id="vlab_degree" class="table table-bordered">
+                <tr>
+                    <th>序号</th>
+                    <th>学位</th>
+                    <th>操作</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input id="degree" type="text" class="form-control"></td>
+                    <td><button class="new-degree btn btn-primary">添加</button></td>
+                </tr>
+                
+            </table>
+        </div>
+    </div>
+</div>
+    <hr>
+    <div id="link">
+    <div class="link1">
+      <div class="link2">友情链接</div>
+    </div>
+    <center class="link_cot"><a title="" href="http://www.hnust.edu.cn" target="_blank">湖南科技大学</a> | <a title="" href="http://power.hnust.cn:9080/" target="_blank">湖南科技大学能源与安全工程学院</a> | <a title="" href="http://computer.hnust.edu.cn/" target="_blank">湖南科技大学计算机科学与工程学院</a></center>
+  </div>
+  <div id="footer">
+     版权所有@2014 湖南科技大学虚拟仿真实验教学中心<br>
+     电话: 0731-58290478 Email: vlab@hnust.edu.cn
+  </div>
+
+
+<div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none;"></div></div></body></html>
+<?php
+if(isset($_SERVER['HTTP_APPNAME'])){//SAE会生成一个HTTP_APPNAME判断一下它的存在可以方便本地调试
+        //for sae
+        $dbms='mysql';
+        $dbName=SAE_MYSQL_DB;
+        $user= SAE_MYSQL_USER;
+        $pwd=SAE_MYSQL_PASS;
+        $host=SAE_MYSQL_HOST_M.':'. SAE_MYSQL_PORT;
+        $dsn="$dbms:host=$host;dbname=$dbName";
+        $pdo=new PDO($dsn,$user,$pwd);
+        $pdo->query("set names utf8");
+        date_default_timezone_set('PRC');
+    }else
+    {
+        //for local 
+        $dsn = 'mysql:dbname=vlab;host=localhost';
+        $user_name = 'root';
+        $user_psw = '';
+        $pdo = new PDO($dsn,$user_name,$user_psw);
+        $pdo->query("set names 'utf8'");
+        date_default_timezone_set('PRC');
+    }
+?>
+<?php 
+include('head.php');
+?>
+<div id="fr">
+      <div class="fr_title">
+        <div class="fr_je"></div>
+        <p><a href="index.php">首页</a><span> &gt; </span><a href="contact.php">联系方式</a> &gt;  正文</p>
+      </div>
+      <div class="fr3_cot">
+        <div class="walk_te">湖南科技大学虚拟仿真实验教学中心</div>
+        <div class="walk_cot">
+          <div style="LAYOUT-GRID:  15.6pt none" class="Section0">
+<center><h3>电话: 0731-58290478 Email: vlab@hnust.edu.cn</h3></center>
+          </div>
+      </div>
+    </div>
+</div>
+<?php include('bottom.php');?>
+<?php 
+    include('connDB.php');
+    $needed = array('vlab_device' => array('id', 'name', 'type', 'price', 'num', 'maker', 
+                    'buy_time'));
+
+    $res = array();$query = array();
+    foreach ($needed as $k => $subArr) {
+        $query[$k] = "SELECT ";
+        $length = count($subArr);$i = 1;
+        foreach ($subArr as $key => $field) {
+            if($i < $length)
+                $query[$k] .= $field . ', ';
+            else
+                $query[$k] .= $field . ' ';
+            $i++;
+        }
+        $query[$k] .= "FROM " . $k;
+        $res[$k] = $pdo -> prepare($query[$k]);
+        $res[$k] -> execute();
+        $res[$k] = $res[$k] -> fetchAll();
+    }
+include('head.php');
+?>
+<style>
+* {
+-moz-box-sizing: content-box;
+box-sizing: content-box;
+}
+td {
+font-size: 12px;
+}
+.table-bordered>thead>tr>th, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>tbody>tr>td, .table-bordered>tfoot>tr>td {
+border: 1px solid #DDD;
+}
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {
+padding: 8px;
+line-height: 1.42857143;
+vertical-align: top;
+border-top: 1px solid #DDD;
+}
+.table-condensed>thead>tr>th, .table-condensed>tbody>tr>th, .table-condensed>tfoot>tr>th, .table-condensed>thead>tr>td, .table-condensed>tbody>tr>td, .table-condensed>tfoot>tr>td {
+padding: 5px;
+}
+table {
+border-spacing: 0;
+border-collapse: collapse;
+}
+table {
+background-color: rgba(0, 0, 0, 0);
+}
+.table {
+width: 100%;
+max-width: 100%;
+margin-bottom: 20px;
+}
+.table-bordered {
+border: 1px solid #DDD;
+}</style>
+<div id="fr">
+      <div class="fr_title">
+        <div class="fr_je">仪器设备</div>
+        <p>您现在的位置：<a href="index.php">首页</a> &gt; <span><a href="device.php">仪器设备</a> &gt; </span></p>
+      </div>
+      <div class="fr3_cot">    
+      <?php 
+      $id = '';
+      if(isset($_GET['id']))
+        $id = $_GET['id'];
+      if($id == '2')
+        include('t2.html');
+      else if($id == '3')
+        include('t3.html');
+      else
+        include('t1.html');
+           ?>
+      <!--     
+        <table class="table table-bordered table-hover table-condensed">
+          <tr>
+            <th>名称</th>
+            <th>型号</th>
+            <th>数量</th>
+            <th>单价（元）</th>
+            <th>厂家</th>
+            <th>购置日期</th>
+            <th>详情</th>
+          </tr>
+        <?php /*
+              foreach ($res['vlab_device'] as $key => $value) {
+                  $id = $value['id']; $name = $value['name']; $type = $value['type'];
+                  $price = $value['price']; $num = $value['num']; $maker = $value['maker'];
+                  $buy_time = $value['buy_time'];
+                  echo "<tr>
+                          <td>$name</td>
+                          <td>$type</td>
+                          <td>$num</td>
+                          <td>$price</td>
+                          <td>$maker</td>
+                          <td>$buy_time</td>
+                          <td><a href='device.php?id=$id'>详情</a></td>
+                        </tr>";
+              }*/
+        ?>
+        </table>
+        !-->
+        <div class="fy">
+          <div id="pages" class="text-c">3条
+          <a href="device.php?id=1" class="a1">1</a> 
+          <a href="device.php?id=2" class="a1">2</a> 
+          <a href="device.php?id=3" class="a1">3</a> </div>
+        </div>
+     </div>
+     </div>
+</div>
+<?php include('bottom.php'); ?>
+<?php 
+include('connDB.php');
+
+$disc = "SELECT * FROM vlab_disc WHERE id IN (SELECT MAX(id) FROM vlab_disc )";
+$dres = $pdo -> prepare($disc);
+$dres -> execute();
+$res['vlab_disc'] =  $dres -> fetchAll();
+
+include('head.php');
+?>
+<div id="fr">
+      <div class="fr_title">
+        <div class="fr_je">中心简介</div>
+        <p><a href="index.php">首页</a><span> &gt; </span><a href="disc.php">中心简介</a> &gt;  正文</p>
+      </div>
+      <div class="fr3_cot">
+        <div class="walk_te">中心简介</div>
+        <div class="walk_cot">
+          <div style="LAYOUT-GRID:  15.6pt none" class="Section0">
+              <?php
+                echo $res['vlab_disc'][0]['content'];
+              ?>
+          </div>
+      </div>
+    </div>
+</div>
+<?php include('bottom.php');?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>湖南科技大学虚拟仿真实验室</title>
+<meta name="keywords" content="湖南科技大学虚拟仿真实验室">
+<meta name="description" content="湖南科技大学虚拟仿真实验室">
+<link href="css/xmmain.css" rel="stylesheet" type="text/css">
+<style type="text/css" adt="123"></style><style id="stylish-1" class="stylish" type="text/css">body {
+  font-family: 'Microsoft Yahei'!important;
+}</style>
+<style type="text/css">object,embed{                -webkit-animation-duration:.001s;-webkit-animation-name:playerInserted;                -ms-animation-duration:.001s;-ms-animation-name:playerInserted;                -o-animation-duration:.001s;-o-animation-name:playerInserted;                animation-duration:.001s;animation-name:playerInserted;}                @-webkit-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}                @-ms-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}                @-o-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}                @keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}</style><style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+.en-markup-crop-options {
+    top: 18px !important;
+    left: 50% !important;
+    margin-left: -100px !important;
+    width: 200px !important;
+    border: 2px rgba(255,255,255,.38) solid !important;
+    border-radius: 4px !important;
+}
+
+.en-markup-crop-options div div:first-of-type {
+    margin-left: 0px !important;
+}
+</style></head>
+
+<body>
+<div id="all"> <div id="top">
+  <div class="logo"> <img src="images/logo.jpg" alt="湖南科技大学虚拟仿真实验室"></div>
+  <div class="tell">
+    <p class="tell_t"> <span class="t1"><a href="">首页</a></span> <span class="t2"><a href="disc.php">关于我们</a></span> <span class="t3"><a href="contact.php">联系我们</a></span> </p>
+  </div>
+</div>
+<div id="navall">
+  <div class="nav1"></div>
+  <div id="nav">
+    <ul>
+      <li><a href="index.php" title="" id="menu1">网站首页</a></li>
+      <li><a href="disc.php" title="" id="menu2">实验中心概要</a></li>
+      <li><a href="resource.php" title="" id="">中心资源</a></li>
+      <li><a href="device.php" title="" id="menu5">仪器设备</a></li>
+      <li><a href="teacher.php" title="" id="menu3">机构与队伍</a></li>
+      <li><a href="rule.php" title="" id="menu4">管理制度</a></li>
+      <li><a href="news.php" title="" id="menu7">中心动态</a></li>
+      <li><a href="message.php" title="" id="menu8">通知公告</a></li>
+      <li style="background:none"><a href="contact.php" title="" id="menu10">联系我们</a></li>
+    </ul>
+  </div>
+  <div class="nav3"></div>
+</div>
+<div id="banner"> 
+  <script type="text/javascript" src="js/jquery.min.js"></script> 
+  <script type="text/javascript" src="js/jquery.SuperSlide.2.1.js"></script>
+  <script src="js/js.js" language="javascript"></script> 
+  <div class="focusBox" style="margin:0 auto">
+    <div class="tempWrap" style="overflow:hidden; position:relative; width:1000px">
+    <ul class="pic" style="width: 5000px; left: 2000px; position: relative; overflow: hidden; padding: 0px; margin: 0px;">
+      <?php
+      include('connDB.php');
+      $query = "SELECT * FROM `vlab_banner`";
+      $result = $pdo->prepare($query);
+      if($result->execute()){
+        $pic = $result->fetchAll();
+        $len = count($pic);
+        foreach ($pic as $key => $p) {
+          $id = $p['id']; $src = $p['pic'];
+          echo '<li style="float: left; width: 1000px;"><img src='.$src.'></li>';
+        }
+      }
+      ?>
+    </ul></div>
+    <a class="prev" href="javascript:void(0)"></a> <a class="next" href="javascript:void(0)"></a>
+    <ul class="hd">
+      <li class="on"></li>
+    <?php 
+    for($i = 1; $i < $len; $i++)
+        echo '<li class=""></li>';
+    ?>
+    </ul>
+  </div>
+    <script type="text/javascript">
+        jQuery(".focusBox").slide({ mainCell:".pic",effect:"left", autoPlay:true, delayTime:200});
+    </script>
+</div>
+<script src="js/jquery.colorbox-min.js"></script>
+<link rel="stylesheet" href="css/colorbox.css">
+        <script>
+            $(document).ready(function(){
+                //Examples of how to assign the Colorbox event to elements
+                $(".group1").colorbox({rel:'group1'});
+                $(".group2").colorbox({rel:'group2', transition:"fade"});
+                $(".group3").colorbox({rel:'group3', transition:"none", width:"75%", height:"75%"});
+                $(".group4").colorbox({rel:'group4', slideshow:true});
+                $(".ajax").colorbox();
+                $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390});
+                $(".vimeo").colorbox({iframe:true, innerWidth:500, innerHeight:409});
+                $(".iframe").colorbox({iframe:true, width:"700", height:"600"});
+                $(".inline").colorbox({inline:true, width:"50%"});
+                $(".callbacks").colorbox({
+                    onOpen:function(){ alert('onOpen: colorbox is about to open'); },
+                    onLoad:function(){ alert('onLoad: colorbox has started to load the targeted content'); },
+                    onComplete:function(){ alert('onComplete: colorbox has displayed the loaded content'); },
+                    onCleanup:function(){ alert('onCleanup: colorbox has begun the close process'); },
+                    onClosed:function(){ alert('onClosed: colorbox has completely closed'); }
+                });
+
+                $('.non-retina').colorbox({rel:'group5', transition:'none'})
+                $('.retina').colorbox({rel:'group5', transition:'none', retinaImage:true, retinaUrl:true});
+                
+                //Example of preserving a JavaScript event for inline calls.
+                $("#click").click(function(){ 
+                    $('#click').css({"background-color":"#f00", "color":"#fff", "cursor":"inherit"}).text("Open this window again and this message will still be here.");
+                    return false;
+                });
+            });
+        </script>  <div id="main"> <div id="fl">
+      <div class="pr">
+        <div class="pr_t">
+          <div class="pr_ti">虚拟仿真</div>
+        </div>
+        <div class="news_cont"> <a href="#" target="_blank"><img style="width:230px" src="images/login.jpg"></a>
+        <p style="text-align:center;font-size:16px;"><a href="#" target="_blank"><strong><font color="#FF0000">登录到虚拟仿真中心</font></strong></a></p> </div>
+      </div>
+      <div class="pr news">
+        <div class="pr_t">
+          <div class="pr_ti">学科资源</div>
+          <!--<p class="more"><a href="/html/course/">+更多</a></p>-->
+        </div>
+        <div class="pr_course">
+          <div class="sideMenu" style="margin:0 auto">
+            <h3 class="on"><em></em>学科文献</h3>
+            <ul style="display: block;">
+              <li class="sub"><a href="http://www.lcmining.cn/portal.php" target="_blank">西北矿业网</a></li>
+              <li class="sub"><a href="http://www.chnmining.com/forum.php" target="_blank">中国矿业论坛</a></li>
+              <li class="sub"><a href="http://www.coalstudy.com/" target="_blank">煤炭研究网</a></li>
+              <li class="sub"><a href="http://bbs.geokx.com/portal.php" target="_blank">地球科学网</a></li>
+              <li class="sub"><a href="http://www.kc81.com/" target="_blank">中国矿业贸易网</a></li>
+              <li class="sub"><a href="http://mining.kd.lib.hnlat.com/index.php?m=content&c=index&a=show&catid=608&id=4309&siteid=3" target="_blank">ESI收录工程学期刊</a></li>
+            </ul>
+          </div>
+          <div class="sideMenu" style="margin:0 auto">
+            <h3 class="on"><em></em>学科机构</h3>
+            <ul style="display: block;">
+              <li class="sub"><a href="http://imr.cags.ac.cn/" target="_blank">中国地质科学院矿产资源研..</a></li>
+              <li class="sub"><a href="http://www.gdkys.com/" target="_blank">广东省矿产应用研究所</a></li>
+              <li class="sub"><a href="http://www.cmgbr.com.cn/Page/82/default.aspx" target="_blank">中国冶金地质总局矿产资源研...</a></li>
+              <li class="sub"><a href="http://www.zjigm.com/" target="_blank">浙江省地质矿产研究所</a></li>
+              <li class="sub"><a href="http://www.sxgeotest.cn/" target="_blank">陕西省地质矿产实验研究所</a></li>
+              <li class="sub"><a href="http://www.imumr.cgs.gov.cn/" target="_blank">中国地质科学院矿产综合利用...</a></li>
+            </ul>
+          </div>
+          <!-- sideMenu End --> 
+          
+          <script type="text/javascript">
+            jQuery(".sideMenu").slide({
+                titCell:"h3", //鼠标触发对象
+                targetCell:"ul", //与titCell一一对应，第n个titCell控制第n个targetCell的显示隐藏
+                effect:"slideDown", //targetCell下拉效果
+                delayTime:500 , //效果时间
+                triggerTime:500, //鼠标延迟触发时间（默认150）
+                trigger:"click",
+                defaultPlay:true,//默认是否执行效果（默认true）
+                returnDefault:false //鼠标从.sideMen移走后返回默认状态（默认false）
+                });
+        </script> 
+        </div>
+      </div>
+      </div>
+      <?php
+    include('connDB.php');
+    $needed = array('vlab_device' => array('id', 'name'),
+                    'vlab_news' => array('id', 'title', 'add_time'),
+                    'vlab_message' => array('id', 'title', 'add_time'),
+                    'vlab_resource' => array('id', 'pic', 'title', 'add_time'),
+                     );
+    $res = array();$query = array();
+    foreach ($needed as $k => $subArr) {
+        $query[$k] = "SELECT ";
+        $length = count($subArr);$i = 1;
+        foreach ($subArr as $key => $field) {
+            if($i < $length)
+                $query[$k] .= $field . ', ';
+            else
+                $query[$k] .= $field . ' ';
+            $i++;
+        }
+        $query[$k] .= "FROM $k order by add_time desc";
+        $res[$k] = $pdo -> prepare($query[$k]);
+        $res[$k] -> execute();
+        $res[$k] = $res[$k] -> fetchAll();
+    }
+    $disc = "SELECT * FROM vlab_disc WHERE id IN (SELECT MAX(id) FROM vlab_disc )";
+    $dres = $pdo -> prepare($disc);
+    $dres -> execute();
+    $res['vlab_disc'] =  $dres -> fetchAll();
+    echo '<noscript>';
+    print_r($res['vlab_resource']);
+    echo '</noscript>';
+include("head.php"); ?>
+    <div id="fr">
+      <div class="gs">
+        <div class="gs_t">
+          <div class="gs_ti">中心简介</div>
+          <p class="more"><a href="disc.php">+更多</a></p>
+        </div>
+        <div class="gs_cot"> <img src="images/discpic.jpg" width="262" height="176">
+          <p style="TEXT-INDENT: 0em">
+          <?php $str = strip_tags($res['vlab_disc'][0]['content']);
+                echo mb_substr($str,0,260,'utf-8'); 
+          ?>
+            ...<a href="disc.php">详情</a></p>
+        </div>
+      </div>
+      <div class="js">
+        <div class="js_t">
+          <div class="js_ti">中心动态</div>
+          <p class="more"><a href="news.php">+更多</a></p>
+        </div>
+        <div class="js_cot">
+          <ul>
+            <?php 
+              foreach ($res['vlab_news'] as $key => $value) {
+                  $title = $value['title']; $id = $value['id'];
+                  echo "<li><a href='news.php?id=$id' title='$title'>$title</a></li>";
+              }
+            ?>
+          </ul>
+        </div>
+      </div>
+      <div class="js zz">
+        <div class="js_t">
+          <div class="js_ti">通知公告</div>
+          <p class="more"><a href="message.php">+更多</a></p>
+        </div>
+        <style> a{text-overflow: ellipsis;white-space: nowrap;overflow: hidden;}</style>
+        <div class="js_cot">
+          <ul>
+              <?php 
+              foreach ($res['vlab_message'] as $key => $value) {
+                  $title = $value['title']; $id = $value['id'];
+                  echo "<li><a href='message.php?id=$id' title='$title'>$title</a></li>";
+              }
+              ?>
+          </ul>
+        </div>
+      </div>
+      <div class="gs cp">
+        <div class="gs_t">
+          <div class="gs_ti">中心资源</div>
+          <p class="more"><a href="resource.php">+更多</a></p>
+        </div>
+        <div class="cp_cot">
+          <div class="multipleColumn">
+            <div class="bd">
+              <div class="picList" style="position: relative; width: 735px; height: 396px;"> 
+                <ul style="position: absolute; width: 725px; left: 0px; top: 0px; display: none;">
+                  <?php 
+                    $i = 1;
+                    foreach ($res['vlab_resource'] as $key => $value) {
+                      $i++;
+                      $title = $value['title']; $id = $value['id']; $pic = $value['pic'];
+                      echo "<li><div class='pic'><a href='resource.php?id=$id'><img src='$pic' width='205' height='145' 
+                            alt='$title></a></div>
+                            <span><a href='resource.php?id=$id'>$title</a></span> </li>";
+                      if($i%6 == 0){
+                        echo "</ul>
+                        <ul style='position: absolute; width: 725px; left: 0px; top: 0px; display: none;'>";
+                      }
+                    }
+                  ?>
+                </ul>
+               
+              </div>
+            </div>
+            <!-- bd End --> 
+          </div>
+          <!-- multipleColumn End --> 
+          
+          <script type="text/javascript">
+                /* 使用js分组，每6个li放到一个ul里面 */
+                jQuery(".multipleColumn .bd li").each(function(i){ jQuery(".multipleColumn .bd li").slice(i*6,i*6+6).wrapAll("<ul></ul>");});
+
+                /* 调用SuperSlide，每次滚动一个ul，相当于每次滚动6个li */
+                jQuery(".multipleColumn").slide({titCell:".hd ul",mainCell:".bd .picList",autoPage:true,effect:"fold",autoPlay:true,delayTime:500,interTime:5000});
+            </script> 
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<?php include("bottom.php"); ?>
+<!DOCTYPE html>
+<html lang="zh-cn" ng-app="myblog" ng-controller="indexCtrl">
+
+<head>
+  <meta charset="utf-8">
+  <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">  -->
+  <link rel="icon" href="images/logo.png" type="image/png" sizes="32x32" />
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <title>湖南科技大学虚拟仿真实验室</title>
+</head>
+<body>
+    <div class="head">
+        <div class="container">
+            <div class="top_warp">
+                <img src="images/logo.png">
+                <div class="top_words">
+                    唯实惟新 至诚致志
+                </div>
+            </div>
+            <nav class="nav" role="navigation">
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="lab_intro.html">实验中心概况</a></li>
+                    <li><a href="teachers.html">机构与队伍</a></li>
+                    <li><a href="rule.html">管理制度</a></li>
+                    <li><a href="devices.html">仪器设备</a></li>
+                    <li><a href="collab.html">合作交流</a></li>
+                    <li><a href="down.html">下载中心</a></li>
+               
+                </ul>
+            </nav> 
+        </div>
+        <div class="binner">
+            <img src="images/banner.jpg">
+        </div>
+    </div><!-- head -->
+    <div class="container">
+        <h3>实验中心概况</h3>
+        <hr>
+        <div class="text">
+            <p>
+                湖南科技大学矿业工程虚拟仿真实验教学中心源于原煤炭工业部在江南开设的唯一本科院校湘潭矿业学院计算机中心，该中心成立于1988年，是最早进行虚拟仿真实验教学的单位之一。中心在当时中心主任李仁发教授带领下率先开展虚拟仿真实验教学的应用和研究，相继承担国家自然科学基金项目“基于虚拟原型的虚拟实验室实现原理研究”(批准号:66974031)和教育部骨干教师基金项目“虚拟实验室技术”。2003年湘潭工学院计算机中心与湘潭师范学院计算机中心合并组建湖南科技大学计算机中心，为全校3万师生提供计算机教学公共教学服务平台，并持续推广虚拟仿真实验教学和开展虚拟仿真实验教学的应用研究。 
+    随着学校网络带宽的不断增加，网络覆盖到学校教学、科研、管理与建筑的比例达100%。结合早年计算中心使用软件设备进行虚拟仿真实验教学的实际经验，中心基于网络不断推广网络化虚拟仿真实验教学。近年来计算中心整合电子与电气技术实验中心、经济管理综合实验与模拟训练中心等国家、省级示范中心，以及我校有虚拟仿真实验教学需求的矿产资源安全绿色开发协同创新中心、机械设备健康维护湖南省重点实验室、湖南省工矿电传动车辆工程研究中心、知识处理与网络化制造湖南省普通高等学校重点实验室、3S技术实践教学中心等校内单位的仿真实验教学资源，组建了我校矿业工程虚拟仿真实验教学中心，该中心隶属于学校教务处管理。中心组建后，实验室面积从原来的五千余平米，增加到现在的一万余平米。虚拟仿真实验教学中心现有设备3000余台（套），设备金额8000余万元。中心有近60余台服务器，存储设备容量约240TB，各种教学软件价值约2000万元。
+            </p>
+        </div>
+    </div>
+    
+    <div class="foot-bar">
+            <h5>版权所有@2011 湖南科技大学虚拟仿真实验教学中心</h5>
+            <p></p>
+    </div>
+
+<!--                  scripts                    -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
+<?php 
+    include('connDB.php');
+    if(!isset($_GET['id'])){
+    $needed = array('vlab_message' => array('id', 'title', 'add_time')
+                     );
+    $res = array();$query = array();
+    foreach ($needed as $k => $subArr) {
+        $query[$k] = "SELECT ";
+        $length = count($subArr);$i = 1;
+        foreach ($subArr as $key => $field) {
+            if($i < $length)
+                $query[$k] .= $field . ', ';
+            else
+                $query[$k] .= $field . ' ';
+            $i++;
+        }
+        $query[$k] .= "FROM $k order by add_time desc";
+        $res[$k] = $pdo -> prepare($query[$k]);
+        $res[$k] -> execute();
+        $res[$k] = $res[$k] -> fetchAll();
+    }
+  }
+  else{
+    $id = $_GET['id'];
+    $disc = "SELECT * FROM vlab_message WHERE id = $id";
+    $res = $pdo -> prepare($disc);
+    $res -> execute();
+    $res =  $res -> fetchAll();
+    $res = $res[0];
+  }
+include('head.php');
+?>
+<?php if (!isset($_GET['id'])) : ?>
+<div id="fr">
+      <div class="fr_title">
+        <div class="fr_je">通知公告</div>
+        <p>您现在的位置：<a href="index.php">首页</a> &gt; <span><a href="message.php">通知公告</a> &gt; </span></p>
+      </div>
+      <div class="fr3_cot">         
+        <ul>
+        <?php 
+              foreach ($res['vlab_message'] as $key => $value) {
+                  $title = $value['title']; $id = $value['id']; $time = $value['add_time'];
+                  echo "<li><a href='message.php?id=$id' title='$title'>$title</a><span class='date'>$time</span></li>";
+              }
+            ?>
+        </ul>
+        <!--
+        <div class="fy">
+          <div id="pages" class="text-c"><a class="a1">47条</a> <a href="/html/news/index.html" class="a1">上一页</a> <span>1</span> <a href="/html/news/2.html">2</a> <a href="/html/news/2.html" class="a1">下一页</a></div>
+        </div>-->
+     </div>
+</div>
+<?php else: ?>
+  <div id="fr">
+      <div class="fr_title">
+        <div class="fr_je"></div>
+        <p><a href="index.php">首页</a><span> &gt; </span><a href="message.php">通知公告</a> &gt;  正文</p>
+      </div>
+      <div class="fr3_cot">
+      <div class="walk_te"><?php echo $res['title'] ?></div>
+      <div class="fgx">时间:<?php echo $res['add_time'] ?></div>
+        <div class="walk_cot">
+          <div style="LAYOUT-GRID:  15.6pt none" class="Section0">
+            <?php echo $res['content'] ?>
+          </div>
+        </div>
+      </div>
+    </div>
+<?php endif; ?>
+
+<?php include('bottom.php'); ?>
+<?php 
+    include('connDB.php');
+    
+    if(!isset($_GET['id'])){
+    $needed = array('vlab_news' => array('id', 'title', 'add_time')
+                     );
+    $res = array();$query = array();
+    foreach ($needed as $k => $subArr) {
+        $query[$k] = "SELECT ";
+        $length = count($subArr);$i = 1;
+        foreach ($subArr as $key => $field) {
+            if($i < $length)
+                $query[$k] .= $field . ', ';
+            else
+                $query[$k] .= $field . ' ';
+            $i++;
+        }
+        $query[$k] .= "FROM $k order by add_time desc";
+        $res[$k] = $pdo -> prepare($query[$k]);
+        $res[$k] -> execute();
+        $res[$k] = $res[$k] -> fetchAll();
+    }
+  }
+  else{
+    $id = $_GET['id'];
+    $disc = "SELECT * FROM vlab_news WHERE id = $id";
+    $res = $pdo -> prepare($disc);
+    $res -> execute();
+    $res =  $res -> fetchAll();
+    $res = $res[0];
+  }
+include('head.php');
+?>
+<?php if (!isset($_GET['id'])) : ?>
+<div id="fr">
+      <div class="fr_title">
+        <div class="fr_je">中心动态</div>
+        <p>您现在的位置：<a href="index.php">首页</a> &gt; <span><a href="news.php">中心动态</a> &gt; </span></p>
+      </div>
+      <div class="fr3_cot">         
+        <ul>
+        <?php 
+              foreach ($res['vlab_news'] as $key => $value) {
+                  $title = $value['title']; $id = $value['id']; $time = $value['add_time'];
+                  echo "<li><a href='news.php?id=$id' title='$title'>$title</a><span class='date'>$time</span></li>";
+              }
+            ?>
+        </ul>
+        <!--
+        <div class="fy">
+          <div id="pages" class="text-c"><a class="a1">47条</a> <a href="/html/news/index.html" class="a1">上一页</a> <span>1</span> <a href="/html/news/2.html">2</a> <a href="/html/news/2.html" class="a1">下一页</a></div>
+        </div>-->
+     </div>
+    </div>
+<?php else: ?>
+  <div id="fr">
+      <div class="fr_title">
+        <div class="fr_je"></div>
+        <p><a href="index.php">首页</a><span> &gt; </span><a href="news.php">中心动态</a> &gt;  正文</p>
+      </div>
+      <div class="fr3_cot">
+      <div class="walk_te"><?php echo $res['title'] ?></div>
+      <div class="fgx">时间:<?php echo $res['add_time'] ?></div>
+        <div class="walk_cot">
+          <div style="LAYOUT-GRID:  15.6pt none" class="Section0">
+            <?php echo $res['content'] ?>
+          </div>
+        </div>
+      </div>
+    </div>
+<?php endif; ?>
+
+<?php include('bottom.php'); ?>
+<?php
+//设定可操作的表
+$allowed = array('vlab_banner', 'vlab_resource');
+
+session_start();
+if(isset($_SESSION['user'])){    
+    include('connDB.php');
+    $time = date('Y-m-d H:i:s');
+    $regexFileExt = "/\.(jpg|jpeg|png|gif)$/i";
+    $tmpName = $_FILES['files']['tmp_name'];
+    $photoName = $_FILES['files']['name'];
+    /*print_r($_POST);*/
+    if(isset($_POST['update']) && in_array($_POST['update'], $allowed)){
+      $table = $_POST['update'];
+      //正则校验文件名
+      if(preg_match($regexFileExt,$photoName)){
+        $arrEXIFType=array(IMAGETYPE_JPEG,IMAGETYPE_PNG,IMAGETYPE_GIF);
+        //校验文件头
+        if(in_array(exif_imagetype($tmpName),$arrEXIFType)){
+          $photoNameSave = date('ymdHis');
+          $phototype = explode('.',$photoName);
+          $j = count($phototype);
+          //sae上传
+          if(isset($_SERVER['HTTP_APPNAME'])){ 
+            $photoUrl = $photoNameSave.'.'.$phototype[$j-1];
+            $storage = new SaeStorage();
+            $domain = 'pic';
+            $destFileName = $photoUrl;
+            $srcFileName = $tmpName;
+            //$attr = array('encoding'=>'gzip');
+            $result = $storage->upload($domain,$destFileName, $srcFileName, -1, $attr, true);
+            $photoUrl = $result;
+            //$attr = array('access' => 'public');
+            //$storage -> setFileAttr($domain,$destFileName,$attr);
+          }else {
+            //本地上传
+            $photoUrl = 'images/'.$table.'/'.$photoNameSave.'.'.$phototype[$j-1];
+            if(move_uploaded_file($tmpName,$photoUrl)) {
+                if(isset($_POST['id']) && $_POST['id']){
+                    //带id参数时，更新数据库。
+                    $id = $_POST['id'];
+                    $query = "UPDATE `$table` SET `pic` = '$photoUrl' WHERE `id` = $id";
+                }else if($table == 'vlab_banner') {
+                    $query = "INSERT INTO `$table` (`pic`) VALUES ('$photoUrl')";
+                }else {
+                    //当不带参数id且不为更新vlab_banner表时，不写入数据库，只返回地址。
+                    $msg = array('state'=>'succeed', 'msg'=>$photoUrl);
+                    echo json_encode($msg);
+                    exit();
+                }
+                //echo $query;
+                $result = $pdo->prepare($query);
+                if(!$result->execute()){
+                    $msg = array('state'=>'failed', 'msg'=>'Can\'t insert into database');
+                    echo json_encode($msg);
+                    exit();
+                }else{
+                    //获取刚写入字段的id
+                    $query = "SELECT LAST_INSERT_ID()";
+                    $result = $pdo->prepare($query);
+                    if(!$result->execute()){
+                        $msg = array('state'=>'failed', 'msg'=>'Can\'t get ID');
+                        echo json_encode($msg);
+                    }else{
+                        $id = $result->fetchALL();
+                        $id = $id[0][0];
+                        $msg = array('state'=>'succeed', 'msg'=>$photoUrl, 'id'=>$id);
+                        echo json_encode($msg);
+                    }
+                }
+            }else{
+                $msg = array('state'=>'failed', 'msg'=>'Can\'t move uploaded file');
+                echo json_encode($msg);
+                exit();
+            }
+          }
+        }
+      }
+    }
+}
+?>
+<?php 
+    include('connDB.php');
+    if(!isset($_GET['id'])){
+    $needed = array('vlab_resource' => array('id', 'title', 'add_time')
+                     );
+    $res = array();$query = array();
+    foreach ($needed as $k => $subArr) {
+        $query[$k] = "SELECT ";
+        $length = count($subArr);$i = 1;
+        foreach ($subArr as $key => $field) {
+            if($i < $length)
+                $query[$k] .= $field . ', ';
+            else
+                $query[$k] .= $field . ' ';
+            $i++;
+        }
+        $query[$k] .= "FROM $k order by add_time desc";
+        $res[$k] = $pdo -> prepare($query[$k]);
+        $res[$k] -> execute();
+        $res[$k] = $res[$k] -> fetchAll();
+    }
+  }
+  else{
+    $id = $_GET['id'];
+    $disc = "SELECT * FROM vlab_resource WHERE id = $id";
+    $res = $pdo -> prepare($disc);
+    $res -> execute();
+    $res =  $res -> fetchAll();
+    $res = $res[0];
+  }
+include('head.php');
+?>
+<?php if (!isset($_GET['id'])) : ?>
+<div id="fr">
+      <div class="fr_title">
+        <div class="fr_je">中心资源</div>
+        <p>您现在的位置：<a href="index.php">首页</a> &gt; <span><a href="resource.php">中心资源</a> &gt; </span></p>
+      </div>
+      <div class="fr3_cot">         
+        <ul>
+        <?php 
+              foreach ($res['vlab_resource'] as $key => $value) {
+                  $title = $value['title']; $id = $value['id']; $time = $value['add_time'];
+                  echo "<li><a href='resource.php?id=$id' title='$title'>$title</a><span class='date'>$time</span></li>";
+              }
+            ?>
+        </ul>
+        <!--
+        <div class="fy">
+          <div id="pages" class="text-c"><a class="a1">47条</a> <a href="/html/news/index.html" class="a1">上一页</a> <span>1</span> <a href="/html/news/2.html">2</a> <a href="/html/news/2.html" class="a1">下一页</a></div>
+        </div>-->
+     </div>
+</div>
+<?php else: ?>
+  <div id="fr">
+      <div class="fr_title">
+        <div class="fr_je">中心资源</div>
+        <p><a href="index.php">首页</a><span> &gt; </span><a href="resource.php">中心资源</a> &gt;  正文</p>
+      </div>
+      <div class="fr3_cot">
+      <div class="walk_te"><?php echo $res['title'] ?></div>
+      <div class="fgx">时间:<?php echo $res['add_time'] ?></div>
+        <div class="walk_cot">
+          <div style="LAYOUT-GRID:  15.6pt none" class="Section0">
+            <?php echo $res['content'] ?>
+          </div>
+        </div>
+      </div>
+    </div>
+<?php endif; ?>
+
+<?php include('bottom.php'); ?>
+<?php 
+    include('connDB.php');
+    $needed = array('vlab_rule' => array('id', 'title', 'content', 'add_time')
+                    );
+    if(!isset($_GET['id'])){
+
+    $res = array();$query = array();
+    foreach ($needed as $k => $subArr) {
+        $query[$k] = "SELECT ";
+        $length = count($subArr);$i = 1;
+        foreach ($subArr as $key => $field) {
+            if($i < $length)
+                $query[$k] .= $field . ', ';
+            else
+                $query[$k] .= $field . ' ';
+            $i++;
+        }
+        $query[$k] .= "FROM " . $k;
+        $res[$k] = $pdo -> prepare($query[$k]);
+        $res[$k] -> execute();
+        $res[$k] = $res[$k] -> fetchAll();
+    }
+  }else {
+    $id = $_GET['id'];
+    $disc = "SELECT * FROM vlab_rule WHERE id = $id";
+    $res = $pdo -> prepare($disc);
+    $res -> execute();
+    $res =  $res -> fetchAll();
+    $res = $res[0];
+  }
+include('head.php');
+?>
+<style>
+* {
+-moz-box-sizing: content-box;
+box-sizing: content-box;
+}
+.panel-default {
+border-color: #DDD;
+}
+.panel {
+margin-bottom: 20px;
+background-color: #FFF;
+border: 1px solid #E8E8E8;
+border-radius: 4px;
+-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+.panel-default>.panel-heading {
+color: #333;
+background-color: #F5F5F5;
+border-color: #DDD;
+}
+.panel-heading {
+padding: 10px 15px;
+border-bottom: 1px solid rgba(0, 0, 0, 0);
+border-top-left-radius: 3px;
+border-top-right-radius: 3px;
+}
+.panel-title {
+margin-top: 0;
+margin-bottom: 0;
+font-size: 16px;
+color: inherit;
+}
+.panel-body {
+padding: 15px;
+}
+</style>
+<?php if(isset($_GET['id'])) :?>
+     <?php 
+      //print_r($res);
+                  $title = $res['title']; $content = $res['content'];
+                  $time = $res['add_time'];
+        ?>
+       <div id="fr">
+      <div class="fr_title">
+        <div class="fr_je">管理制度</div>
+        <p><a href="index.php">首页</a><span> &gt; </span><a href="rule.php">管理制度</a> &gt;  正文</p>
+      </div>
+      <div class="fr3_cot">
+      <div class="walk_te"><?php echo $title ?></div>
+      <div class="fgx">时间:<?php echo $time ?></div>
+        <div class="walk_cot">
+          <div style="LAYOUT-GRID:  15.6pt none" class="Section0">
+            <?php echo $content ?>
+          </div>
+        </div>
+      </div>
+    </div>
+      
+
+
+</div>
+<?php else : ?>
+  <div id="fr">
+  <div class="fr_title">
+        <div class="fr_je">管理制度</div>
+        <p>您现在的位置：<a href="index.php">首页</a> &gt; <span><a href="rule.php">管理制度</a></span></p>
+      </div>
+      <div class="fr3_cot">         
+        <ul>
+        <?php 
+              foreach ($res['vlab_rule'] as $key => $value) {
+                  $title = $value['title']; $id = $value['id']; $time = $value['add_time'];
+                  echo "<li><a href='rule.php?id=$id' title='$title'>$title</a><span class='date'>$time</span></li>";
+              }
+            ?>
+      </ul>
+  </div>
+  </div>
+<?php endif; ?>
+
+<?php include('bottom.php'); ?>
+<?php 
+    include('connDB.php');
+    $needed = array('vlab_teacher' => array('id', 'name', 'age', 'sex', 'title', 'major', 
+                    'degree', 'web_page'));
+
+    $res = array();$query = array();
+    foreach ($needed as $k => $subArr) {
+        $query[$k] = "SELECT ";
+        $length = count($subArr);$i = 1;
+        foreach ($subArr as $key => $field) {
+            if($i < $length)
+                $query[$k] .= $field . ', ';
+            else
+                $query[$k] .= $field . ' ';
+            $i++;
+        }
+        $query[$k] .= "FROM " . $k;
+        $res[$k] = $pdo -> prepare($query[$k]);
+        $res[$k] -> execute();
+        $res[$k] = $res[$k] -> fetchAll();
+    }
+include('head.php');
+?>
+<style>
+* {
+-moz-box-sizing: content-box;
+box-sizing: content-box;
+}
+.table-bordered>thead>tr>th, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>tbody>tr>td, .table-bordered>tfoot>tr>td {
+border: 1px solid #DDD;
+}
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {
+padding: 8px;
+line-height: 1.42857143;
+vertical-align: top;
+border-top: 1px solid #DDD;
+}
+.table-condensed>thead>tr>th, .table-condensed>tbody>tr>th, .table-condensed>tfoot>tr>th, .table-condensed>thead>tr>td, .table-condensed>tbody>tr>td, .table-condensed>tfoot>tr>td {
+padding: 5px;
+}
+table {
+border-spacing: 0;
+border-collapse: collapse;
+}
+table {
+background-color: rgba(0, 0, 0, 0);
+}
+.table {
+width: 100%;
+max-width: 100%;
+margin-bottom: 20px;
+}
+.table-bordered {
+border: 1px solid #DDD;
+}</style>
+<div id="fr">
+      <div class="fr_title">
+        <div class="fr_je">机构与队伍</div>
+        <p>您现在的位置：<a href="index.php">首页</a> &gt; <span><a href="teacher.php">机构与队伍</a></span></p>
+      </div>
+      <div class="fr3_cot">    
+
+      <?php 
+      $id = '';
+      include('teacherFile.html');
+           ?>
+      <!--
+        <table class="table table-bordered table-hover table-condensed">
+          <tr>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>性别</th>
+            <th>职称</th>
+            <th>学历学位</th>
+            <th>专业</th>
+            <th>主页</th>
+          </tr>
+        <?php 
+            /*
+              foreach ($res['vlab_teacher'] as $key => $value) {
+                  $id = $value['id']; $name = $value['name']; $age = $value['age']; $sex = $value['sex'];
+                  $title = $value['title']; $degree = $value['degree']; $major = $value['major'];
+                  $web_page = $value['web_page'];
+                  echo "<tr>
+                          <td>$name</td>
+                          <td>$age</td>
+                          <td>$sex</td>
+                          <td>$title</td>
+                          <td>$degree</td>
+                          <td>$major</td>
+                          <td><a href='$web_page' target='_blank'>$web_page</a></td>
+                        </tr>";
+              }*/
+        ?>
+        </table>
+      -->
+     </div>
+</div>
+<?php include('bottom.php');?>

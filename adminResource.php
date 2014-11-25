@@ -1,6 +1,12 @@
 <div class="container">
     <h2>中心虚拟资源介绍</h2>
     <hr>
+    <h3>首页展示缩略图</h3>
+    <p>建议上传图片大小200*140px</p>
+    
+    <center><img id="img" src="images/vlab_resource/default.jpg"></center>
+    <input id="centerPic" class="btn btn-sm btn-primary" type="file" name='files'>
+    <hr>
     <div class="alert alert-info" style="overflow:auto">
       <p class="pull-right">上次保存时间：<input disabled="disabled" id="addTime" type="text">  
       本次保存时间：<input id="nowTime" type="text"></p>

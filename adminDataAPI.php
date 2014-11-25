@@ -2,7 +2,7 @@
 session_start();
 //可访问表单控制
 $allowed = array('vlab_disc', 'vlab_resource', 'vlab_news', 'vlab_message', 'vlab_rule',
- 'vlab_major', 'vlab_teacher', 'vlab_title', 'vlab_device', 'vlab_degree');
+ 'vlab_major', 'vlab_teacher', 'vlab_title', 'vlab_device', 'vlab_degree', 'vlab_banner');
 
     //获取数据可以无需登录
 if(isset($_POST['query']) && isset($_POST['id'])){
@@ -11,13 +11,18 @@ if(isset($_POST['query']) && isset($_POST['id'])){
     $id = $_POST['id'];
     if(in_array($q, $allowed)) {
         $field = '*';
-        if(!isset($_POST['field']))
+        if(isset($_POST['field']) && $_POST['field'])
         {   
             $field = '';
-            print_r($_POST['field']);
+            //print_r($_POST['field']);
+            $len = count($_POST['field']);
+            $i = 1;
             foreach ($_POST['field'] as $key => $value) {
-                $field .= $value . ' ';
+                if($i<$len) $field .= $value . ', ';
+                else $field .= $value;
+                $i++;
             }
+            //echo $field;
         }
         if($id == 'all'){
             //获取整个表单的数据
@@ -35,10 +40,11 @@ if(isset($_POST['query']) && isset($_POST['id'])){
         }
         //echo $query;
         if(!$result -> execute()) {
-            echo '获取数据失败！';
+            echo 'getting data failed!';
             exit();
         }
         else{
+            $result->setFetchMode(PDO::FETCH_ASSOC);
             $row = $result -> fetchAll();
             //print_r($row);
             echo json_encode($row);

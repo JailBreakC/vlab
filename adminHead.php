@@ -8,8 +8,8 @@
     <link href="css/fonts/font-awesome.css" rel="stylesheet">
     <style>
     .foot-bar{
-      color: rgb(133, 133, 133);
-      background: rgb(240, 248, 255);
+      color: #1B5E9B;
+      background: #CFE5F8;
       margin-top: 50px;
     }
     </style>
