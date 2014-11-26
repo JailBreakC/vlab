@@ -5,11 +5,19 @@ $(function(){
     
     window.transfer = function(){
         return {
-            sendText : function(save, id, data, fn, norefresh) {
+            //生成GUID
+            guid: function() {
+                return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+                    var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
+                    return v.toString(16);
+                });
+            },
+            //发送数据
+            sendText : function(method, save, id, data, fn, norefresh) {
                     $.ajax({
                         type:"post",
                         url:"adminDataAPI.php",
-                        data:{'save':save, 'id':id, 'data':data},
+                        data:{'method':method, 'save':save, 'id':id, 'data':data},
                         dataType:"text",
                         success:function(ret){
                             if(ret === 'success'){
@@ -39,7 +47,7 @@ $(function(){
                         success:function(ret){
                             //console.log(ret);
                             data = JSON.parse(ret);
-                            fn(data);
+                            fn&&fn(data);
                         },
                         error:function(ret){
                             alert("网络故障，稍后重试 " + ret);

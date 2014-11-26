@@ -1,30 +1,31 @@
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="keywords" content="湖南科技大学虚拟仿真实验室">
-<meta name="description" content="湖南科技大学虚拟仿真实验室">
-<title>湖南科技大学虚拟仿真实验室</title>
-<link rel="icon" href="images/logo.jpg">
-<link href="css/xmmain.css" rel="stylesheet" type="text/css">
-<style type="text/css">
-  body {
-    font-family: 'Microsoft Yahei'!important;
-  }
-  object,embed{                -webkit-animation-duration:.001s;-webkit-animation-name:playerInserted;                -ms-animation-duration:.001s;-ms-animation-name:playerInserted;                -o-animation-duration:.001s;-o-animation-name:playerInserted;                animation-duration:.001s;animation-name:playerInserted;}                @-webkit-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}                @-ms-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}                @-o-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}                @keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}</style><style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
-  .en-markup-crop-options {
-      top: 18px !important;
-      left: 50% !important;
-      margin-left: -100px !important;
-      width: 200px !important;
-      border: 2px rgba(255,255,255,.38) solid !important;
-      border-radius: 4px !important;
-  }
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="keywords" content="湖南科技大学虚拟仿真实验室">
+  <meta name="description" content="湖南科技大学虚拟仿真实验室">
+  <title>湖南科技大学虚拟仿真实验室</title>
+  <link rel="icon" href="images/logo.jpg">
+  <link href="css/xmmain.css" rel="stylesheet" type="text/css">
+  <style type="text/css">
+    body {
+      font-family: 'Microsoft Yahei'!important;
+    }
+    object,embed{                -webkit-animation-duration:.001s;-webkit-animation-name:playerInserted;                -ms-animation-duration:.001s;-ms-animation-name:playerInserted;                -o-animation-duration:.001s;-o-animation-name:playerInserted;                animation-duration:.001s;animation-name:playerInserted;}                @-webkit-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}                @-ms-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}                @-o-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}                @keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}</style><style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+    .en-markup-crop-options {
+        top: 18px !important;
+        left: 50% !important;
+        margin-left: -100px !important;
+        width: 200px !important;
+        border: 2px rgba(255,255,255,.38) solid !important;
+        border-radius: 4px !important;
+    }
 
-  .en-markup-crop-options div div:first-of-type {
-      margin-left: 0px !important;
-  }
-</style>
+    .en-markup-crop-options div div:first-of-type {
+        margin-left: 0px !important;
+    }
+  </style>
 </head>
 
 <body>

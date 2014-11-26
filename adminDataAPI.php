@@ -2,7 +2,7 @@
 session_start();
 //可访问表单控制
 $allowed = array('vlab_disc', 'vlab_resource', 'vlab_news', 'vlab_message', 'vlab_rule',
- 'vlab_major', 'vlab_teacher', 'vlab_title', 'vlab_device', 'vlab_degree', 'vlab_banner');
+ 'vlab_major', 'vlab_teacher', 'vlab_title', 'vlab_device', 'vlab_degree', 'vlab_banner', 'vlab_list');
 
     //获取数据可以无需登录
 if(isset($_POST['query']) && isset($_POST['id'])){
@@ -51,14 +51,12 @@ if(isset($_POST['query']) && isset($_POST['id'])){
         }
     }
         //若处于登录状态，则可以进行数据的修改
-}else if(isset($_POST['save']) && isset($_POST['id']) && isset($_POST['data']) && isset($_SESSION['user'])){
+}else if(isset($_POST['method']) && isset($_POST['save']) && isset($_POST['id']) && isset($_POST['data']) && isset($_SESSION['user'])){
     include('connDB.php');
-    $save = $_POST['save'];
-    $id = $_POST['id'];
-    $data = $_POST['data'];
+    $method = $_POST['method'];    $save = $_POST['save'];    $id = $_POST['id'];    $data = $_POST['data'];
     if(in_array($save, $allowed)){
             //若未指定id则新增数据
-        if($id == 'no'){
+        if($method == 'insert'){
             //拼凑SQL语句
             $query = "insert into " . $save . "(";
             $value = " value(";
@@ -113,7 +111,6 @@ if(isset($_POST['query']) && isset($_POST['id'])){
             else
                 echo 'success';
         }
-
     }
     //若处于登录状态，可删除数据。
 }else if(isset($_POST['delete']) && isset($_POST['id']) && isset($_SESSION['user'])){

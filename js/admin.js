@@ -50,7 +50,7 @@ $(document).ready(function(){
             var data = {}
             data.content = $('#editor').html();
             data.add_time = $('#nowTime').val();
-            t.sendText('vlab_disc', 'no', data);
+            t.sendText('insert','vlab_disc', 'no', data);
         })
     }
     //加载仪器设备列表
@@ -94,7 +94,7 @@ $(document).ready(function(){
                     data[id] = $(ele).find('input').val();
             });
             data.disc = $('#editor').html();
-            t.sendText('vlab_device', 'no', data);
+            t.sendText('insert', 'vlab_device', 'no', data);
         });
         $('#save').click(function() {
             var data = {};
@@ -106,7 +106,7 @@ $(document).ready(function(){
             data.disc = $('#editor').html();
             var id = $('#id').html()
             if(id)
-                t.sendText('vlab_device', id, data);
+                t.sendText('update', 'vlab_device', id, data);
             else
                 alert('请先读取要修改的文章');
         });
@@ -152,7 +152,7 @@ $(document).ready(function(){
             data.title = $('#title').val();
             data.content = $('#editor').html();
             data.add_time = $('#nowTime').val();
-            t.sendText(table, 'no', data);
+            t.sendText('insert', table, 'no', data);
             $('#save').attr('data-target-id','');
         });
         $('#save').click(function() {
@@ -162,7 +162,7 @@ $(document).ready(function(){
                 data.title = $('#title').val();
                 data.content = $('#editor').html();
                 data.add_time = $('#nowTime').val();
-                t.sendText(table, id, data);
+                t.sendText('update', table, id, data);
             }else{
                 alert('请先读取要修改的文章');
             }
@@ -189,7 +189,7 @@ $(document).ready(function(){
             data.title = $('#title').val();
             data.content = $('#editor').html();
             data.add_time = $('#nowTime').val();
-            t.sendText('vlab_rule', 'no', data);
+            t.sendText('insert', 'vlab_rule', 'no', data);
             $('#save').attr('data-target-id','');
         });
         $('#save').click(function() {
@@ -199,7 +199,7 @@ $(document).ready(function(){
                 data.title = $('#title').val();
                 data.content = $('#editor').html();
                 data.add_time = $('#nowTime').val();
-                t.sendText('vlab_rule', id, data);
+                t.sendText('update', 'vlab_rule', id, data);
             }else{
                 alert('请先读取要修改的文章');
             }
@@ -251,7 +251,7 @@ $(document).ready(function(){
                 + "<button class='delete btn btn-xs btn-danger'>删除</button></td></tr>"
                 $('.table>tbody').append(ele);
             }
-            t.sendText('vlab_resource', 'no', data, appendEle, 'norefresh');
+            t.sendText('insert', 'vlab_resource', 'no', data, appendEle, 'norefresh');
             $('#save').attr('data-target-id','');
         });
 
@@ -263,7 +263,7 @@ $(document).ready(function(){
                 data.content = $('#editor').html();
                 data.add_time = $('#nowTime').val();
                 data.pic = $('#img').attr('src');
-                t.sendText('vlab_resource', id, data);
+                t.sendText('update', 'vlab_resource', id, data);
             }else{
                 alert('请先读取要修改的文章');
             }
@@ -316,7 +316,7 @@ $(document).ready(function(){
                     data[id] = $('#' + id).val();
             });
             data.disc = $('#editor').html();
-            t.sendText('vlab_teacher', 'no', data);
+            t.sendText('insert', 'vlab_teacher', 'no', data);
         });
         $('#save').click(function() {
             var data = {};
@@ -328,7 +328,7 @@ $(document).ready(function(){
             data.disc = $('#editor').html();
             var id = $('#id').html()
             if(id)
-                t.sendText('vlab_teacher', id, data);
+                t.sendText('update', 'vlab_teacher', id, data);
             else
                 alert('请先读取要修改的文章');
         });
@@ -369,7 +369,7 @@ $(document).ready(function(){
                 if(id)
                     data[id] = $(ele).find('input').val();
             });
-            t.sendText(table, 'no', data);
+            t.sendText('insert', table, 'no', data);
         }
         $('.new-title').click(function() {
             newData('vlab_title');
@@ -388,22 +388,32 @@ $(document).ready(function(){
         });
     }
     if(page === 'adminList') {
-        $('#listeditor').on('click', 'li>button', function(){
+        $('#listeditor').on('click', 'li>button', function() {
             $(this).parent().clone().appendTo($(this).parent().parent());
         });
+
         $('.save').click(function(){
             var data = {};
-            $('.mainTitle').each(function(index, ele){
-                data[index].title.val = $(ele).children('input').val();
-                $(ele).find('.subTitle').each(function(idx, el){
-                    data[index].title.subTitle[idx].val = $(el).children('input').val()
-                    $(el).find('.content').each(function(i,e){
-                        data[index].title.subTitle[idx].content.href = $(e).children('input').eq(0).val();
-                        data[index].title.subTitle[idx].content.text = $(e).children('input').eq(1).val();
+            data.title = [];
+            $('.mainTitle').each(function(index, ele) {
+                var title = data.title[index] = {};
+                title.val = $(ele).children('input').val();
+                title.subTitle = [];
+
+                $(ele).find('.subTitle').each(function(idx, el) {
+                    var sub = data.title[index].subTitle[idx] = {};
+                    sub.val = $(el).children('input').val()
+
+                    $(el).find('.content').each(function(i, e) {
+                        var content = data.title[index].subTitle[idx].content = {};
+                        content.href = $(e).children('input').eq(0).val();
+                        content.text = $(e).children('input').eq(1).val();
                     });
                 });
             });
-            console.log(data);
+            var dataSend = {};
+            dataSend.content = JSON.stringify(data);
+            t.sendText('insert','vlab_list', 'no', dataSend)
         });
     }
 
