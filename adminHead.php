@@ -37,6 +37,7 @@
             <li><a href="admin.php?page=adminRule">管理制度</a></li>
             <li><a href="admin.php?page=adminNews">中心动态</a></li>
             <li><a href="admin.php?page=adminMessage">通知公告</a></li>
+            <li class=""><a href="admin.php?page=adminList">侧栏管理</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">预设值管理 <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
@@ -44,7 +45,6 @@
                 <li><a href="admin.php?page=adminMajor">专业</a></li>
               </ul>
             </li>
-            <li class=""><a href="admin.php?page=adminList">侧栏管理</a></li>
             <li class=""><a href="admin.php">管理员管理</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
