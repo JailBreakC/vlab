@@ -128,7 +128,7 @@
 
 <div class="pr news">
         <div class="pr_t">
-          <div class="pr_ti">学科资源</div>
+          <div class="pr_ti">资源展示</div>
           <!--<p class="more"><a href="/html/course/">+更多</a></p>-->
         </div>
 
