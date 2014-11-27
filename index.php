@@ -64,7 +64,6 @@ include("head.php"); ?>
           <div class="js_ti">通知公告</div>
           <p class="more"><a href="message.php">+更多</a></p>
         </div>
-        <style> a{text-overflow: ellipsis;white-space: nowrap;overflow: hidden;}</style>
         <div class="js_cot">
           <ul>
               <?php 

@@ -388,9 +388,18 @@ $(document).ready(function(){
         });
     }
     if(page === 'adminList') {
-        $('#listeditor').on('click', 'li>button', function() {
+        $('#listeditor').on('click', 'li>.glyphicon-plus-sign', function() {
             $(this).parent().clone().appendTo($(this).parent().parent());
         });
+        $('#listeditor').on('click', 'li>.glyphicon-minus-sign', function() {
+            if($(this).parent().parent().children().length > 1){
+                $(this).parent().remove();
+            }
+            else{
+                alert('每个节点至少要有一个元素！');
+            }
+        });
+
 
         $('.save').click(function(){
             var data = {};
@@ -403,9 +412,10 @@ $(document).ready(function(){
                 $(ele).find('.subTitle').each(function(idx, el) {
                     var sub = data.title[index].subTitle[idx] = {};
                     sub.val = $(el).children('input').val()
+                    sub.content = [];
 
                     $(el).find('.content').each(function(i, e) {
-                        var content = data.title[index].subTitle[idx].content = {};
+                        var content = data.title[index].subTitle[idx].content[i] = {};
                         content.href = $(e).children('input').eq(0).val();
                         content.text = $(e).children('input').eq(1).val();
                     });

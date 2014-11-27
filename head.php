@@ -125,34 +125,44 @@
         <div class="news_cont"> <a href="#" target="_blank"><img style="width:230px" src="images/login.jpg"></a>
         <p style="text-align:center;font-size:16px;"><a href="#" target="_blank"><strong><font color="#FF0000">登录到虚拟仿真中心</font></strong></a></p> </div>
       </div>
-      <div class="pr news">
+
+<div class="pr news">
         <div class="pr_t">
           <div class="pr_ti">学科资源</div>
           <!--<p class="more"><a href="/html/course/">+更多</a></p>-->
         </div>
-        <div class="pr_course">
-          <div class="sideMenu" style="margin:0 auto">
-            <h3 class="on"><em></em>学科文献</h3>
-            <ul style="display: block;">
-              <li class="sub"><a href="http://www.lcmining.cn/portal.php" target="_blank">西北矿业网</a></li>
-              <li class="sub"><a href="http://www.chnmining.com/forum.php" target="_blank">中国矿业论坛</a></li>
-              <li class="sub"><a href="http://www.coalstudy.com/" target="_blank">煤炭研究网</a></li>
-              <li class="sub"><a href="http://bbs.geokx.com/portal.php" target="_blank">地球科学网</a></li>
-              <li class="sub"><a href="http://www.kc81.com/" target="_blank">中国矿业贸易网</a></li>
-              <li class="sub"><a href="http://mining.kd.lib.hnlat.com/index.php?m=content&c=index&a=show&catid=608&id=4309&siteid=3" target="_blank">ESI收录工程学期刊</a></li>
-            </ul>
-          </div>
-          <div class="sideMenu" style="margin:0 auto">
-            <h3 class="on"><em></em>学科机构</h3>
-            <ul style="display: block;">
-              <li class="sub"><a href="http://imr.cags.ac.cn/" target="_blank">中国地质科学院矿产资源研..</a></li>
-              <li class="sub"><a href="http://www.gdkys.com/" target="_blank">广东省矿产应用研究所</a></li>
-              <li class="sub"><a href="http://www.cmgbr.com.cn/Page/82/default.aspx" target="_blank">中国冶金地质总局矿产资源研...</a></li>
-              <li class="sub"><a href="http://www.zjigm.com/" target="_blank">浙江省地质矿产研究所</a></li>
-              <li class="sub"><a href="http://www.sxgeotest.cn/" target="_blank">陕西省地质矿产实验研究所</a></li>
-              <li class="sub"><a href="http://www.imumr.cgs.gov.cn/" target="_blank">中国地质科学院矿产综合利用...</a></li>
-            </ul>
-          </div>
+
+<div class="pr_course">
+  <div class="sideMenu" style="margin:0 auto">
+<?php
+include "connDB.php";
+$query = "SELECT * FROM `vlab_list` ORDER BY `id` desc limit 0,1";
+$result = $pdo->prepare($query);
+$result->setFetchMode(PDO::FETCH_ASSOC);
+if($result->execute()){
+    $row = $result->fetchAll();
+    $row = $row[0]['content'];
+    $row = json_decode($row);
+/*    echo '<pre>';
+    print_r($row);
+    echo '</pre>';*/
+    foreach ($row->title as $value) {
+        echo '
+            <h3 class="on"><em></em>'.$value->val.'</h3>
+            <ul style="display: block;">';
+        foreach ($value->subTitle as $v) {
+            echo '<li class="course_title">'.$v->val.'</li>';
+            foreach ($v->content as $va) {
+              echo "<li class='sub'><a href='$va->href' title='$va->text' target='_blank'>$va->text</a></li>";
+            }
+        }
+        echo "</ul>";
+
+    }
+}
+?> 
+  </div>
+</div>
           <!-- sideMenu End --> 
           
           <script type="text/javascript">
@@ -168,5 +178,4 @@
                 });
         </script> 
         </div>
-      </div>
       </div>

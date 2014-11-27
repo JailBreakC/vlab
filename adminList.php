@@ -1,22 +1,18 @@
+<style>
+ul{
+    list-style: none;
+    margin: 10px;
+}
+#listeditor{
+    border: 2px solid #5CB3E4;
+    border-radius: 5px;
+    padding: 20px; 
+}
+</style>
 <div class="container">
-    <ul id="listeditor">
-        <li class="mainTitle"><button class="glyphicon glyphicon-plus-sign"></button>主标题：<input type="text">　　
-            <ul>
-                <li class="subTitle"><button class="glyphicon glyphicon-plus-sign"></button>副标题：<input type="text">　　
-                    <ul>
-                        <li class="content">
-                            <button class="glyphicon glyphicon-plus-sign"></button>
-                            网址：<input type="text">　描述<input type="text">　　
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </li>
-    </ul>
-    <button class="save btn btn-sm btn-primary">保存修改</button>　
-    <button class="add btn btn-sm btn-success">新增一栏</button>
+    <h1>侧边栏导航条元素编辑</h1>
     <hr>
-    <ul>
+    <ul id="listeditor">
 <?php
 include "connDB.php";
 $query = "SELECT * FROM `vlab_list` ORDER BY `id` desc limit 0,1";
@@ -26,23 +22,19 @@ if($result->execute()){
     $row = $result->fetchAll();
     $row = $row[0]['content'];
     $row = json_decode($row);
-    echo '<pre>';
+/*    echo '<pre>';
     print_r($row);
-    echo '</pre>';
+    echo '</pre>';*/
     foreach ($row->title as $value) {
-        echo "<li>";
-        echo $value->val;
-        print_r($value);
+        echo "<li class='mainTitle'>　主标题：<input value='$value->val' type='text'> <button class='btn btn-xs btn-primary glyphicon glyphicon-plus-sign'></button> <button class='btn btn-xs btn-danger glyphicon glyphicon-minus-sign'></button>";
         echo "<ul>";
         foreach ($value->subTitle as $v) {
-            echo "<li>$v->val";
+            echo "<li class='subTitle'>　副标题：<input value='$v->val' type='text'> <button class='btn btn-xs btn-primary glyphicon glyphicon-plus-sign'></button> <button class='btn btn-xs btn-danger glyphicon glyphicon-minus-sign'></button>";
             echo "<ul>";
             foreach ($v->content as $va) {
-                print_r($va);
-                echo "<li>$va->href|$va->text";
-                foreach ($va->content as $val) {
-
-                }
+                echo "<li class='content'>
+                            网址：<input value='$va->href'type='text'>　描述<input value='$va->text' type='text'> 
+                            <button class='btn btn-xs btn-primary glyphicon glyphicon-plus-sign'></button> <button class='btn btn-xs btn-danger glyphicon glyphicon-minus-sign'></button>";
                 echo "</li>";
             }
             echo "</ul>";
@@ -54,8 +46,7 @@ if($result->execute()){
 }
 ?> 
     </ul>
+    <hr>
+    <button class="save btn btn-sm btn-primary">保存修改</button>　
+    <a href="admin.php?page=adminList"><button class="btn btn-sm btn-default">撤销修改</button></a>
 </div>
-
-<li>
-    <ul></ul>
-</li>

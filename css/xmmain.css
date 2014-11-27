@@ -17,6 +17,12 @@ a {
 	color: #333333;
 	text-decoration: none;
 }
+.pr a, .js a{
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	display: inherit;
+}
 a:hover {
 	text-decoration: underline;
 	color: #FF0000;
