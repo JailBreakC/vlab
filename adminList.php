@@ -33,7 +33,7 @@ if($result->execute()){
             echo "<ul>";
             foreach ($v->content as $va) {
                 echo "<li class='content'>
-                            网址：<input value='$va->href'type='text'>　描述<input value='$va->text' type='text'> 
+                            网址：<input value='$va->href'type='text'>　描述：<input value='$va->text' type='text'> 
                             <button class='btn btn-xs btn-primary glyphicon glyphicon-plus-sign'></button> <button class='btn btn-xs btn-danger glyphicon glyphicon-minus-sign'></button>";
                 echo "</li>";
             }

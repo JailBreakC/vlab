@@ -26,6 +26,17 @@
         margin-left: 0px !important;
     }
   </style>
+  <!--百度统计-->
+  <script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?167043a18c199b6495c94f76cd10fa5a";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+  })();
+  </script>
+
 </head>
 
 <body>

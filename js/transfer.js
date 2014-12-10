@@ -1,9 +1,6 @@
-$(function(){
-    //发送数据
-    if(window.transfer)
-        throw "变量名冲突：请检查是transfer变量是否被占用";
-    
-    window.transfer = function(){
+;(function($){
+
+    $.fn.transfer = function(){
         return {
             //生成GUID
             guid: function() {
@@ -79,4 +76,4 @@ $(function(){
             }
         }
     }
-});
+})(window.jQuery)
