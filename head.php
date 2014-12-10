@@ -134,7 +134,7 @@
           <div class="pr_ti">虚拟仿真</div>
         </div>
         <div class="news_cont"> <a href="#" target="_blank"><img style="width:230px" src="images/login.jpg"></a>
-        <p style="text-align:center;font-size:16px;"><a href="#" target="_blank"><strong><font color="#FF0000">登录到虚拟仿真中心</font></strong></a></p> </div>
+        <p style="text-align:center;font-size:16px;"><a href="http://vlab.hnust.cn:8088/" target="_blank"><strong><font color="#FF0000">登录到虚拟仿真中心</font></strong></a></p> </div>
       </div>
 
 <div class="pr news">
