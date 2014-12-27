@@ -25,9 +25,9 @@
     $dres = $pdo -> prepare($disc);
     $dres -> execute();
     $res['vlab_disc'] =  $dres -> fetchAll();
-    echo '<noscript>';
+/*    echo '<noscript>';
     print_r($res['vlab_resource']);
-    echo '</noscript>';
+    echo '</noscript>';*/
 include("head.php"); ?>
     <div id="fr">
       <div class="gs">
