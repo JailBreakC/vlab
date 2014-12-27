@@ -99,32 +99,46 @@ id sub_title_id content
     var guid = $.transfer.guid();
     
 发送数据 
+
 `method`：'insert' 新增表 'updata' 修改表；
+
 `table`：表名；
+
 `[id]`：行ID，'no'为新增行；
+
 `[data]`：数据；
+
 `[fn]`：回调函数；
+
 `[norefresh]`：默认false。为true则成功后不刷新页面，否则刷新页面；
 
     $.transfer.sendText('insert', 'vlab_resource', 'no', data, appendEle, true);
     
 获取数据
+
 `tablename`：表名；
+
 `id`：行ID，'no'为新增行；
+
 `[fn]`：回调函数；
+
 `[field]`：请求的元素列表,类型为数组；
 
     $.transfer.getText('vlab_teacher', 'all', parseTeacher, ['id', 'name', 'sex', 'age',
          'phone', 'title', 'major', 'degree', 'add_time', 'web_page']);
 
 删除数据
+
 `tablename`：表名；
+
 `id`：行ID；
+
 `norefresh`：默认false。为true则成功后不刷新页面，否则刷新页面；
 
     $.transfer.deleteText('vlab_banner', id, true);
     
 ###前端图片接口 jQuery.fileupload.js
+
 使用前先引入资源
 
     <script type="text/javascript" src="js/jquery.ui.widget.js"></script>
@@ -148,12 +162,15 @@ id sub_title_id content
     };
     
 `fn`：回调函数, 参数为图片地址;
+
 `table`：图片储存的表名；
+
 `id`：行ID，'no'为新增行；
 
     uploadFile(addImg, 'vlab_banner');
     
 ###源码与注释
+
 ####transfer.js *前台数据接口*
     
     ;(function($){
