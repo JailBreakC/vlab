@@ -1,6 +1,6 @@
 ;(function($){
 
-    $.fn.transfer = function(){
+    $.transfer = function(){
         return {
             //生成GUID
             guid: function() {
@@ -10,11 +10,11 @@
                 });
             },
             //发送数据
-            sendText : function(method, save, id, data, fn, norefresh) {
+            sendText : function(method, tablename, id, data, fn, norefresh) {
                     $.ajax({
                         type:"post",
                         url:"adminDataAPI.php",
-                        data:{'method':method, 'save':save, 'id':id, 'data':data},
+                        data:{'method':method, 'save':tablename, 'id':id, 'data':data},
                         dataType:"text",
                         success:function(ret){
                             if(ret === 'success'){
@@ -32,14 +32,14 @@
                     });
                 },
             //获取数据
-            getText : function(query, id, fn, field) {
+            getText : function(tablename, id, fn, field) {
                 field = field || '';
                 var data;
                 console.log(field);
                 $.ajax({
                         type:"post",
                         url:"adminDataAPI.php",
-                        data:{'query':query, 'id':id, 'field':field},
+                        data:{'query':tablename, 'id':id, 'field':field},
                         dataType:"text",
                         success:function(ret){
                             //console.log(ret);

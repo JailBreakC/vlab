@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $('#editor').wysiwyg();
-    var t = $(window).transfer();
+    var t = $.transfer();
     var page = window.location.href.split('=')[1];
 
     //获取当前日期
