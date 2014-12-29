@@ -1,7 +1,58 @@
-#湖南科技大学虚拟仿真实验室系统(hnust vlab)源码文档
-
+#湖南科技大学虚拟仿真实验室系统(hnust vlab)文档
+版本： `2014/12/29`
+作者：`JailBreak`
+联系方式：`email:admin@vgee.cn` `QQ:610164407`
+Copyright：`湖南科技大学` `计算机学院`
 ##概述
 本系统是采用PHP进行编写，使用MySQL数据库。实现了一个基本完备的信息管理系统。拥有全面后台管理功能。后台采用统一化的AJAX API进行操作。可扩展性强。
+
+##安装
+
+###环境搭建
+
+要快速搭建本系统可以安装XAMPP建站集成软件包（XAMPP是一个易于安装的Apache发行版，其中包含MySQL、PHP和Perl。）
+
+![xampp](https://d16zszyyqlzz6z.cloudfront.net/images/xampp-logo-ac950edf.svg)
+
+软件下载地址 [https://www.apachefriends.org/zh_cn/index.html](https://www.apachefriends.org/zh_cn/index.html)
+
+安装完成之后打开会出现如下控制面板
+
+![xamppControlPad](http://pic.pc6.com/up/2013-9/20139410323.jpg)
+
+通常只需要打开Apache 和 MySQL模块就好了。
+
+然后访问本机地址（在浏览器里输入[http://locoalhost](http://localhost)）就可以进入安装界面。
+
+选择简体中文安装完成之后会出现类似界面
+
+![xamppadmin](http://www.huacolor.com/article/UploadPic/2011-1/20111266420831.jpg)
+
+点击tools 下面的 phpMyAdmin 或者直接点击XAMPP控制面板中MySQL模块的admin按钮，或者直接访问[http://localhost/phpmyadmin/](http://localhost/phpmyadmin/) 可以进行可视化的数据库管理。
+
+###导入数据库
+
+####如果需要将之前的网站数据导入进来，我们就需要来进行数据库导入工作。
+
+进入phpMyAdmin之后，我们先创建一个数据库。
+
+![创建表](http://vgee.sinaapp.com/post/img/wendangpic1.jpg)
+
+如果你创建的数据库名不叫作vlab的话，需要在代码目录里面找到connDB.php文件，将dbname=vlab改为dbname=你创建的数据库名。
+
+![修改代码](http://vgee.sinaapp.com/post/img/wendangpic3.jpg)
+
+创建完成之后，进入数据表中，点击导入选项，讲已存在的.sql文件导入到数据库中
+
+![导入数据库](http://vgee.sinaapp.com/post/img/wendangpic2.jpg)
+
+###导入网站代码
+
+将网站源码解压之后，复制进xampp安装目录的htdocs文件夹中 `C:\xampp\htdocs` （将改文件夹中的其他文件全部移动到另外一个文件夹中）。 
+
+再访问 [http://locoalhost](http://localhost) 就可以了。
+
+-------------------
 
 ##数据库表
 - 用户     vlab_user 
@@ -99,46 +150,32 @@ id sub_title_id content
     var guid = $.transfer.guid();
     
 发送数据 
-
 `method`：'insert' 新增表 'updata' 修改表；
-
 `table`：表名；
-
 `[id]`：行ID，'no'为新增行；
-
 `[data]`：数据；
-
 `[fn]`：回调函数；
-
 `[norefresh]`：默认false。为true则成功后不刷新页面，否则刷新页面；
 
     $.transfer.sendText('insert', 'vlab_resource', 'no', data, appendEle, true);
     
 获取数据
-
 `tablename`：表名；
-
 `id`：行ID，'no'为新增行；
-
 `[fn]`：回调函数；
-
 `[field]`：请求的元素列表,类型为数组；
 
     $.transfer.getText('vlab_teacher', 'all', parseTeacher, ['id', 'name', 'sex', 'age',
          'phone', 'title', 'major', 'degree', 'add_time', 'web_page']);
 
 删除数据
-
 `tablename`：表名；
-
 `id`：行ID；
-
 `norefresh`：默认false。为true则成功后不刷新页面，否则刷新页面；
 
     $.transfer.deleteText('vlab_banner', id, true);
     
 ###前端图片接口 jQuery.fileupload.js
-
 使用前先引入资源
 
     <script type="text/javascript" src="js/jquery.ui.widget.js"></script>
@@ -162,15 +199,12 @@ id sub_title_id content
     };
     
 `fn`：回调函数, 参数为图片地址;
-
 `table`：图片储存的表名；
-
 `id`：行ID，'no'为新增行；
 
     uploadFile(addImg, 'vlab_banner');
     
 ###源码与注释
-
 ####transfer.js *前台数据接口*
     
     ;(function($){
