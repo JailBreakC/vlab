@@ -1,5 +1,6 @@
 <?php
     include('connDB.php');
+    include('visitorCounter.php');
     $needed = array('vlab_device' => array('id', 'name'),
                     'vlab_news' => array('id', 'title', 'add_time'),
                     'vlab_message' => array('id', 'title', 'add_time'),

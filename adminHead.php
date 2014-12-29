@@ -46,6 +46,7 @@
               </ul>
             </li>
             <li class=""><a href="admin.php">管理员管理</a></li>
+            <li class=""><a href="admin.php?page=adminCounter">访客统计</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
