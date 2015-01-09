@@ -1,6 +1,6 @@
 <?php
 //设定可操作的表
-$allowed = array('vlab_banner', 'vlab_resource');
+$allowed = array('vlab_banner', 'vlab_resource', 'vlab_video');
 
 session_start();
 if(isset($_SESSION['user'])){    

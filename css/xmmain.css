@@ -852,11 +852,26 @@ table.t1 tr.a1{
 	.focusBox .next:hover { filter:alpha(opacity=60); -moz-opacity:.6; opacity:.6 }
 	
 	/* 轮显css */
-	.multipleColumn{ overflow:hidden; position:relative; width:725px; background:#fff;   }
-	.multipleColumn .bd{ overflow:hidden;  }
-	.multipleColumn .bd ul{ overflow:hidden; zoom:1; width:725px;  float:left; _display:inline;  padding:10px 0 10px 10px; }
-	.multipleColumn .bd ul li{ margin:0 10px; float:left; _display:inline; overflow:hidden; text-align:center;  }
-	.multipleColumn .bd ul li .pic{ text-align:center; }
-	.multipleColumn .bd ul li .pic img{ width:205px; height:145px; display:block;  padding:2px; border:1px solid #ccc; }
-	.multipleColumn .bd ul li .pic a:hover img{ border-color:#999;  }
-	.multipleColumn .bd ul li .title{ line-height:24px;   }
+	.multiple{ overflow:hidden; position:relative; width:725px; background:#fff;   }
+	.multiple .bd{ overflow:hidden;  }
+	.multiple .bd ul{ overflow:hidden; zoom:1; width:725px;  float:left; _display:inline;  padding:10px 0 10px 10px; }
+	.multiple .bd ul li{ margin:0 10px; float:left; _display:inline; overflow:hidden; text-align:center;  }
+	.multiple .bd ul li .pic{ text-align:center; }
+	.multiple .bd ul li .pic img{ width:205px; height:145px; display:block;  padding:2px; border:1px solid #ccc; }
+	.multiple .bd ul li .pic a:hover img{ border-color:#999;  }
+	.multiple .bd ul li .title{ line-height:24px;   }
+
+
+#videoShade {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+}
+.video-js {
+	margin: 100px auto;
+}

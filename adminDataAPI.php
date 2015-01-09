@@ -2,7 +2,8 @@
 session_start();
 //可访问表单控制
 $allowed = array('vlab_disc', 'vlab_resource', 'vlab_news', 'vlab_message', 'vlab_rule',
- 'vlab_major', 'vlab_teacher', 'vlab_title', 'vlab_device', 'vlab_degree', 'vlab_banner', 'vlab_list');
+ 'vlab_major', 'vlab_teacher', 'vlab_title', 'vlab_device', 'vlab_degree', 'vlab_banner',
+ 'vlab_list', 'vlab_video');
 
     //获取数据可以无需登录
 if(isset($_POST['query']) && isset($_POST['id'])){

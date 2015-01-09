@@ -63,7 +63,7 @@ border: 1px solid #DDD;
       </div>
       <div class="fr3_cot">    
       <?php 
-      $id = '';
+/*      $id = '';
       if(isset($_GET['id']))
         $id = $_GET['id'];
       if($id == '2')
@@ -71,9 +71,8 @@ border: 1px solid #DDD;
       else if($id == '3')
         include('t3.html');
       else
-        include('t1.html');
+        include('t1.html');*/
            ?>
-      <!--     
         <table class="table table-bordered table-hover table-condensed">
           <tr>
             <th>名称</th>
@@ -84,7 +83,7 @@ border: 1px solid #DDD;
             <th>购置日期</th>
             <th>详情</th>
           </tr>
-        <?php /*
+        <?php 
               foreach ($res['vlab_device'] as $key => $value) {
                   $id = $value['id']; $name = $value['name']; $type = $value['type'];
                   $price = $value['price']; $num = $value['num']; $maker = $value['maker'];
@@ -98,16 +97,15 @@ border: 1px solid #DDD;
                           <td>$buy_time</td>
                           <td><a href='device.php?id=$id'>详情</a></td>
                         </tr>";
-              }*/
+              }
         ?>
         </table>
-        !-->
-        <div class="fy">
-          <div id="pages" class="text-c">3条
-          <a href="device.php?id=1" class="a1">1</a> 
-          <a href="device.php?id=2" class="a1">2</a> 
-          <a href="device.php?id=3" class="a1">3</a> </div>
-        </div>
+<!--         <div class="fy">
+  <div id="pages" class="text-c">3条
+  <a href="device.php?id=1" class="a1">1</a> 
+  <a href="device.php?id=2" class="a1">2</a> 
+  <a href="device.php?id=3" class="a1">3</a> </div>
+</div> -->
      </div>
      </div>
 </div>

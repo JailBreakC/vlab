@@ -7,6 +7,7 @@
   <meta name="description" content="湖南科技大学虚拟仿真实验室">
   <title>湖南科技大学虚拟仿真实验室</title>
   <link rel="icon" href="images/logo.jpg">
+  <link href="js/video-js/video-js.css" rel="stylesheet" type="text/css">
   <link href="css/xmmain.css" rel="stylesheet" type="text/css">
   <style type="text/css">
     body {
@@ -26,6 +27,7 @@
         margin-left: 0px !important;
     }
   </style>
+  <script src="js/video-js/video.js"></script>
   <!--百度统计-->
   <script>
   var _hmt = _hmt || [];
@@ -43,7 +45,7 @@
 <div id="all"> <div id="top">
   <div class="logo"> <img src="images/logo.png" alt="湖南科技大学虚拟仿真实验室"></div>
   <div class="tell">
-    <p class="tell_t"> <span class="t1"><a href="">首页</a></span> <span class="t2"><a href="disc.php">关于我们</a></span> <span class="t3"><a href="contact.php">联系我们</a></span> </p>
+    <p class="tell_t"> <span class="t1"><a href="index.php">首页</a></span> <span class="t2"><a href="disc.php">关于我们</a></span> <span class="t3"><a href="contact.php">联系我们</a></span> </p>
   </div>
 </div>
 <div id="navall">

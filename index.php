@@ -5,6 +5,7 @@
                     'vlab_news' => array('id', 'title', 'add_time'),
                     'vlab_message' => array('id', 'title', 'add_time'),
                     'vlab_resource' => array('id', 'pic', 'title', 'add_time'),
+                    'vlab_video' => array('id', 'pic', 'title', 'name', 'add_time')
                      );
     $res = array();$query = array();
     foreach ($needed as $k => $subArr) {
@@ -82,7 +83,7 @@ include("head.php"); ?>
           <p class="more"><a href="resource.php">+更多</a></p>
         </div>
         <div class="cp_cot">
-          <div class="multipleColumn">
+          <div class="multipleColumn multiple">
             <div class="bd">
               <div class="picList" style="position: relative; width: 735px; height: 396px;"> 
                 <ul style="position: absolute; width: 725px; left: 0px; top: 0px; display: none;">
@@ -118,8 +119,61 @@ include("head.php"); ?>
             </script> 
         </div>
       </div>
+      <div class="gs cp">
+        <div class="gs_t">
+          <div class="gs_ti">视频资源</div>
+          <!-- <p class="more"><a href="resource.php">+更多</a></p> -->
+        </div>
+        <div class="cp_cot">
+          <div class="multipleColumn2 multiple">
+            <div class="bd">
+              <div class="picList" style="position: relative; width: 735px; height: 396px;"> 
+                <ul style="position: absolute; width: 725px; left: 0px; top: 0px; display: none;">
+                  <?php 
+                    $i = 1;
+                    foreach ($res['vlab_video'] as $key => $value) {
+
+                      $title = $value['title']; $id = $value['id']; $pic = $value['pic']; $name = $value['name'];
+                      echo "<li class='videoList' data-href='video/$name'><div class='pic'><a href=''><img src='$pic' width='205' height='145' 
+                            alt='$title></a></div>
+                            <span><a href=''>$title</a></span> </li>";
+                      if($i%6 == 0){
+                        echo "</ul>
+                        <ul style='position: absolute; width: 725px; left: 0px; top: 0px; display: none;'>";
+                      }
+                      $i++;
+                    }
+                  ?>
+                </ul>
+               
+              </div>
+            </div>
+            <!-- bd End --> 
+          </div>
+          <!-- multipleColumn2 End --> 
+          
+          <script type="text/javascript">
+                /* 使用js分组，每6个li放到一个ul里面 */
+                jQuery(".multipleColumn2 .bd li").each(function(i){ jQuery(".multipleColumn2 .bd li").slice(i*6,i*6+6).wrapAll("<ul></ul>");});
+
+                /* 调用SuperSlide，每次滚动一个ul，相当于每次滚动6个li */
+                jQuery(".multipleColumn2").slide({titCell:".hd ul",mainCell:".bd .picList",autoPage:true,effect:"fold",autoPlay:true,delayTime:500,interTime:5000});
+            </script> 
+        </div>
+      </div>
     </div>
   </div>
 
+<div id="videoShade">
+
+  <video id="really-cool-video" class="video-js vjs-default-skin" controls
+   preload="auto" width="640" height="480" data-setup='{}'>
+    <p class="vjs-no-js">
+      To view this video please enable JavaScript, and consider upgrading to a web browser
+      that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+    </p>
+  </video>
+
+</div>
 
 <?php include("bottom.php"); ?>

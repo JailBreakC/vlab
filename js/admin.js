@@ -224,34 +224,39 @@ $(document).ready(function(){
         $('#addTime').val(data.add_time);
         $('#nowTime').val(getDate());
         $('#img').attr('src', data.pic);
+        $('#name').val(data.name);
     }
-    if(page === 'adminResource') {
+    if(page === 'adminResource' || page === 'adminVideo') {
+        var table;
+        if(page === 'adminResource') table = 'vlab_resource';
+        else table = 'vlab_video';
         var changeImg = function(rs){
             $('#img').attr('src', rs.msg);
         }
-        //绑定图像上传事件，不更新数据表，只获取图片地址
-        uploadFile(changeImg, 'vlab_resource');
+        //绑定图像上传事件
+        uploadFile(changeImg, table);
 
         $('#nowTime').attr('value',getDate());
-        t.getText('vlab_resource', 'all', parseNewsTable, ['id', 'title', 'add_time']);
+        t.getText(table, 'all', parseNewsTable, ['id', 'title', 'add_time']);
         
         $('#new').click(function() {
             var data = {};
             data.title = $('#title').val();
             data.content = $('#editor').html();
             data.add_time = $('#nowTime').val();
+            if(table === 'vlab_video') data.name = $('#name').val();
 
             //新增实例时需要写入图片地址
             data.pic = $('#img').attr('src');
 
             var appendEle = function(data) {
                 var ele = "<tr><td>NaN</td><td>"+data.title+"(修改前请刷新)</td><td>"+data.add_time
-                + "</td><td><button class='read btn btn-xs btn-primary'>读取文章</button></td> "
-                + " <td><button class='read btn btn-xs btn-primary'>修改</button>"
-                + "<button class='delete btn btn-xs btn-danger'>删除</button></td></tr>"
+                + "</td><td><button disabled='disabled' class='read btn btn-xs btn-primary'>读取文章</button></td> "
+                + " <td><button disabled='disabled' class='read btn btn-xs btn-primary'>修改</button>"
+                + "<button disabled='disabled' class='delete btn btn-xs btn-danger'>删除</button></td></tr>"
                 $('.table>tbody').append(ele);
             }
-            t.sendText('insert', 'vlab_resource', 'no', data, appendEle, 'norefresh');
+            t.sendText('insert', table, 'no', data, appendEle, 'norefresh');
             $('#save').attr('data-target-id','');
         });
 
@@ -263,7 +268,8 @@ $(document).ready(function(){
                 data.content = $('#editor').html();
                 data.add_time = $('#nowTime').val();
                 data.pic = $('#img').attr('src');
-                t.sendText('update', 'vlab_resource', id, data);
+                if(table === 'vlab_video') data.name = $('#name').val();
+                t.sendText('update', table, id, data);
             }else{
                 alert('请先读取要修改的文章');
             }
@@ -272,14 +278,14 @@ $(document).ready(function(){
         $('.table').on('click', '.read', function() {
             var id = $(this).closest('tr').children().eq(0).html();
             $('#save').attr('data-target-id', id);
-            t.getText('vlab_resource', id, parseResource);
+            t.getText(table, id, parseResource);
             //注册头像事件
-            uploadFile(changeImg, 'vlab_resource', id);
+            uploadFile(changeImg, table, id);
         });
 
         $('.table').on('click', '.delete', function() {
             var id = $(this).closest('tr').children().eq(0).html();
-            t.deleteText('vlab_resource', id);
+            t.deleteText(table, id);
         });
 
     }

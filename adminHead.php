@@ -32,6 +32,7 @@
           <ul class="nav navbar-nav">
             <li><a href="admin.php?page=adminCenter">实验中心介绍</a></li>
             <li><a href="admin.php?page=adminResource">中心虚拟资源</a></li>
+            <li><a href="admin.php?page=adminVideo">视频资源</a></li>
             <li><a href="admin.php?page=adminDevice">仪器设备</a></li>
             <li><a href="admin.php?page=adminTeacher">机构成员</a></li>
             <li><a href="admin.php?page=adminRule">管理制度</a></li>

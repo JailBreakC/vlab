@@ -50,6 +50,9 @@ width: 100%;
 max-width: 100%;
 margin-bottom: 20px;
 }
+.table a {
+  color: blue;
+}
 .table-bordered {
 border: 1px solid #DDD;
 }</style>
@@ -60,11 +63,10 @@ border: 1px solid #DDD;
       </div>
       <div class="fr3_cot">    
 
-      <?php 
+      <?php /*
       $id = '';
-      include('teacherFile.html');
+      include('teacherFile.html');*/
            ?>
-      <!--
         <table class="table table-bordered table-hover table-condensed">
           <tr>
             <th>姓名</th>
@@ -73,14 +75,16 @@ border: 1px solid #DDD;
             <th>职称</th>
             <th>学历学位</th>
             <th>专业</th>
-            <th>主页</th>
           </tr>
         <?php 
-            /*
+            
               foreach ($res['vlab_teacher'] as $key => $value) {
                   $id = $value['id']; $name = $value['name']; $age = $value['age']; $sex = $value['sex'];
                   $title = $value['title']; $degree = $value['degree']; $major = $value['major'];
                   $web_page = $value['web_page'];
+                  if($web_page) {
+                    $name = "<a href='$web_page' target='_blank'>".$name."</a>";
+                  }
                   echo "<tr>
                           <td>$name</td>
                           <td>$age</td>
@@ -88,12 +92,10 @@ border: 1px solid #DDD;
                           <td>$title</td>
                           <td>$degree</td>
                           <td>$major</td>
-                          <td><a href='$web_page' target='_blank'>$web_page</a></td>
                         </tr>";
-              }*/
+              }
         ?>
         </table>
-      -->
      </div>
 </div>
 <?php include('bottom.php');?>
