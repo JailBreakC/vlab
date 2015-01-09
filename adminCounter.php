@@ -23,7 +23,8 @@ $page = 1;
 if(isset($_GET['p'])) {
     $page = $_GET['p'];
 }
-$query = "SELECT * FROM `vlab_visitor` ORDER BY `count` DESC limit " . (($page-1) * 100) .", " . ($page * 100);
+$query = "SELECT * FROM `vlab_visitor` ORDER BY `count` DESC limit " . (($page-1) * 100) .", 100";
+echo $query;
 $res = $pdo->prepare($query);
 $res->execute();
 $res->setFetchMode(PDO::FETCH_ASSOC);
