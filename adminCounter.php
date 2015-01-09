@@ -15,10 +15,14 @@ $query = "SELECT COUNT(*) FROM `vlab_visitor`";
 $res = $pdo->prepare($query);
 $res->execute();
 $res = $res->fetchALL();
-echo "<h3>总访客数".$res[0][0]."</h3>";
+$visitorCount = $res[0][0];
+echo "<h3>总访客数".$visitorCount."</h3>";
 echo "<hr>";
-echo "访问次数TOP100↓";
 $query = "SELECT * FROM `vlab_visitor` ORDER BY `count` DESC limit 0, 100";
+if(isset($_GET['p'])) {
+    $page = $_GET['p'];
+    $query = "SELECT * FROM `vlab_visitor` ORDER BY `count` DESC limit " . ($page-1) * 100 .", " . $page * 100;
+}
 $res = $pdo->prepare($query);
 $res->execute();
 $res->setFetchMode(PDO::FETCH_ASSOC);
@@ -34,5 +38,13 @@ foreach ($res as $key => $value) {
 ?>
     </tbody>
 </table>
-
+<center>
+    <div class="btn-group">
+    <?php 
+        for($i = 1; $i <= ceil($visitorCount/100); $i++) {
+            echo "<a href='admin.php?page=adminCounter&p=$i'><button type='button' class='btn btn-default'>$i</button></a>";
+        }
+    ?>
+    </div>
+</center>
 </div>

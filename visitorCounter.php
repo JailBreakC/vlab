@@ -33,16 +33,18 @@ function isExist($ip) {
 if(!isset($_SESSION['visited'])) {
     $IP = $_SERVER['REMOTE_ADDR'];
     $loc = getIPLoc_QQ($IP);
-    $time = date('Y-m-d h:i:s',time());
-    $visitor = isExist($IP);
-    $count = intval($visitor['count'], 10) + 1;
-    $id = $visitor['id'];
-    if($visitor) {
-        $query = "UPDATE `vlab_visitor` SET `count` = '$count', `time` = '$time' WHERE `id` = $id";
-    }else {
-        $query = "INSERT INTO `vlab_visitor` (`ip`, `from`, `count`, `time`) value ('$IP', '$loc', 1, '$time')";
+    if($loc && $loc != '' && $loc != ' '){
+        $time = date('Y-m-d h:i:s',time());
+        $visitor = isExist($IP);
+        $count = intval($visitor['count'], 10) + 1;
+        $id = $visitor['id'];
+        if($visitor) {
+            $query = "UPDATE `vlab_visitor` SET `count` = '$count', `time` = '$time' WHERE `id` = $id";
+        }else {
+            $query = "INSERT INTO `vlab_visitor` (`ip`, `from`, `count`, `time`) value ('$IP', '$loc', 1, '$time')";
+        }
+        $res = $pdo->prepare($query);
+        if($res->execute())
+            $_SESSION['visited'] = true;
     }
-    $res = $pdo->prepare($query);
-    if($res->execute())
-        $_SESSION['visited'] = true;
 }
