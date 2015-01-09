@@ -4,6 +4,7 @@
 <table class="table table-bordered">
     <tbody>
         <tr>
+            <th>排名</th>
             <th>ip</th>
             <th>地址</th>
             <th>访问次数</th>
@@ -18,22 +19,25 @@ $res = $res->fetchALL();
 $visitorCount = $res[0][0];
 echo "<h3>总访客数".$visitorCount."</h3>";
 echo "<hr>";
-$query = "SELECT * FROM `vlab_visitor` ORDER BY `count` DESC limit 0, 100";
+$page = 1;
 if(isset($_GET['p'])) {
     $page = $_GET['p'];
-    $query = "SELECT * FROM `vlab_visitor` ORDER BY `count` DESC limit " . ($page-1) * 100 .", " . $page * 100;
 }
+$query = "SELECT * FROM `vlab_visitor` ORDER BY `count` DESC limit " . ($page-1) * 100 .", " . $page * 100;
 $res = $pdo->prepare($query);
 $res->execute();
 $res->setFetchMode(PDO::FETCH_ASSOC);
 $res = $res->fetchALL();
+$ct = ($page - 1) * 100;
 foreach ($res as $key => $value) {
     echo '<tr>' .
+    '<td>' . ($ct + 1) . '</td>' .
     '<td>' . $value['ip'] . '</td>' .
     '<td>' . $value['from'] . '</td>' .
     '<td>' . $value['count'] . '</td>' .
     '<td>' . $value['time'] . '</td>' .
     '</tr>';
+    $ct++;
 }
 ?>
     </tbody>
